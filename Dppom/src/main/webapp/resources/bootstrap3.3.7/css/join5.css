@@ -1,0 +1,760 @@
+@charset "utf-8";
+/**
+ * Global image
+ * 바둑판 형식으로 Sprite
+ * ( 컨텐츠 bg로 사용금지 )
+ * Class name은 .ico-global-**** 으로 무조건 지정해서 사용
+ */
+.com[class*="ico-global-"] {display:block;overflow:hidden;background:url(//image.wemakeprice.com/images/resources/wmp/common/global/ico-global.png?20160212_1) no-repeat;}
+.com.ico-global-exclaim {width:14px;height:14px;background-position:0 0;} /* 느낌표 */
+
+/* Image Common Class */
+.title-content-comm,
+.text-content-comm {display:block;overflow:hidden;text-indent:-9999px;}
+.title-content-comm {background:url(//image.wemakeprice.com/images/resources/wmp/common/title-content-comm-v6.png?20161214_1) no-repeat 0 0;}
+.text-content-comm {background:url(//image.wemakeprice.com/images/resources/wmp/common/text-content-comm.png) no-repeat 0 0;}
+
+/**
+ * ui-kit
+ ** Bullet
+ */
+.ui[class*="ico-blt-"],
+.ui[class*="list-blt-"] > li {padding-left:8px;background-repeat:no-repeat;background-position:0 7px;font-size:12px;line-height:18px;text-align:left;}
+.ui[class*="ico-blt-"].sm,
+.ui[class*="list-blt-"].sm > li {padding-left:6px;font-size:11px;line-height:17px;}
+.ui.ico-blt-999,
+.ui.list-blt-999 > li {background-image:url(//image.wemakeprice.com/images/resources/wmp/common/global/blt-999.png);color:#999;}
+.ui.ico-blt-aaa,
+.ui.list-blt-aaa > li {background-image:url(//image.wemakeprice.com/images/resources/wmp/common/global/blt-aaa.png);color:#aaa;}
+
+
+/* wmpSkip Navigation */
+#wmpSkip {position:relative;z-index:601;}
+#wmpSkip a {position:absolute;top:-33px;left:0;padding:2px 20px 0 19px;border:1px solid #e51b13;background-color:#000;}
+#wmpSkip a:focus {top:0;outline:0;}
+#wmpSkip a > span {display:block;height:29px;padding-right:11px;background:url(//image.wemakeprice.com/images/global/ico_skip_arr.png) no-repeat 100% 50%;color:#fff;line-height:29px;}
+
+/* 레이어팝업 오픈시 html태그에 추가되는 클래스 (스크롤 비노출) */
+html.no-scroll,
+html.no-scroll body {overflow:hidden;}
+
+/* Layout */
+body {overflow-y:scroll;*overflow-y:auto;}
+
+/** Layout - Common(공통 레이아웃) **/
+#wrap {overflow:hidden;min-width:937px;}
+
+/** Layout - Order(장바구니, 결제 레이아웃) **/
+.nognb #toolbar {display:none;}
+.nognb #header .header_inner {padding:30px 0 6px;}
+.nognb #header .search_wrap {display:none;}
+.nognb #header .wrap_ad {display:none;}
+.nognb #gnb {display:none;}
+.nognb #aside{display:none;}
+
+/** Layout - 검색 **/
+.search #container .content-main {padding-top:30px;}
+.search.compare #aside {padding-top:200px;}
+.search.compare .not-has-relation #aside {padding-top:138px;}
+
+/** Layout - 마이페이지 **/
+.mypage #container .content-main{padding-top:20px;}
+
+/** Layout - 오늘오픈 **/
+.todayopen #container .content-main{padding-top:20px;min-height:600px;}
+
+/** Layout - 고객센터 **/
+.customer #container .content-main{padding-top:20px;}
+
+/** Layout - 패션 **/
+.fashion #aside .wrap_bigad,
+.fashion #aside .wrap_shopping {display:block;}
+.fashion.product-detail #aside .wrap_shopping {display:none;}
+
+/** Layout - 딜상세 **/
+.product-detail #aside {padding-top:85px;}
+.product-detail .deal_area {margin-top:20px;}
+
+/** Layout - 할인항공권 **/
+.tour-air-detail #aside {padding-top:85px;}
+.tour-air-detail .deal_area {margin-top:20px;}
+
+/** Layout - 이메일거부 **/
+.no-aside #aside {display:none;}
+
+/** Layout - 베스트 **/
+.best-list #aside .wrap_bigad,
+.best-list #aside .wrap_shopping {display:none;}
+
+/** Layout - 프로모션 **/
+.promotion-full .container-inner {width:100% !important;}
+.promotion-full .container-inner #contents{width:100% !important;float:none !important;}
+.promotion-full #aside {display:none;}
+
+/** Header - Common(공통) **/
+#header {position:relative;z-index:200;}
+#header .header_inner {display:block;width:937px;margin:0 auto;padding:5px 0 6px;*zoom:1;}
+#header .header_inner:before,
+#header .header_inner:after {display:table;content:'';}
+#header .header_inner:after {clear:both;}
+
+/** Header - logo **/
+#logo {float:left;position:relative;}
+#logo .logo {display:block;overflow:hidden;float:left;width:260px;height:79px;}
+.logo_decoration {float:left;}
+.logo_bg {display:inline-block;width:135px;height:79px;position: absolute;top: 0;left: 50%;margin-left: -263px;}
+
+/** Header - 검색창(상단) **/
+.header_inner .search_wrap {position:relative;float:left;z-index:500;margin:20px 0 0 8px;}
+.header_inner .search_wrap .screen_out{overflow:hidden;position:absolute;width:0;height:0;line-height:0;text-indent:-9999px;}
+.header_inner .search_wrap .ico_new_search {position:absolute;z-index:2;left:152px;top:20px;}
+.header_inner .search_wrap .top_search .label_inp {position:absolute;top:38px;left:11px;color:#333;cursor:text;}
+.header_inner .search_wrap .top_search.on .label_inp {display:none;}
+.header_inner .search_wrap .top_search .inp_txt {outline:none;float:left;width:300px;height:18px;padding:5px 9px 4px 9px;border:2px solid #ef1f12;border-right:0 none;font-size:12px;color:#666;}
+.header_inner .search_wrap .top_search .search_inner .btn_search {position:absolute;right:1px;top:1px;width:44px;height:38px;background-position:-617px 8px;text-indent:0;}
+.header_inner .search_wrap .top_search .search_inner .btn_search button {display:block;width:100%;height:100%;border:0 none;background:none;text-indent:-9999px}
+
+/** Header - 검색창(상단) 검색 자동완성 레이어 **/
+.header_inner .srch_keyword {position:absolute;top:100%;left:0;right:0;width:398px;height:276px;padding:0;border:1px solid #acacac;border-top:0;background:#fff;line-height:25px;z-index:300;}
+.header_inner .srch_keyword .result_wrap {float:left;width:225px;}
+.header_inner .srch_keyword .result_wrap .result_lst {height:168px;}
+.header_inner .srch_keyword .result_wrap .cat_lst {border-top:1px solid #eee;}
+.header_inner .srch_keyword .result_wrap ul {padding:11px 0;}
+.header_inner .srch_keyword .result_wrap li {line-height:21px;}
+.header_inner .srch_keyword .result_wrap li a {display:block;overflow:hidden;padding:0 15px 0 16px;color:#333;text-overflow:ellipsis;white-space:nowrap;}
+.header_inner .srch_keyword .result_wrap li.tab_focus,.header_inner .srch_keyword .result_wrap li a:hover {background-color:#f7f7f7;}
+.header_inner .srch_keyword .result_wrap li em {color:#f7120a;font-weight:bold;}
+.header_inner .srch_keyword .recommend_wrap {float:left;width:172px;border-left:1px solid #eee;text-align:center;}
+.header_inner .srch_keyword .recommend_wrap a {display:block;height:238px;padding:19px 0;}
+.header_inner .srch_keyword .recommend_wrap.tab_focus,.header_inner .srch_keyword .recommend_wrap a:hover {background-color:#f7f7f7;}
+.header_inner .srch_keyword .recommend_wrap .area_title {display:block;overflow:hidden;width:85px;height:16px;margin:0 auto;background:url(http://image.wemakeprice.com/images/resources/wmp/common/sample/top_srch_area.png) no-repeat 0 0;text-indent:-9999px;}
+.header_inner .srch_keyword .recommend_wrap img {display:block;width:132px;height:132px;margin:16px auto 22px;vertical-align:baseline;}
+.header_inner .srch_keyword .recommend_wrap .deal_title {display:block;height:32px;text-align:center;line-height:16px;}
+.header_inner .srch_keyword .recommend_wrap .price {display:block;padding-top:3px;text-align:center;line-height:1;color:#333;font-family:Arial;}
+.header_inner .srch_keyword .recommend_wrap .price em {display:inline-block;margin-bottom:3px;font:bold 14px tahoma;vertical-align:middle;}
+.header_inner .srch_keyword .recommend_wrap .price .etc{display:inline-block;margin-left:2px;margin-bottom:0;;font-size:12px;font-family:Arial;font-weight:normal;vertical-align:0;line-height:1;margin-top:0;*margin-top:-1px;}
+/* chrome */
+@media screen and (-webkit-min-device-pixel-ratio:0){.header_inner .srch_keyword .recommend_wrap .price .etc{vertical-align:middle;margin-bottom:0.5px;}}
+
+.header_inner .search_inner {position:relative;}
+.header_inner .ui-input-search {position:relative;width:396px;border:2px solid #e51b13;*zoom:1;}
+.header_inner .ui-input-search:before,
+.header_inner .ui-input-search:after {display:table;content:'';}
+.header_inner .ui-input-search:after {clear:both;}
+.header_inner .ui-input-search input.ui-input-text {outline:none;float:left;display:inline-block;width:320px;height:16px;line-height:16px;padding:11px 0 9px 13px;border:0 none;font-size:12px;color:#333;text-overflow:ellipsis;}
+.header_inner .ui-input-search .ui-input-clear {display:none;position:absolute;right:46px;top:14px;z-index:100;}
+.header_inner .ui-btn-icon-notext .ui-btn-inner {padding:0;}
+.header_inner .ui-btn-inner {display:block;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;position:relative;}
+.header_inner .ui-btn-icon-notext .ui-icon {display:block;}
+.header_inner .ui-icon {width:9px;height:9px;background:url(//image.wemakeprice.com/images/2014/common/ico_sch_close_v3.png) no-repeat 0 -130px;}
+* + html .header_inner .ui-btn-icon-notext .ui-icon {display:none;width:0;height:0;}
+.header_inner input[type=text]::-ms-clear {display:none;}
+.header_inner input[type=password]::-ms-reveal {display:none;}
+
+/** Header - 광고 **/
+.wrap_ad {position:relative;float:right;}
+.wrap_ad .list_ad {overflow:hidden;width:190px;height:79px;}
+.wrap_ad .list_ad a {display:block;}
+.wrap_ad .btn_page {position:absolute;top:12px;right:3px;overflow:hidden;float:left;width:30px;height:15px;background:url(//image.wemakeprice.com/images/2013/common/btn_comm_v9.png) no-repeat 1px 0}
+.wrap_ad .btn_page a,
+.wrap_ad .btn_page button {overflow:hidden;float:left;width:15px;height:15px;font-size:0;line-height:0;text-indent:-9999px}
+
+/** Header - toolbar **/
+#toolbar {display:block;width:100%;position:relative;z-index:600;}
+#toolbar .toolbar_inner {position:relative;width:937px;margin:0 auto;z-index:130;*zoom:1;}
+#toolbar .toolbar_inner:before,
+#toolbar .toolbar_inner:after {display:table;content:'';}
+#toolbar .toolbar_inner:after {clear:both;}
+#toolbar .list_alliance,
+#toolbar .list_alliance li {float:left;}
+#toolbar .list_alliance li a {display:block;height:30px;background:url(//image.wemakeprice.com/images/resources/wmp/common/toolbar-util-v5.png) no-repeat;text-indent:-9999px;}
+#toolbar .list_alliance li a.util-promotion {width:57px;background-position:0 0;} /* 기획전 */
+#toolbar .list_alliance li a:hover.util-promotion {background-position:0 -30px;}
+#toolbar .list_alliance li a.util-coupon {width:83px;background-position:-57px 0;} /* 쿠폰.혜택 */
+#toolbar .list_alliance li a:hover.util-coupon {background-position:-57px -30px;}
+#toolbar .list_alliance li a.util-bizmall {width:67px;background-position:-140px 0;} /* 비즈몰 */
+#toolbar .list_alliance li a:hover.util-bizmall {background-position:-140px -30px;}
+#toolbar .list_alliance li a.util-fairart {width:78px;background-position:-207px 0;} /* 페어아트 */
+#toolbar .list_alliance li a:hover.util-fairart {background-position:-207px -30px;}
+#toolbar .list_alliance li a.util-contact {width:78px;background-position:-285px 0;} /* 입점문의 */
+#toolbar .list_alliance li a:hover.util-contact {background-position:-285px -30px;}
+#toolbar .wrap_topbar {float:right;}
+#toolbar .wrap_topbar .ico_toolbar {background:url(//image.wemakeprice.com/images/resources/wmp/common/ico_toolbar_v2.png) no-repeat}
+#toolbar .wrap_topbar .link_option,
+#toolbar .wrap_topbar #loginBtn {float:left;padding:8px 10px;border-bottom:1px solid transparent;font-size:11px;line-height:14px;color:#666;letter-spacing:-1px;vertical-align:top}
+#toolbar .wrap_topbar .link_option:hover,
+#toolbar .wrap_topbar .link_option:focus,
+#toolbar .wrap_topbar #loginBtn:hover,
+#toolbar .wrap_topbar #loginBtn:focus {text-decoration:underline}
+#toolbar .wrap_topbar .link_option .num {display:inline;padding:0;font-size:11px;line-height:12px;font-family:Tahoma;color:#ce1710;font-weight:normal;}
+#toolbar .wrap_topbar .txt_bar {float:left;overflow:hidden;width:1px;height:10px;margin-top:10px;background-color:#ccc;text-indent:-9999px;vertical-align:top}
+#toolbar .wrap_topbar .box_layer {float:left;position:relative;border:0;z-index:300;vertical-align:top}
+#toolbar .wrap_topbar .box_layer .link_option {display:block;padding:8px;vertical-align:top;border-bottom:1px solid transparent;}
+#toolbar .wrap_topbar .box_layer .ico_layer {height:15px;padding-right:22px;padding-bottom:6px;background-position:right 13px}
+#toolbar .wrap_topbar .box_layer.empt .ico_layer {background:none;}
+#toolbar .wrap_topbar .box_layer:hover .ico_layer {background-position:right -27px;}
+#toolbar .wrap_topbar .box_layer .link_name {overflow:hidden;text-overflow:ellipsis;max-width:185px;white-space:nowrap;word-break:break-all;}
+#toolbar .wrap_topbar .box_layer .list_layer {
+	overflow:hidden;height:0;padding:0;background-color:#fff;clear:both;
+	opacity:0;
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter:alpha(opacity=0);
+}
+#toolbar .wrap_topbar .on .list_layer {
+	display:block;height:auto;padding:5px 0;border:1px solid #ce1710;
+	opacity:1;
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	filter:alpha(opacity=100);
+}
+#toolbar .wrap_topbar .box_layer .list_layer li a {display:block;padding:0 0 0 8px;font-size:11px;line-height:18px;letter-spacing:-1px;color:#666;text-align:left}
+#toolbar .wrap_topbar .box_layer .list_layer li a:hover {color:#ce1710;background-color:#f3f3f3;text-decoration:underline;}
+#toolbar .wrap_topbar .box_layer .list_layer li #tcomms {padding:0 0 0 20px;background:url(//image.wemakeprice.com/images/front/main/ico_bookmark.gif) 5px -20px no-repeat}
+#toolbar .wrap_topbar .box_layer .list_layer li #tcomms:hover {background-color:#f3f3f3}
+#toolbar .wrap_topbar .box_layer.login .list_layer {position:absolute;top:30px;width:86px;}/*로그인*/
+#toolbar .wrap_topbar .box_layer.customer .list_layer {position:absolute;top:30px;width:86px;}/*고객센터*/
+#toolbar .wrap_topbar .box_layer.mypage .list_layer {position:absolute;top:30px;width:95px;}/*마이페이지*/
+#toolbar .wrap_topbar .box_layer.order_layer {margin-right:-5px;}/*장바구니*/
+#toolbar .wrap_topbar .box_layer.order_layer .ico_layer {padding-top:0;height:24px;}
+#toolbar .wrap_topbar .box_layer.order_layer .cart {background:url(http://image.wemakeprice.com/images/resources/wmp/common/ico_toolbar_v2.png) 0 -72px no-repeat;padding:0 17px 6px 20px;display:inline-block;}
+#toolbar .wrap_topbar .box_layer.order_layer .num {background:url(http://image.wemakeprice.com/images/resources/wmp/common/ico_toolbar_v2.png) -120px -70px no-repeat;width:20px;*width:22px;height:18px;display:inline-block;text-align:center;padding-top:3px;*padding-top:2px;position:absolute;top:5px;right:0;color:#fff;font-weight:bold;}
+#toolbar .wrap_topbar .box_layer.order_layer .ico_layer:hover {text-decoration:none;}
+#toolbar .wrap_topbar .box_layer.order_layer .ico_layer:hover .cart {text-decoration:underline}
+#toolbar .wrap_topbar .box_layer.order_layer .list_layer {position:absolute;top:30px;right:5px;width:175px;}
+#toolbar .wrap_topbar .box_layer.order_layer .list_layer .img_li {width:100%;overflow:hidden;color:#666;margin-bottom:5px;}
+#toolbar .wrap_topbar .box_layer.order_layer .list_layer .img_li:hover {background-color:#f3f3f3;color:#ce1710;}
+#toolbar .wrap_topbar .box_layer.order_layer .list_layer .img_li a {position:relative;height:45px;padding:0 10px;}
+#toolbar .wrap_topbar .box_layer.order_layer .list_layer .thumb {float:left;margin-right:5px;position:relative;}
+#toolbar .wrap_topbar .box_layer.order_layer .list_layer .thumb span {background:url(http://image.wemakeprice.com/images/resources/wmp/common/ico_toolbar_v2.png) no-repeat;position:absolute;bottom:0;left:0;width:45px;height:14px;text-indent:-9999px;}
+#toolbar .wrap_topbar .box_layer.order_layer .list_layer .thumb .sticker_soldout1 {background-position:0 -144px;}/*마감임박*/
+#toolbar .wrap_topbar .box_layer.order_layer .list_layer .thumb .sticker_soldout2 {background-position:0 -168px;}/*매진임박*/
+#toolbar .wrap_topbar .box_layer.order_layer .list_layer .thumb .sticker_soldout3 {background-position:0 -192px;}/*오늘마감*/
+#toolbar .wrap_topbar .box_layer.order_layer .list_layer .thumb img {width:45px;height:45px;}
+#toolbar .wrap_topbar .box_layer.order_layer .list_layer .link {display:block;height:14px;line-height:14px;padding-top:8px;}
+#toolbar .wrap_topbar .box_layer.order_layer .list_layer .cart_more {margin-bottom:5px;}
+#toolbar .wrap_topbar .box_layer.order_layer .list_layer .cart_more a {background:url(http://image.wemakeprice.com/images/resources/wmp/common/ico_toolbar_v2.png) 115px -98px no-repeat;text-align:center;padding-right:8px;color:#fff;text-decoration:none;display:block;line-height:20px;height:20px;margin:0 10px;background-color:#6a747d;}
+#toolbar .select_layer1 {position:absolute;margin:0;overflow:hidden;top:25px;right:312px;}
+#toolbar .select_layer1 .close {display:block;position:absolute;top:11px;right:5px;text-indent:-9999px;background:url(http://image.wemakeprice.com/images/resources/wmp/common/ico_toolbar_v2.png) 0 -40px no-repeat;width:10px;height:10px;}
+#toolbar .select_layer1 .txt {background-color:#fffff2;border:1px solid #dddccd;color:#999;text-align:center;font-size:11px;line-height:16px;margin-top:5px;padding:2px 20px 0 8px;letter-spacing:-1px;}
+#toolbar .select_layer1 .txt em.icon {position:absolute;top:0;left:95px;background:url(http://image.wemakeprice.com/images/resources/wmp/common/ico_toolbar_v2.png) no-repeat;width:10px;height:10px;}
+#toolbar .select_layer1 .txt span {color:#666;}
+#toolbar .select_layer1 .txt span em {color:#ce1710;}
+#toolbar .select_layer2 {position:absolute;margin:0;overflow:hidden;top:25px;right:0;}
+#toolbar .select_layer2 .close {display:block;position:absolute;top:11px;right:5px;text-indent:-9999px;background:url(http://image.wemakeprice.com/images/resources/wmp/common/ico_toolbar_v2.png) 0 -40px no-repeat;width:10px;height:10px;}
+#toolbar .select_layer2 .txt {background-color:#fffff2;border:1px solid #dddccd;color:#666;text-align:center;font-size:11px;line-height:16px;margin-top:5px;padding:2px 20px 0 8px;letter-spacing:-1px;}
+#toolbar .select_layer2 .txt em.icon {position:absolute;top:0;left:95px;background:url(http://image.wemakeprice.com/images/resources/wmp/common/ico_toolbar_v2.png) no-repeat;width:10px;height:10px;}
+#toolbar .select_layer2 .txt span {color:#666;}
+#toolbar .select_layer2 .txt span em {color:#ce1710;}
+#toolbar .select_layer2 .txt span em.lin {color:#dddccd;}
+
+/* GNB */
+#gnb .ico-gnb-comm {background:url(//image.wemakeprice.com/images/resources/wmp/common/ico-gnb-comm-v1.png) no-repeat;}
+#gnb .text-gnb-comm {display:block;background:url(//image.wemakeprice.com/images/resources/wmp/common/text-gnb-comm-v13.png) no-repeat;text-indent:-9999px;}
+#gnb {position:relative;z-index:190;border-bottom:1px solid #ddd;}
+#gnb .gnb-inner {border-width:1px 0;border-style:solid;border-color:#ddd transparent #ccc;}
+#gnb .gnb-content {position:relative;width:936px;margin:0 auto;*zoom:1;border-right:1px solid #ddd;}
+#gnb .gnb-content:before,
+#gnb .gnb-content:after {display:table;content:'';}
+#gnb .gnb-content:after {clear:both;}
+
+/** GNB - 전체메뉴 **/
+#gnb .wrap-category-all {float:left;position:relative;z-index:2;}
+#gnb .wrap-category-all .btn-category-all {display:block;overflow:visible;position:relative;width:50px;height:40px;margin-top:-1px;border-width:1px 1px 0;border-style:solid;border-color:#ddd #ddd #ccc;background-color:#fff;outline:0;}
+#gnb .wrap-category-all .btn-category-all .ico-menu {overflow:hidden;position:absolute;top:11px;left:13px;width:22px;height:17px;background-position:0 0;text-indent:-9999px;}
+
+/** GNB - 카테고리메뉴 **/
+#gnb .list-category {float:left;position:relative;z-index:2;}
+#gnb .list-category > li {float:left;position:relative;}
+#gnb .list-category > li:first-child {padding-left:20px;}
+#gnb .list-category > li > a {display:block;position:relative;z-index:2;padding:12px 14px 12px 14px;*padding-bottom:12px;}
+#gnb .list-category .gnb-balloon {position:absolute;top:-13px;right:0;left:0;text-align:center;}
+#gnb .list-category .gnb-balloon img {vertical-align:top;}
+#gnb .list-category .ico-new {position:absolute;right:-14px;bottom:6px;width:26px;height:27px;background-position:0 -100px;}
+#gnb .list-category .ico-tomorrow {position:absolute;right:-16px;bottom:16px;width:49px;height:21px;background-position:0 -135px;}
+#gnb .list-category .text-gnb-comm {position:relative;height:13px;}
+#gnb .list-category .menu-gnb-best .text-gnb-comm {width:37px;height:15px;background-position:0 0;} /* 베스트 */
+#gnb .list-category .menu-gnb-best.selected .text-gnb-comm,
+#gnb .list-category .menu-gnb-best.active .text-gnb-comm,
+#gnb .list-category .menu-gnb-best > a:hover .text-gnb-comm,
+#gnb .list-category .menu-gnb-best > a:focus .text-gnb-comm {background-position:-130px 0;}
+#gnb .list-category .menu-gnb-wonder .text-gnb-comm {width:49px;height:15px;background-position:0 -20px;} /* 원더배송	 */
+#gnb .list-category .menu-gnb-wonder.selected .text-gnb-comm,
+#gnb .list-category .menu-gnb-wonder.active .text-gnb-comm,
+#gnb .list-category .menu-gnb-wonder > a:hover .text-gnb-comm,
+#gnb .list-category .menu-gnb-wonder > a:focus .text-gnb-comm {background-position:-130px -20px;}
+#gnb .list-category .menu-gnb-fasion .text-gnb-comm {width:55px;height:15px;background-position:0 -40px;} /* 패션뷰티 */
+#gnb .list-category .menu-gnb-fasion.selected .text-gnb-comm,
+#gnb .list-category .menu-gnb-fasion.active .text-gnb-comm,
+#gnb .list-category .menu-gnb-fasion > a:hover .text-gnb-comm,
+#gnb .list-category .menu-gnb-fasion > a:focus .text-gnb-comm {background-position:-130px -40px;}
+#gnb .list-category .menu-gnb-food .text-gnb-comm {width:99px;height:15px;background-position:0 -60px;} /* 식품/생활/유아동 */
+#gnb .list-category .menu-gnb-food.selected .text-gnb-comm,
+#gnb .list-category .menu-gnb-food.active .text-gnb-comm,
+#gnb .list-category .menu-gnb-food > a:hover .text-gnb-comm,
+#gnb .list-category .menu-gnb-food > a:focus .text-gnb-comm {background-position:-130px -60px;}
+#gnb .list-category .menu-gnb-electric .text-gnb-comm {width:69px;height:15px;background-position:0 -80px;} /* 가전/디지털 */
+#gnb .list-category .menu-gnb-electric.selected .text-gnb-comm,
+#gnb .list-category .menu-gnb-electric.active .text-gnb-comm,
+#gnb .list-category .menu-gnb-electric > a:hover .text-gnb-comm,
+#gnb .list-category .menu-gnb-electric > a:focus .text-gnb-comm {background-position:-130px -80px;}
+#gnb .list-category .menu-gnb-travel .text-gnb-comm {width:55px;height:15px;background-position:0 -100px;} /* 여행/레저 */
+#gnb .list-category .menu-gnb-travel.selected .text-gnb-comm,
+#gnb .list-category .menu-gnb-travel.active .text-gnb-comm,
+#gnb .list-category .menu-gnb-travel > a:hover .text-gnb-comm,
+#gnb .list-category .menu-gnb-travel > a:focus .text-gnb-comm {background-position:-130px -100px;}
+#gnb .list-category .menu-gnb-region .text-gnb-comm {width:69px;height:15px;background-position:0 -120px;} /* 지역/서비스 */
+#gnb .list-category .menu-gnb-region.selected .text-gnb-comm,
+#gnb .list-category .menu-gnb-region.active .text-gnb-comm,
+#gnb .list-category .menu-gnb-region > a:hover .text-gnb-comm,
+#gnb .list-category .menu-gnb-region > a:focus .text-gnb-comm {background-position:-130px -120px;}
+#gnb .list-category .menu-gnb-culture .text-gnb-comm {width:24px;height:15px;background-position:0 -140px;} /* 컬처 */
+#gnb .list-category .menu-gnb-culture.selected .text-gnb-comm,
+#gnb .list-category .menu-gnb-culture.active .text-gnb-comm,
+#gnb .list-category .menu-gnb-culture > a:hover .text-gnb-comm,
+#gnb .list-category .menu-gnb-culture > a:focus .text-gnb-comm {background-position:-130px -140px;}
+#gnb .list-category .menu-gnb-brand .text-gnb-comm {width:37px;height:15px;background-position:0 -160px;} /* 브랜드관 */
+#gnb .list-category .menu-gnb-brand.selected .text-gnb-comm,
+#gnb .list-category .menu-gnb-brand.active .text-gnb-comm,
+#gnb .list-category .menu-gnb-brand > a:hover .text-gnb-comm,
+#gnb .list-category .menu-gnb-brand > a:focus .text-gnb-comm {background-position:-130px -160px;}
+#gnb .list-category .menu-gnb-todayopen .text-gnb-comm {width:75px;height:16px;background-position:0 -180px;} /* 신규상품 */
+#gnb .list-category .menu-gnb-todayopen > a {padding-bottom:11px;}
+#gnb .list-category .menu-gnb-todayopen.selected .text-gnb-comm,
+#gnb .list-category .menu-gnb-todayopen.active .text-gnb-comm,
+#gnb .list-category .menu-gnb-todayopen > a:hover .text-gnb-comm,
+#gnb .list-category .menu-gnb-todayopen > a:focus .text-gnb-comm {background-position:-130px -180px;}
+#gnb .list-category .ico-layer-arr,
+#gnb .layer-category,
+#gnb .bg-layer-allmenu {
+	opacity:0;
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter:alpha(opacity=0);
+}
+#gnb .layer-category,
+#gnb .bg-layer-allmenu {overflow:hidden;position:absolute;top:100%;left:0;height:0;border:1px solid #e51b13;background-color:#fff;
+	-webkit-box-shadow:5px 5px 5px rgba(0, 0, 0, .1);
+	box-shadow:5px 5px 5px rgba(0, 0, 0, .1);
+}
+#gnb .list-category .menu-gnb-wonder .layer-category {left:-27px;}
+#gnb .list-category .menu-gnb-fasion .layer-category {left:-62px;}
+#gnb .list-category .menu-gnb-food .layer-category {left:-82px;}
+#gnb .list-category .menu-gnb-electric .layer-category {left:-153px;}
+#gnb .list-category .menu-gnb-travel .layer-category {left:-195px;}
+#gnb .list-category .menu-gnb-region .layer-category {left:-215px;}
+#gnb .list-category .menu-gnb-culture .layer-category {left:-249px;}
+#gnb .list-category .ico-layer-arr {position:absolute;top:100%;left:50%;width:15px;height:7px;margin:-6px 0 0 -4px;background-position:0 -50px;}
+#gnb .layer-category {width:188px;padding-right:290px;}
+#gnb .layer-category .tit {display:none;color:#333;}
+#gnb .layer-category .list-sub-category {width:159px;padding:24px 0 21px 30px;line-height:24px;}
+#gnb .layer-category .list-sub-category li {vertical-align:top;}
+#gnb .layer-category .list-sub-category a {display:block;color:#333;*zoom:1;}
+#gnb .layer-category .list-sub-category a:before,
+#gnb .layer-category .list-sub-category a:after {display:table;content:'';}
+#gnb .layer-category .list-sub-category a:after {clear:both;}
+#gnb .layer-category .list-sub-category a:hover,
+#gnb .layer-category .list-sub-category a:focus,
+#gnb .layer-category .list-sub-category .active a {font-weight:bold;color:#ce1710;}
+#gnb .layer-category .list-sub-category .txt-category {float:left;margin-right:7px;}
+#gnb .layer-category .list-sub-category .ico-category {float:left;margin-top:5px;}
+
+#gnb .list-category .menu-gnb-region .list-sub-category {padding:0 0 35px 30px;*padding:0 0 8px 30px;}
+#gnb .layer-category .sub-title {display:block;position:relative;width:110px;height:18px;}
+#gnb .layer-category .sub-title.service{margin:20px 0 5px 2px;}
+#gnb .layer-category .sub-title.region {margin:16px 0 5px 2px;}
+#gnb .layer-category .sub-title.travel{margin:4px 0 8px}
+#gnb .layer-category .sub-title em {position:absolute;top:0;left:-10px;width:110px;height:21px;padding:0 0 0 10px;background-color:#f3f3f3;color:#333;font-weight:bold;}
+#gnb .layer-category .banner {position:absolute;top:0;right:0;bottom:0;left:188px;opacity:0;}
+#gnb .active .layer-category .banner {opacity:1;}
+#gnb .layer-category .banner .thumb {position:absolute;right:0;bottom:0;}
+#gnb .bg-layer-allmenu {right:0;height:0;}
+#gnb .bg-layer-allmenu-inner {position:absolute;top:20px;right:0;bottom:60px;left:0;z-index:1;background:url(//image.wemakeprice.com/images/resources/wmp/common/bg-gnb-allmenu-v3.png) repeat-y;}
+#gnb .bg-layer-allmenu .btn-close {overflow:hidden;position:absolute;right:12px;bottom:11px;z-index:2;width:17px;height:17px;background-position:0 -75px;text-indent:-9999px;}
+#gnb .bg-layer-allmenu .exhibitions-openbox{overflow:hidden;position:absolute;left:0;bottom:0;width:100%;background:#f4f4f4;}
+#gnb .bg-layer-allmenu .exhibitions-openbox li:first-child{width:137px;padding:0;background:#ff6f60;}
+#gnb .bg-layer-allmenu .exhibitions-openbox li:first-child a{padding:0 20px;text-align:left;color:#fff;cursor:default;background:url(//image.wemakeprice.com/images/resources/wmp/common/gnb-exhibitions-listbg.png) no-repeat 100% 0;}
+#gnb .bg-layer-allmenu .exhibitions-openbox li{float:left;height:40px;line-height:40px;}
+#gnb .bg-layer-allmenu .exhibitions-openbox li a {display:block;padding:0 8px 0 19px;color:#333;text-align:center;}
+#gnb .bg-layer-allmenu .exhibitions-openbox li a > span{position:relative;top:2px;display:inline-block;height:40px;vertical-align:middle;}
+#gnb .bg-layer-allmenu .exhibitions-openbox li a > span .ico{position:relative;top:-2px;display:inline-block;width:19px;height:14px;margin-right:10px;vertical-align:middle;line-height:40px;background:url(//image.wemakeprice.com/images/resources/wmp/common/gnb-exhibitions-ico-v1.png) no-repeat;background-position:0 0;}
+#gnb .list-category > .active .ico-layer-arr,
+#gnb .list-category > .active .layer-category,
+#gnb .all-open-menu .layer-category,
+#gnb .all-open-menu .bg-layer-allmenu {
+	z-index:1;
+	opacity:1;
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	filter:alpha(opacity=100);
+}
+#gnb .all-open-menu .wrap-category-all {margin-bottom:-1px;}
+#gnb .all-open-menu .wrap-category-all .btn-category-all {height:41px;border-color:#e51b13 #e51b13 transparent;}
+#gnb .all-open-menu .wrap-category-all .btn-category-all .ico-menu {background-position:0 -25px;}
+#gnb .all-open-menu .layer-category {width:auto;border:0;}
+#gnb .all-open-menu .list-category .layer-category {overflow:visible;margin-top:19px;padding-right:0;background-color:transparent;
+	-webkit-box-shadow:none;
+	box-shadow:none;
+}
+#gnb .all-open-menu .list-category .menu-gnb-wonder .layer-category {left:-107px;}
+#gnb .all-open-menu .list-category .menu-gnb-fasion .layer-category {left:-81px;}
+#gnb .all-open-menu .list-category .menu-gnb-food .layer-category {left:-18px;}
+#gnb .all-open-menu .list-category .menu-gnb-electric .layer-category {left:2px;}
+#gnb .all-open-menu .list-category .menu-gnb-travel .layer-category {left:42px;}
+#gnb .all-open-menu .list-category .menu-gnb-region .layer-category {left:84px;}
+#gnb .all-open-menu .list-category .menu-gnb-culture .layer-category {left:126px;}
+#gnb .all-open-menu .layer-category .list-sub-category {padding:9px 0 0 0;padding-bottom:0;letter-spacing:-1px;line-height:24px;}
+#gnb .all-open-menu .menu-gnb-wonder .layer-category .list-sub-category {width:82px;}
+#gnb .all-open-menu .menu-gnb-fasion .layer-category .list-sub-category {width:125px;}
+#gnb .all-open-menu .menu-gnb-food .layer-category .list-sub-category {width:125px;}
+#gnb .all-open-menu .menu-gnb-electric .layer-category .list-sub-category {width:115px;}
+#gnb .all-open-menu .menu-gnb-travel .layer-category .list-sub-category {width:105px;}
+#gnb .all-open-menu .menu-gnb-region .layer-category .list-sub-category {width:118px;}
+#gnb .all-open-menu .menu-gnb-culture .layer-category .list-sub-category {width:110px;}
+#gnb .all-open-menu .layer-category .tit {display:block;}
+#gnb .all-open-menu .layer-category .banner {display:none;}
+#gnb .all-open-menu .menu-gnb-region .layer-category .list-sub-category .sub-title,#gnb .all-open-menu .menu-gnb-travel .layer-category .list-sub-category .sub-title{display:none;}
+
+/** GNB - 실시간 인기 검색어 **/
+.realtime-top-searches {display:none;overflow:hidden;float:right;position:relative;z-index:2;width:165px;height:39px;margin-top:-1px;border-width:1px 1px 0;border-style:solid;border-color:#ddd;background-color:#f3f3f3;}
+.realtime-top-searches .tit {display:none;position:relative;z-index:1;padding:12px 9px 9px;border-bottom:1px solid #ddd;font-weight:bold;color:#333;}
+.realtime-top-searches .wrap-list {position:relative;}
+.realtime-top-searches .list-top-searches a {display:block;padding:12px 10px 0;color:#333;*zoom:1;}
+.realtime-top-searches .list-top-searches a:before,
+.realtime-top-searches .list-top-searches a:after {display:table;content:'';}
+.realtime-top-searches .list-top-searches a:after {clear:both;}
+.realtime-top-searches .list-top-searches .ranking {float:left;width:14px;margin-right:7px;padding-top:2px;*padding-top:1px;background-color:#666;font-size:11px;color:#fff;line-height:12px;*line-height:13px;text-align:center;}
+.realtime-top-searches .list-top-searches .text-search {float:left;width:80px;margin-top:-1px;}
+.realtime-top-searches .list-top-searches .ico-top-searches {float:right;width:26px;height:18px;margin-top:-1px;padding-left:7px;background:url(//image.wemakeprice.com/images/resources/wmp/common/ico-gnb-top-search.png) no-repeat;text-align:right;}
+.realtime-top-searches .list-top-searches .ico-up {background-position:0 3px;}
+.realtime-top-searches .list-top-searches .ico-middle {background-position:100% -17px;}
+.realtime-top-searches .list-top-searches .ico-down {background-position:0 -47px;}
+.realtime-top-searches .list-top-searches .ico-new {background-position:0 -70px;}
+.realtime-top-searches .standard-time {display:none;padding:2px 9px 0;background-color:#f9f9f9;font-size:11px;line-height:20px;color:#999;text-align:right;}
+
+.top-searches-unfold {overflow:visible;border-color:#333;background-color:#fff;}
+.top-searches-unfold .tit {display:block;}
+.top-searches-unfold .wrap-list {position:absolute;top:100% !important;right:-1px;left:-1px;border-width:0 1px 1px;border-style:solid;border-color:#333;background-color:#fff;}
+.top-searches-unfold .list-top-searches {padding:6px 0 4px;}
+.top-searches-unfold .list-top-searches a {padding-top:5px;padding-bottom:3px;}
+.top-searches-unfold .list-top-searches a:hover,
+.top-searches-unfold .list-top-searches a:focus {background-color:#f3f3f3;}
+.top-searches-unfold .list-top-searches .ranking {background-color:#e51b13;}
+.top-searches-unfold .standard-time {display:block;}
+.top-searches-unfold .clone-first {display:none;}
+
+/** GNB - 서브 2차 메뉴 **/
+.gnb-2depth {float:left;width:184px;height:298px;padding:20px;border:1px solid #ddd;background-color:#fff;}
+.gnb-2depth .title-2depth {padding-bottom:4px;border-bottom:2px solid #333;font-size:16px;font-weight:bold;color:#333;}
+.gnb-2depth .gnb-area {overflow-y:auto;height:265px;margin-top:10px;}
+.gnb-2depth .gnb-area li {display:block;line-height:22px;*line-height:20px;*zoom:1;}
+.gnb-2depth .gnb-area li:before,
+.gnb-2depth .gnb-area li:after {display:table;content:'';}
+.gnb-2depth .gnb-area li:after {clear:both;}
+.gnb-2depth .gnb-area li span {float:left;margin-right:7px;}
+.gnb-2depth .gnb-area li .ico-category {float:left;margin-top:4px;}
+.gnb-2depth .gnb-area a {display:block;color:#666;}
+.gnb-2depth .gnb-area a:hover,
+.gnb-2depth .gnb-area a:focus,
+.gnb-2depth .gnb-area .active a {font-weight:bold;color:#ce1710;}
+
+/** GNB - 서브 3차 메뉴 **/
+.gnb_3depth {overflow:hidden;width:935px;border:1px solid #ddd;background-color:#fff;}
+.gnb_3depth h4 {height:0;text-indent:-9999px;font-size:0;line-height:0;}
+.gnb_3depth .tab{overflow:hidden;margin:25px 0;background:url(//image.wemakeprice.com/images/resources/wmp/common/bg-3depth-menu.png) repeat-y 0 0;font-size:12px;}
+.gnb_3depth .tab li {float:left;position:relative;width:155px;}
+.gnb_3depth .tab li a {display:block;overflow:hidden;padding:5px 0 5px 20px;}
+.gnb_3depth .tab a, .gnb_3depth .tab a:active, .gnb_3depth .tab a:visited{color:#666;}
+.gnb_3depth .tab .txt {float:left;line-height:19px;}
+.gnb_3depth .tab .num {display:none;font:normal 10px tahoma;color:#999;padding-right:2px;letter-spacing:0;}
+.gnb_3depth .tab .on a, .gnb_3depth .tab .on a:active, .gnb_3depth .tab .on a:visited{font-weight:bold;color:#ce1710;}
+.gnb_3depth .tab .on .num {color:#666;}
+.gnb_3depth .tab a:hover .txt {text-decoration:underline;}
+.gnb_3depth .tab a:hover .txt, .gnb_3depth .tab a:hover .num {color:#ce1710;}
+.gnb_3depth .tab .on a:hover .txt {text-decoration:none;}
+.gnb_3depth .tab .on a:hover .txt, .gnb_3depth .tab .on  a:hover .num {color:#ce1710;}
+.gnb_3depth .tab .ico-category{padding-left:5px;}
+.gnb_3depth .tab-type-2 {background-image:url(//image.wemakeprice.com/images/resources/wmp/common/bg-3depth-menu-type2.png);}
+.gnb_3depth .tab-type-2 li {width:187px;}
+
+/** GNB - 서브 3차 메뉴 하단 배너 */
+.gnb-3depth-banner{overflow:hidden;width:936px;margin-bottom:-1px;border-top:1px solid #eee;background:url(//image.wemakeprice.com/images/resources/wmp/common/bg-3depth-banner-line.png) repeat;}
+.gnb-3depth-banner ul li{float:left;width:155px;height:68px;padding:0 1px 1px 0;text-align:center;}
+.gnb-3depth-banner ul li img {vertical-align:middle}
+
+/** 지역 LNB **/
+.lnb_local .inner {position:relative;min-height:352px;border-width:0 1px 1px;border-style:solid;border-color:#ddd;background-color:#fff;*zoom:1;}
+.lnb_local .inner:before,
+.lnb_local .inner:after {display:table;content:'';}
+.lnb_local .inner:after {clear:both;}
+.lnb_local h3 {position:absolute;width:313px;border-width:1px 0;border-style:solid;border-color:#ddd;}
+.lnb_local h3 a {display:block;height:21px;padding:13px 0 15px 0;border-width:0 1px;border-style:solid;border-color:#ddd;background-color:#f9f9f9;font-weight:bold;color:#333;font-size:14px;text-align:center;}
+.lnb_local .seoul h3 {top:0;left:-1px;}
+.lnb_local .icn h3 {top:0px;left:311px;}
+.lnb_local .other h3 {top:0px;left:623px;}
+.lnb_local .on h3 {z-index:1;border-top-width:2px;border-top-color:#e51b13;border-bottom:0px;}
+.lnb_local .on h3 a {padding-top:12px;border-bottom-color:#fff;background-color:#fff;color:#ce1710;}
+.lnb_local .detail {display:none;padding:70px 0 20px;}
+.lnb_local .detail > ul {background:url(//image.wemakeprice.com/images/resources/wmp/common/bg-3depth-menu.png) repeat-y 0 0;*zoom:1;}
+.lnb_local .detail > ul:before,
+.lnb_local .detail > ul:after {display:table;content:'';}
+.lnb_local .detail > ul:after {clear:both;}
+.lnb_local .on .detail {display:block;}
+.lnb_local .detail > ul > li {float:left;width:141px;padding-left:15px;}
+.lnb_local .detail > ul > li:first-child {width:140px;}
+.lnb_local h4 {font-weight:bold;color:#333;line-height:25px;}
+.lnb_local .hotspot {padding-top:3px;}
+.lnb_local .hotspot li {line-height:26px;white-space:nowrap;}
+.lnb_local li a{display:inline-block;color:#666;}
+.lnb_local li em {display:none;font-family:tahoma;font-size:10px;color:#999;letter-spacing:0;}
+.lnb_local li a:hover{text-decoration:underline;}
+.lnb_local li a:hover, .lnb_local li a:hover em {color:#ce1710;}
+.lnb_local li.on a, .lnb_local li.on a em {color:#ce1710;}
+.lnb_local .special {font-size:11px;color:#666;}
+.lnb_local .special li a {padding:0;line-height:14px;}
+.lnb_local .special .s1,
+.lnb_local .special .s2,
+.lnb_local .special .s3 {width:70px;height:19px;margin-bottom:-18px;text-indent:-9999px;background-image:url(//image.wemakeprice.com/images/2013/common/gubsub2_special_03.png);background-repeat:no-repeat;}
+.lnb_local .special .s1 {background-position:1px -110px;}
+.lnb_local .special .s2 {background-position:1px -130px;}
+.lnb_local .special .s3 {background-position:1px -147px;}
+.lnb_local .special .more a {display:block;position:absolute;top:6px;right:0;width:34px;height:10px;text-indent:-9999px;background:url(//image.wemakeprice.com/images/2013/common/gubsub2_special_03.png) no-repeat 0 -90px;}
+.lnb_local .special .pic img {display:block;width:35px;height:35px;}
+.lnb_local .special .dt {margin:-30px 0 0 0;padding:0 0 0 44px;}
+.lnb_local .special .dt a {display:block;width:90px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+.lnb_local .special .dd {padding:1px 0 0 44px;color:#999;width:90px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+.lnb_local .special .li {margin-top:29px;}
+
+/* container */
+#container {position:relative;z-index:180;}
+#container .container-inner {width:937px;margin:0 auto;*zoom:1;}
+#container .container-inner:before,
+#container .container-inner:after {display:table;content:'';}
+#container .container-inner:after {clear:both;}
+
+/** container - contents **/
+#contents {float:left;width:937px;}
+
+/*** contents - 상단 배너 & 컨텐츠 영역 ***/
+#contents .content-sub {margin:0 -500%;padding:20px 500% 40px;background-color:#f1f1f1;*background-color:transparent;}
+#contents .content-sub .bg-gray {position:absolute;top:0;right:0;left:0;z-index:-1;background-color:#f1f1f1;} /* 상단 백그라운드 깔리는 부분 */
+
+/*** contents - 하단 컨텐츠 영역 ***/
+#contents .content-main {}
+.content-main #contents {float:left;position:relative;width:760px;}
+
+/** container - aside **/
+.title-aside-comm {display:block;overflow:hidden;background:url(//image.wemakeprice.com/images/resources/wmp/common/title-aside-comm-v3.png) no-repeat 0 0;text-indent:-9999px;}
+#aside {float:right;position:relative;z-index:100;width:110px;margin:0 -140px 0 0;padding-top:20px;*padding-left:30px;}
+.wrap_bigad {position:relative;width:110px;margin-bottom:40px;}
+.wrap_bigad li {margin-top:10px;}
+.wrap_bigad li:first-child {margin-top:0;}
+.wrap_bigad a {display:block;}
+.wrap_shopping {position:relative;margin-bottom:40px;z-index:200;}
+.wrap_shopping .title-today {width:108px;height:30px;border:1px solid #ddd;} /* 오늘의 딜 */
+.wrap_shopping a {display:block;width:108px;border-width:0 1px 1px 1px;border-style:solid;border-color:#ddd;}
+.wrap_shopping img {vertical-align:top;}
+.section-mostrecent {position:relative;width:110px;height:309px;z-index:300;}
+.section-mostrecent.fixed .mostrecent-inner {position:fixed;top:30px;}
+.section-mostrecent .box_realbox {display:block;width:70px;padding:10px 19px 10px 19px;border-style:solid;border-width:1px;border-color:#ddd;background-color:#fff;}
+.section-mostrecent .box_realbox .tit_real {display:block;width:100%;height:30px;font-size:11px;line-height:20px;letter-spacing:-1px;white-space:nowrap;}
+.section-mostrecent .box_realbox .tit_real strong, .box_realbox .tit_real h2 {display:inline;color:#333333;font-weight:bold;text-indent:0 !important;font-size:11px !important;line-height:20px !important;}
+.section-mostrecent .box_realbox .tit_real em {padding-left:3px;font:bold 10px/14px Tahoma;color:#ce1710;letter-spacing:0;}
+.section-mostrecent .list_real {height:240px;font-size:0;line-height:0;}
+.section-mostrecent .list_real li {position:relative;margin-bottom:10px;z-index:140;}
+.section-mostrecent .list_real .thumb {display:block;width:70px;height:70px;}
+.section-mostrecent .list_real .thumb img {width:70px;height:70px;}
+.section-mostrecent .list_real .thumb .frame {display:none;position:absolute;top:0;left:0;width:68px;height:68px;border:1px solid #6a747d;}
+.section-mostrecent .list_real .on .thumb .frame {display:block;}
+.section-mostrecent .list_real .box_info {display:none;position:absolute;top:0;right:70px;width:145px;height:55px;padding:15px 12px 0 12px;background-color:#6a747d;font-size:12px;line-height:16px;color:#fff;text-align:left;white-space:nowrap;}
+.section-mostrecent .list_real .on .box_info {display:block;}
+.section-mostrecent .list_real .box_info .name {overflow:hidden;width:145px;padding-top:4px;font-size:11px;white-space:nowrap;text-overflow:ellipsis;}
+.section-mostrecent .list_real .box_info .price {display:block;font:bold 15px/20px tahoma;}
+.section-mostrecent .list_real .box_info .won {font-weight:bold;font-size:14px;font-family:Arial,'돋움',dotum;}
+.section-mostrecent .list_real .box_info .etc{margin-left:3px;}
+.section-mostrecent .list_real .btn_real {display:none;overflow:hidden;position:absolute;top:0;right:0;width:15px;height:15px;background:url(http://image.wemakeprice.com/images/resources/wmp/common/btn_mostrecent_close.gif) no-repeat;text-indent:-9999px;z-index:51;}
+.section-mostrecent .list_real .on .btn_real {display:block;}
+.section-mostrecent .no_list {height:217px;padding-top:23px;line-height:17px;text-align:center;letter-spacing:-1px;}
+.quick_paging {display:block;overflow:hidden;padding:0 0 2px;}
+.quick_paging a, .quick_paging button {float:left;width:15px;height:15px;background:url(//image.wemakeprice.com/images/front/common/tit_banner_v4.png) no-repeat;font-size:0;line-height:0;text-indent:-9999px;cursor:pointer;}
+.quick_paging .btn_paging_prev {background-position:0 -536px;}
+.quick_paging .btn_paging_prev:hover,
+.quick_paging .btn_paging_prev:focus {background-position:0 -552px;}
+.quick_paging .btn_paging_next {background-position:-14px -536px;}
+.quick_paging .btn_paging_next:hover,
+.quick_paging .btn_paging_next:focus {background-position:-14px -552px;}
+.quick_paging .numbering {float:left;width:40px;height:15px;font-size:11px;line-height:15px;font-family:Verdana;color:#999;text-align:center;}
+.quick_paging .numbering .on {color:#333;}
+/*** container - aside - topdown button ***/
+.wrap_fixed_updown {position:relative;right:-210px;}
+.wrap_fixed_updown.fixed {position:static;}
+.fixed_updown_btn {display:none;position:fixed;bottom:90px;z-index:1000;}
+.fixed .fixed_updown_btn {right:50px;}
+.fixed_updown_btn.type2 {bottom:374px;}
+.fixed_updown_btn .btn_updown {display:block;overflow:hidden;width:75px;height:38px;background:url(//image.wemakeprice.com/images/front/common/btn_quick_updown_v3.png) no-repeat;text-indent:-9999px;}
+.fixed_updown_btn .btn_up {background-position:0 0;}
+.fixed_updown_btn .btn_up:hover {background-position:0 -80px;}
+.fixed_updown_btn .btn_down {height:37px;background-position:0 -40px;}
+.fixed_updown_btn .btn_down:hover {background-position:0 -120px;}
+
+/* Footer */
+#footer {overflow:hidden;width:100%;margin-top:80px;background-color:#f9f9f9}
+#footer .policy {height:36px;border-top:1px solid #e0e0e0;background:#eee}
+#footer .policy .site_menu {overflow:hidden;width:937px;margin:0 auto;}
+#footer .policy .site_menu li {float:left;height:35px;background:url(//image.wemakeprice.com/images/resources/wmp/common/img_footer_menu_v1.png) no-repeat 0 0}
+#footer .policy .site_menu li a {overflow:hidden;float:left;width:100%;height:100%;font-size:0;line-height:0;text-indent:-9999px}
+#footer .policy .site_menu li.info {width:75px;padding-left:0;background-position:0 13px}
+#footer .policy .site_menu li.blog {width:72px;padding-left:0;background-position:0px -178px;margin-left:153px;} /* 기업소개 */
+#footer .policy .site_menu li.employ {width:105px;background-position:31px -207px;} /* 인재채용 */
+#footer .policy .site_menu li.stipulation {width:105px;background-position:31px -27px} /* 이용약관 */
+#footer .policy .site_menu li.private {width:145px;background-position:30px -67px} /* 개인정보처리방침 */
+#footer .policy .site_menu li.private_youth {width:135px;background-position:31px -107px} /* 청소년보호정책 */
+#footer .policy .site_menu li.coalition {width:105px;background-position:31px -147px} /* 제휴문의 */
+#footer .policy .site_menu li.sevice {width:103px;background-position:32px -239px;} /* 고객서비스 */
+
+#footer .footer_company {overflow:hidden;width:937px;margin:0 auto;padding:15px 0 0 0;}
+#footer .footer_company .company_logo {overflow:hidden;float:left;margin:42px 52px 0 0;width:98px;height:56px;text-indent:-9999px;background:url(//image.wemakeprice.com/images/resources/wmp/common/logo-footer-v1.png) no-repeat 0 0;}
+#footer .footer_company .company_logo a {display:block;width:100%;height:100%;}
+#footer .footer_company .company_info {float:left;padding-top:3px;width:555px;font-size:11px;color:#666;padding-bottom:15px;}
+#footer .footer_company .company_info a {color:#666;}
+#footer .footer_company .company_info dt,
+#footer .footer_company .company_info dd {display:inline;font-size:11px;color:#666;line-height:18px;white-space:nowrap;letter-spacing:-1px;}
+#footer .footer_company .company_info dt {padding:0 0 0 13px;background:url(//image.wemakeprice.com/images/resources/wmp/common/img_footer_v12.png) no-repeat 6px -550px;}
+#footer .footer_company .company_info dt.fst {clear:both;padding-left:0;background:none;}
+#footer .footer_company .company_info address {display:inline;}
+#footer .footer_company .operator {display:inline-block;width:87px;height:18px;margin:0 0 0 5px;color:#666;text-decoration:underline;letter-spacing:0;background:url(//image.wemakeprice.com/images/resources/wmp/common/img_footer_v12.png) no-repeat 83px -696px;}
+#footer .footer_company .phone_number {overflow:hidden;width:100%;padding:10px 0 14px;}
+#footer .footer_company .phone_number .num_client {float:left;position:relative;width:266px;height:45px;padding:0;background:url(//image.wemakeprice.com/images/resources/wmp/common/img_footer_v12.png) no-repeat -113px -860px;font-size:0;line-height:0;text-indent:-9999px;}
+#footer .footer_company .phone_number .num_client .link_faq{position:absolute;top:-2px;right:21px;width:100px;height:19px;background:url(//image.wemakeprice.com/images/resources/wmp/common/img_footer_v12.png) no-repeat 0 -915px;font-size:0;line-height:0;text-indent:-9999px;}
+#footer .footer_company .phone_number .num_coalition {overflow:hidden;float:left;width:204px;height:59px;padding:0;background:url(//image.wemakeprice.com/images/resources/wmp/common/img_footer_v12.png) no-repeat -379px -860px;font-size:0;line-height:0;text-indent:-9999px;}
+#footer .footer_company .copyright {position:relative;width:249px;height:8px;font-size:0;text-indent:-9999px;background:url(//image.wemakeprice.com/images/resources/wmp/common/img_footer_v12.png) no-repeat 0 -762px;}
+#footer .footer_company .copyright a {position:absolute;top:0;left:65px;display:block;width:84px;height:8px;background-color:transparent;}
+#footer .footer_company .info {float:right;margin-top:6px;width:227px;height:128px;background-color:#eee;}
+#footer .footer_company .info .link_notice {display:block;margin:5px 0 5px 10px;height:14px;width:169px;overflow:hidden;font-size:0;line-height:0;text-indent:-9999px;background:url(//image.wemakeprice.com/images/resources/wmp/common/img_footer_v12.png) no-repeat 0 -740px;}
+#footer .footer_company .info .bank_notice {padding:0px 7px 0px 9px;border-top:1px solid #f9f9f9;font-size:11px;color:#7e8190;}
+#footer .footer_company .info .bank_notice dt {font-weight:bold;padding-top:11px;line-height:22px;}
+#footer .footer_company .info .bank_notice dd {line-height:13px;}
+#footer .footer_company .info .link_security {display:block;margin-top:4px;width:113px;height:14px;overflow:hidden;text-decoration:underline;color:#7e8190;background:url(//image.wemakeprice.com/images/resources/wmp/common/img_footer_v12.png) no-repeat 109px -718px;}
+#footer .footer_company .association {float:left;width:783px;height:43px;padding:16px 0 0 154px;border-top:1px solid #eee;}
+#footer .footer_company .association a {float:left;display:block;overflow:hidden;font-size:0;text-indent:-9999px;background:url(//image.wemakeprice.com/images/resources/wmp/common/img_footer_v12.png) no-repeat;}
+#footer .footer_company .association span {float:left;display:block;overflow:hidden;font-size:0;text-indent:-9999px;background:url(//image.wemakeprice.com/images/resources/wmp/common/img_footer_v12.png) no-repeat;}
+#footer .footer_company .association .link1 {margin:0 30px 0 0;width:149px;height:27px;background-position:-378px -759px;} /* 한국지식재산보호협회 */
+#footer .footer_company .association .link2 {width:178px;height:28px;background-position:0 -820px;}
+#footer .footer_company .association .link3 {width:106px;height:31px;margin:0 0 0 30px;background-position:-380px -810px;}
+#footer .footer_company .footer_brand {overflow:hidden;width:100%;padding:13px 0px;border-top:1px solid #eee;}
+#footer .footer_company .footer_brand ul li {float:left;height:32px;}
+#footer .footer_company .footer_brand ul li a {display:block;height:32px;background:url(//image.wemakeprice.com/images/2014/common/footer_brand.png) no-repeat;text-indent:-9999px;}
+#footer .footer_company .footer_brand ul li.brand1 a {margin-left:22px;;width:101px;background-position:0 0}
+#footer .footer_company .footer_brand ul li.brand2 a {margin-left:33px;;width:109px;background-position:0 -32px;}
+#footer .footer_company .footer_brand ul li.brand3 a {margin-left:32px;;width:84px;background-position:0 -64px;}
+#footer .footer_company .footer_brand ul li.brand4 a {margin-left:32px;;width:107px;background-position:0 -96px}
+#footer .footer_company .footer_brand ul li.brand5 a {margin-left:32px;;width:101px;background-position:0 -128px}
+#footer .footer_company .footer_brand ul li.brand6 a {margin-left:31px;;width:126px;background-position:0 -160px}
+#footer .footer_company .footer_brand ul li.brand7 a {margin-left:24px;;width:83px;background-position:0 -192px;}
+
+/* Title 공통영역 (공통) */
+.wrap-title-area {position:relative;width:937px;min-height:27px;margin:40px 0 20px;*zoom:1;}
+.wrap-title-area:before,
+.wrap-title-area:after {display:table;content:'';}
+.wrap-title-area:after {clear:both;}
+.wrap-title-area .title-text,
+.wrap-title-area .title-content-comm,
+.wrap-title-area .title-img-wrap {float:left;margin-right:10px;}
+.wrap-title-area .title-text {font-weight:bold;font-size:20px;line-height:27px;color:#333;letter-spacing:-1px;}
+.wrap-title-area .title-content-comm {height:27px;}
+.wrap-title-area .title-promotion {width:145px;background-position:0 0;} /* 위메프 기획전 */
+.wrap-title-area .title-today-pick {width:140px;background-position:0 -30px;} /* 위메프's Pick */
+.wrap-title-area .title-realtime-best {width:223px;background-position:0 -60px;} /* 위메프 실시간 베스트 */
+.wrap-title-area .title-recent-region {width:334px;background-position:0 -90px;} /* 위메프 최근 본 지역 베스트 상품 */
+.wrap-title-area .title-recom-tour {width:233px;background-position:0 -120px;} /* 위메프 추천 여행/레저 */
+.wrap-title-area .title-recom-culture {width:235px;background-position:0 -150px;} /* 위메프 추천 컬처/키즈 */
+.wrap-title-area .title-recom-product {width:175px;background-position:0 -180px;} /* 위메프 추천상품 */
+.wrap-title-area .title-recom-product-plus {width:184px;background-position:0 -420px;} /* 플러스 추천상품 */
+.wrap-title-area .title-realtime-best-product {width:275px;background-position:0 -210px;} /* 위메프 실시간 베스트 상품 */
+.wrap-title-area .title-realtime-best-product-plus {width:283px;background-position:0 -450px;} /* 플러스 실시간 베스트 상품 */
+.wrap-title-area .title-connect-product {width:302px;background-position:0 -240px;} /* OOO 이 보시는 상품과 연관된 상품 */
+.wrap-title-area .title-like-product {width:269px;background-position:0 -270px;} /* 고객님이 좋아할 추천상품 */
+.wrap-title-area .title-soldout-soon {width:406px;background-position:0 -300px;} /* 매진임박! 마지막 기회를 놓치지마세요! */
+.wrap-title-area .title-best-product {width:296px;background-position:0 -330px;} /* 위메프 베스트 상품 */
+.wrap-title-area .title-foryou-region {width:233px;background-position:0 -360px;} /* OOO 을 위한 지역 추천 상품 */
+.wrap-title-area .title-recom-region {width:151px;background-position:0 -390px;} /* 지역 추천 상품 */
+.wrap-title-area .title-adult-confirm {width:146px;background-position:0 -420px;} /* 성인본인인증 */
+.wrap-title-area .title-adult-login {width:69px;background-position:0 -450px;} /* 로그인 */
+.wrap-title-area .title-wmp-best {width:146px;background-position:0 -480px;} /* 위메프 베스트 */
+.wrap-title-area .title-recom-product-wonder {width:233px;background-position:0 -570px;} /* 원더배송 추천상품 */
+.wrap-title-area .title-realtime-best-product-wonder {width:320px;background-position:0 -600px;} /* 원더배송 실시간 베스트 상품 */
+.wrap-title-area .help_area {float:left;position:relative;}
+.wrap-title-area .help_area .btn_help {width:15px;height:15px;margin-top:4px;cursor:pointer;}
+.wrap-title-area .help_area .layer_help {display:none;position:absolute;bottom:-9px;left:100%;z-index:1;margin-left:7px;padding:9px 9px 7px;border:1px solid #bebebe;background-color:#fff;font-size:11px;color:#666;line-height:14px;white-space:nowrap;}
+.wrap-title-area .help_area:hover .layer_help,
+.wrap-title-area .active .layer_help {display:block;}
+.wrap-title-area .help_area .layer_help .ico_arr {position:absolute;bottom:12px;left:-5px;width:5px;height:7px;background-position:0 0;}
+.wrap-title-area .btn-more {overflow:hidden;position:absolute;top:0;right:0;width:80px;height:30px;background:url(//image.wemakeprice.com/images/2013/common/btn_comm_v9.png) no-repeat -67px -136px;text-indent:-9999px;}
+.wrap-title-area .name {float:left;padding-right:5px;color:#333;font-size:28px;text-decoration:underline;line-height:27px;letter-spacing:-1px;}
+
+.wrap-title-area .change {margin-left:5px;float:left;font-size:0;line-height:0;text-indent:-9999px;width:104px;height:30px;background:url(//image.wemakeprice.com/images/2013/common/btn_comm_v9.png) no-repeat scroll -150px -135px transparent;}
+
+/* 현재페이지 경로 (공통) */
+.breadcrumb-comm {margin:37px 0 12px;*zoom:1;}
+.breadcrumb-comm:before,
+.breadcrumb-comm:after {display:table;content:'';}
+.breadcrumb-comm:after {clear:both;}
+.breadcrumb-comm .list-crumb {float:left;margin-right:10px;}
+.breadcrumb-comm .list-crumb li {float:left;margin-left:9px;padding-left:18px;background:url(//image.wemakeprice.com/images/resources/wmp/module/ico-module-location.png) no-repeat 0 3px;line-height:24px;}
+.breadcrumb-comm .list-crumb li:first-child {margin-left:0;padding-left:0;background:none;}
+.breadcrumb-comm .list-crumb a,
+.breadcrumb-comm .list-crumb a:hover {color:#333;}
+.breadcrumb-comm .list-crumb a {font-weight:bold;font-size:20px;letter-spacing:-1px;}
+
+/* 디자인 셀렉트박스 (공통) */
+.select-list-group {position:relative;background-color:#fff;text-align:left;}
+.select-list-group.active {z-index:1;}
+.select-list-group .action-select {display:block;height:20px;padding:3px 25px 0 7px;border:1px solid #ddd;font-size:11px;color:#666;line-height:20px;
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	user-select:none;
+}
+.select-list-group.active .action-select,
+.select-list-group .action-select:hover,
+.select-list-group .action-select:focus {border-color:#aaa;}
+.select-list-group .action-select .ico-arr {position:absolute;top:10px;right:8px;width:7px;height:4px;background:url(//image.wemakeprice.com/images/resources/wmp/module/ico-module-select.png) no-repeat 0 0px;}
+.select-list-group.active .action-select .ico-arr {background-position:0 -5px;}
+.select-list-group .wrap-list-select {overflow:hidden;position:absolute;top:24px;right:0;left:0;height:0;border-width:0 1px 1px;border-style:solid;border-color:#aaa;background-color:#fff;opacity:0;filter:alpha(opacity=0);
+}
+.select-list-group.active .wrap-list-select {height:auto;opacity:1;filter:alpha(opacity=100);}
+.select-list-group .wrap-list-inner {overflow-y:auto;border-top:1px solid #ddd;}
+.select-list-group .list-select {padding:6px 0;}
+.select-list-group .list-select .link-menu {display:block;padding-top:3px;font-size:11px;color:#666;line-height:17px;white-space:nowrap;}
+.select-list-group .list-select .link-menu:hover,
+.select-list-group .list-select .link-menu:focus {background-color:#f7f7f7;}
+.select-list-group .list-select .selected .link-menu {background-color:transparent;font-weight:bold;color:#ce1710;}
+.select-list-group .list-select .link-menu .txt {padding:0 7px;}
+.select-list-group .list-select .link-menu .label {display:inline-block;margin-left:-5px;padding:3px 3px 1px;background-color:#f7120a;font-size:11px;line-height:11px;color:#fff;}
+
+/* 딜리스트 카테고리 탭(수만은 type중 하나 - 최초 빨리가요에서 노출) */
+.list-cate-tab {overflow:hidden;background-color:#f9f9f9;*zoom:1;}
+.list-cate-tab:before,
+.list-cate-tab:after {display:table;content:'';}
+.list-cate-tab:after {clear:both;}
+.list-cate-tab li {float:left;margin-right:-1px;border-width:1px 0;border-style:solid;border-color:#ddd;}
+.list-cate-tab a {display:block;padding:14px 0 12px;border-width:0 1px;border-style:solid;border-color:#eee;font-weight:bold;font-size:14px;color:#333;text-align:center;}
+.list-cate-tab a:hover {background-color:#fcfcfc;}
+.list-cate-tab li:first-child a {border-left-color:#ddd;}
+.list-cate-tab .last a {border-right-color:#ddd;}
+.list-cate-tab .selected {position:relative;margin-bottom:-1px;border-top-width:2px;border-top-color:#e51b13;border-bottom:0;}
+.list-cate-tab .selected a {padding-top:13px;padding-bottom:13px;border-color:#ddd;background-color:#fff;color:#ce1710;}
+
+.list-cate-type-5 li {width:188px;}
+.list-cate-type-5 .last {width:189px;}
+
+/**
+ * #aside 를 가지고 있을때 실행
+ * Window 가로 사이즈 1232px 이하일때
+ */
+html.has-sidebar {min-width:1217px;}
+@media all and (max-width:1235px) {
+	html.has-sidebar {margin-left:-140px;}
+}
+@media all and (max-width:1235px) and (min-width:1095px) {
+	.has-sidebar #aside .fixed-aside {left:50% !important;margin-left:428px !important;}
+}
+@media all and (max-width:1094px) {
+	.has-sidebar #aside .fixed-aside {left:969px;}
+}
