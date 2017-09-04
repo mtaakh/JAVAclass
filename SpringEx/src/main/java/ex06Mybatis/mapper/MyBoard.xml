@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="ex06Mybatis.IMyBoardDAO">
+	<select id="list" resultType="ex06Mybatis.MyBoardDTO">
+		select * from my_board order by mId desc
+	</select>
+	
+	<insert id="write">
+		insert into my_board (mId, mWriter, mContent) values (my_seq.nextval, #{param1}, #{param2})
+	</insert>
+	
+	<delete id="delete">
+		delete from my_board where mId=#{param1}
+	</delete>
+	
+	<select id="view" resultType="ex06Mybatis.MyBoardDTO">
+		select * from my_board where mId=#{param1}
+	</select>
+</mapper>

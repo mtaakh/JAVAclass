@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beansProjectDescription>
+	<version>1</version>
+	<pluginVersion><![CDATA[3.9.0.201707061730-RELEASE]]></pluginVersion>
+	<configSuffixes>
+		<configSuffix><![CDATA[xml]]></configSuffix>
+	</configSuffixes>
+	<enableImports><![CDATA[true]]></enableImports>
+	<configs>
+		<config>src/main/resources/applicationContextEx02.xml</config>
+		<config>src/main/resources/applicationContextEx03.xml</config>
+		<config>src/main/resources/applicationContextEx04.xml</config>
+		<config>src/main/resources/applicationContextEx05.xml</config>
+		<config>src/main/resources/applicationContextLifeCycle.xml</config>
+		<config>src/main/resources/applicationContextEnv01.xml</config>
+		<config>src/main/resources/applicationContextEnv02.xml</config>
+		<config>src/main/resources/applicationContextAOP1.xml</config>
+		<config>src/main/resources/applicationContextAOP2.xml</config>
+	</configs>
+	<autoconfigs>
+		<config>src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml</config>
+		<config>src/main/webapp/WEB-INF/spring/root-context.xml</config>
+	</autoconfigs>
+	<configSets>
+	</configSets>
+</beansProjectDescription>

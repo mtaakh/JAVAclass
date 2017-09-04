@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- 4B연필 사용시 빈 생성 -->
+	<!-- <bean id="pencil" class="ex01DI.ex05.Pencil4B" /> -->
+	
+	<!-- 6B연필 사용시 빈 생성 -->
+	<!-- <bean id="pencil" class="ex01DI.ex05.Pencil6B" /> -->
+	
+	<!-- 4B연필+지우개 사용시 빈 생성 -->
+	<bean id="pencil" class="ex01DI.ex05.Pencil4BWithEraser" />
+	
+
+</beans>

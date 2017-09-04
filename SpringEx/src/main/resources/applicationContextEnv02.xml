@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	<!-- Environment 객체를 사용하지 않고 xml 설정파일에서 외부파일을 가져오기 위해선 "context"네임스페이스가 추가적으로 필요함
+		하단의 Namespace 탭에서 context 항목을 체크 후 아래 <context:property-placeholder> 엘리먼트를 추가한다
+		
+		"파일명.properties" 외부파일을 가져와서 설정값으로 사용
+	 -->
+	<context:property-placeholder location="classpath:user1.properties, classpath:user2.properties" />
+	
+	<!-- UserConnection 클래스를 기반을 userConnection 빈을 생성,
+		각 멤버변수의  설정값을  properties파일에서 읽어온 값으로 설정하고 있음 -->
+	<bean id="userConnection" class="ex03Env.UserConnection">
+		<property name="userId"> <value>${user.id}</value> </property>
+		<property name="userPw"> <value>${user.pw}</value> </property>
+		<property name="subUserId"> <value>${subUser.id}</value> </property>
+		<property name="subUserPw"> <value>${subUser.pw}</value> </property>
+	</bean>
+
+</beans>

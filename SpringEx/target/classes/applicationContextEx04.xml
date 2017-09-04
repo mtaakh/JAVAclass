@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- 생성자를 통한 빈 생성방법 -->
+	<bean id="student1" class="ex01DI.ex04.Student">
+		<!-- 생성자의 멤버변수 초기화를 위해 constructor-arg 엘리먼트 사용 -->
+		<constructor-arg>
+			<value>홍길동</value>
+		</constructor-arg>
+		<constructor-arg>
+			<value>20살</value>
+		</constructor-arg>
+		<constructor-arg>
+			<value>1학년</value>
+		</constructor-arg>
+		<constructor-arg>
+			<value>1반</value>
+		</constructor-arg>
+	</bean>
+	
+	<!-- 위와 동일한 생성방법 -->
+	<bean id="student2" class="ex01DI.ex04.Student">
+		<constructor-arg value="김길동" />
+		<constructor-arg value="22살" />
+		<constructor-arg value="6학년" />
+		<constructor-arg value="6반" />
+	</bean>
+	
+	<!-- 위에서 생성한 빈을 참조하여 빈 생성 후 주입.
+		만약 다른 학생으로 변경해야 한다면  ref의 빈만 변경하면 된다 -->
+	<bean id="studentInfo" class="ex01DI.ex04.StudentInfo">
+		<constructor-arg>
+			<ref bean="student1" />
+		</constructor-arg>
+		</bean>
+
+</beans>

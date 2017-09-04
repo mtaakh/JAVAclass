@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- BMI 지수 빈 설정 -->
+	<bean id="bmiCalculator" class="ex01DI.ex03.BMICalculator">
+		<property name="lowWeight">
+			<value>18.5</value><!-- 저체중 지수 -->
+		</property>
+		<property name="normal">
+			<value>23</value><!-- 정상 지수 -->
+		</property>
+		<property name="overWeight">
+			<value>25</value><!-- 과체중 지수 -->
+		</property>
+		<property name="obesity">
+			<value>30</value><!-- 비만 지수 -->
+		</property>
+		
+	</bean>
+	
+	<!-- myInfo 빈을 생성 후 주입(Injection) -->
+	<bean id="myInfo" class="ex01DI.ex03.MyInfo">
+    	<property name="name" value="홍길동"></property>
+    	<property name="height" value="182"></property>
+    	<property name="weight" value="77"></property>
+    	<property name="hobbys">
+    		<list>
+    			<value>자전거</value>
+    			<value>퀵보드</value>
+    			<value>레고</value>
+    		</list>
+    	</property>
+    	<!-- 위에서 생성한 빈을 참조하여 멤버변수 설정 -->
+    	<property name="bmiCalculator">
+    		<ref bean="bmiCalculator" />
+    	</property>
+	</bean>
+
+</beans>

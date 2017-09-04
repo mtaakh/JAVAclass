@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	<!-- Student 클래스에서 어노테이션을 이용하여 빈 초기화/소멸 과정에 호출될 메소드를 정의했다.
+		이 경우 하단탭의 Namespaces 를 열어 "context" 항목을 체크한 후 <context>엘리먼트를 추가해야 한다. -->
+		
+	<context:annotation-config />
+	
+	<!-- 빈으로 지정된 객체는 기본적으로 singleton 객체로 관리된다. 별도의 scope를 지정하지 않으면 싱글톤이 됨 -->
+	<!-- singleton : 빈 생성후 재사용 가능함
+		 prototype : getBean()으로 요청할때마다 새로운 인스턴스를 생성함 -->
+	<bean id="student" class="ex02LifeCycle.Student" scope="singleton">
+		<constructor-arg value="홍길순"></constructor-arg>
+		<constructor-arg value="30"></constructor-arg>
+	</bean>
+	
+	<bean id="otherStudent" class="ex02LifeCycle.OtherStudent">
+		<constructor-arg value="김길자"></constructor-arg>
+		<constructor-arg value="50"></constructor-arg>
+	</bean>
+
+</beans>

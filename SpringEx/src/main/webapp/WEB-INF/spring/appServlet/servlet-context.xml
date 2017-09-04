@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
+	
+	<!-- Enables the Spring MVC @Controller programming model -->
+	<annotation-driven />
+
+	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
+	<resources mapping="/resources/**" location="/resources/" />
+	<resources mapping="/my_image/**" location="/my_image/" />
+	<resources mapping="/common/**" location="/common/" />
+
+	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
+	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<beans:property name="prefix" value="/WEB-INF/views/" />
+		<beans:property name="suffix" value=".jsp" />
+	</beans:bean>
+	<!-- 
+	"/WEB-INF/views/" + HomeController반환값 + ".jsp" 조립
+		prefix 					제목	명			suffix
+	아래 경로를 가져와서 화면에 출력함
+	/SpringEx/src/main/webapp/WEB-INF/views/home.jsp
+	 -->
+	 <!-- 스프링 프레임워크는 아래에 지정된 패키지를 스캔해서 @Controller 어노테이션을 만나게 되면 해당 클래스를 컨트롤러로 인식하게 됨 -->
+	<context:component-scan base-package="com.kosmo.SpringEx" />
+	<context:component-scan base-package="springBoard.controller" />
+	
+	<!-- JDBC 템플릿 설정 : 데이터소스 빈을 생성함 -->
+	<beans:bean name="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<beans:property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
+		<beans:property name="url" value="jdbc:oracle:thin:@localhost:1521:orcl" />
+		<beans:property name="username" value="java_user" />
+		<beans:property name="password" value="1234" />
+	</beans:bean>
+	
+	<beans:bean name="template" class="org.springframework.jdbc.core.JdbcTemplate">		
+		<beans:property name="dataSource" ref="dataSource" />
+	</beans:bean>
+	
+	<!-- 트랜젝션01 > 트랜젝션 처리전 -->
+	<!-- <beans:bean name="TransactionDao" class="ex05Transaction01.TicketDAO">
+		<beans:property name="template" ref="template" />
+	</beans:bean> -->
+	
+	<!-- 트랜젝션02 > 트랜젝션 처리후 -->
+<!-- 	<beans:bean name="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<beans:property name="dataSource" ref="dataSource" />
+	</beans:bean>
+	
+	<beans:bean name="TransactionDao" class="ex05Transaction02.TicketDAO">
+		<beans:property name="template" ref="template" />
+		<beans:property name="transactionManager" ref="transactionManager" />
+	</beans:bean> -->
+	
+	<!-- 트랜젝션03 > 트랜젝션 템플릿 사용 -->
+	<beans:bean name="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<beans:property name="dataSource" ref="dataSource" />
+	</beans:bean>
+	
+	<beans:bean name="transactionTemplate" class="org.springframework.transaction.support.TransactionTemplate">
+		<beans:property name="transactionManager" ref="transactionManager" />
+	</beans:bean>
+
+	<beans:bean name="TransactionDao" class="ex05Transaction03.TicketDAO">
+		<beans:property name="template" ref="template" />
+		<beans:property name="transactionTemplate" ref="transactionTemplate" />
+	</beans:bean>
+	
+	<!-- Mybatis -->
+	<!-- <beans:bean name="MyDao" class="ex06Mybatis.MyBoardDAO">
+		<beans:property name="template" ref="template" />
+	</beans:bean> -->
+	
+	<beans:bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<beans:property name="dataSource" ref="dataSource" />
+		<beans:property name="mapperLocations" value="classpath:ex06Mybatis/mapper/*.xml" />
+	</beans:bean>
+	<beans:bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+		<beans:constructor-arg index="0" ref="sqlSessionFactory" />
+	</beans:bean>
+	
+</beans:beans>
