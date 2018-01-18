@@ -1,0 +1,55 @@
+<!-- Ex05Selector05.html -->
+<!doctype html>
+<html lang="ko">
+	<head>
+	<meta charset="UTF-8">
+	<title>Selector(셀렉터) 5</title>
+	<style type="text/css">
+		a{ /* a태그로 링크가 걸려있는 모든 부분 */
+			text-decoration:none; /* 텍스트효과 주기 : 아무것도 하지 않음 */
+			color:black;
+		}
+		a:hover{ /* a태그에 마우스를 올렸을때 */
+			text-decoration:underline; /* 텍스트 효과주기 : 밑줄 나타나게 하기 */
+			color:green;
+		}
+		a:active{ /* a태그를 마우스로 클릭했을때(마우스로 누르고 있는 상태) */
+			color:red;
+		}
+		a:visited{ /* 해당 사이트를 방문한 적이 있을때 */
+			color:#b50909;
+		}
+
+		/* after 선택자 : 선택된 태그가 감싸고 있는 컨텐츠의 뒤에 다른 내용을 추가하고자 할때 사용 */
+		ul.link a::after{
+			content: '-' attr(href)
+		}
+		/* 부정 선택자 : not(제외할 선택자)함수 사용. 즉 선택된 것 이외의 요소를 찾아서 적용할때 사용 */
+		ul.notClass li:not(.odd){
+			background-color:yellow;
+		}
+	</style>
+	</head>
+	<body>
+		<h2>링크선택자</h2>
+		<div>
+			<ul class="link">
+				<li><a href="http://naver.com">네이버</a></li>
+				<li><a href="http://nate.com">네이트</a></li>
+				<li><a href="http://daum.net">다음</a></li>
+				<li><a href="http://google.com">구글</a></li>
+				<li><a href="http://ikosmo.co.kr">한국소프트웨어인재개발원</a></li>
+			</ul>
+		</div>
+
+		<h2>부정 선택자</h2>
+		<div>
+			<ul class="notClass">
+				<li class="odd"><a href="http://naver.com">NAVER</a></li>
+				<li><a href="http://nate.com">NATE</a></li>
+				<li class="odd"><a href="http://daum.net">DAUM</a></li>
+				<li><a href="http://google.com">GOOGLE</a></li>
+			</ul>
+		</div>
+	</body>
+</html>

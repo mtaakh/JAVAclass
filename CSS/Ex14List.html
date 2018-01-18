@@ -1,0 +1,132 @@
+<!-- Ex14List.html -->
+<!doctype html>
+<html lang="ko">
+	<head>
+	<meta charset="UTF-8">
+	<title>List</title>
+	<style type="text/css">
+		
+		#topmenu li{
+			display:inline; /*display 속성 : block을 inline으로 변경함*/
+			border-right:solid gray 1px;
+			padding-right:5px;
+		}
+		/*
+			id="topmenu" 에 포함된 li태그 중 가장 마지막 요소의 border을 제거
+		*/
+		#topmenu li:last-child{
+			border:none;
+		}
+
+		ul.sport{
+			border:1px green solid;
+			list-style-type:upper-roman; /* 목록의 블릿 모양을 설정 */
+			list-style-position:inside; /* 목록의 블릿 위치를 설정 */
+		}
+		ul.sport li{
+			border:1px solid red;
+		}
+		/* 커스텀 이미지(아이콘)을 사용하는 설정(HTML만으론 불가능하고 CSS를 추가로 사용해야 가능) */
+		ul.image{
+			list-style-image:url(../HTML5/images/bullet.png);
+		}
+		ul.inline1 li{
+		/* 
+			li태그를 인라인으로 설정하면 블릿이 모두 제거됨
+			인라인 엘리먼트로 변경되는 순간 width, height의 값은 무시됨
+		*/
+			border:1px red solid;
+			display:inline;
+			width:100px; height:100px;
+		}
+		/*
+			방법2 : float:left 속성값으로 가로배치는 되었고, 블릿은 제거되었으나 아직 블럭 엘리먼트의 속성은 그대로 남아있다
+			그러므로 width, height 값이 유지되고 있음
+		*/
+		ul.inline2{
+			list-style-type:none;
+		}
+		ul.inline2 li{
+			border:1px solid red;
+			float:left;
+			width:100px; height:100px;
+		}
+		/*
+			방법3 : 
+			displayLinline-block;
+			인라인 엘리먼트처럼 가로배치는 되나 블럭 엘리먼트의 성격은 그대로 유지됨
+			리스트의 블릿은 자동 제거됨(방법2와 동일)
+		*/
+		ul.inline3 li{
+			border:1px solid red;
+			display:inline-block;
+			width:150px; height:100px;
+		}
+
+		ul.bullet{
+			list-style-type:none;
+			border:1px solid red;
+			/* margin은 음수값이 가능. padding은 불가능 */
+			margin-left:-30px;
+		}
+
+	</style>
+	</head>
+	<body>
+	
+		<h2>UL로 Top메뉴 구현하기</h2>
+
+		<fieldset>
+			<legend>Top메뉴</legend>
+			<ul id="topmenu">
+				<li><a href="#home">HOME</a></li>
+				<li><a href="#regist">회원가입</a></li>
+				<li><a href="#login">로그인</a></li>
+				<li><a href="#notice">공지사항</a></li>
+				<li><a href="#board">게시판</a></li>
+			</ul>
+		</fieldset>
+
+		<fieldset>
+			<legend>당신이 좋아하는 스포츠는?</legend>
+			<ul class="sport">
+				<li>축구</li>
+				<li>배구</li>
+				<li>야구</li>
+				<li>농구</li>
+				<li>배구</li>
+			</ul>
+		</fieldset>
+
+		<fieldset>
+			<legend>당신이 좋아하는 음식은?</legend>
+
+			<ul class="image">
+				<li>짜장면</li>
+				<li>짱뽕</li>
+				<li>설렁탕</li>
+				<li>육개장</li>
+				<li>라면</li>
+			</ul>
+		</fieldset>
+
+		<fieldset>
+			<legend>당신이 좋아하는 동물은?(li를 인라인으로 변경 : 방법3)</legend>
+
+			<ul class="inline3">
+				<li>개</li>
+				<li>토끼</li>
+				<li>고양이</li>
+			</ul>
+		</fieldset>
+
+		<fieldset>
+			<legend>당신이 좋아하는 위인은?(블릿만 제거)</legend>
+			<ul class="bullet">
+				<li>세종대왕</li>
+				<li>이순신</li>
+				<li>정조대왕</li>
+			</ul>
+		</fieldset>
+	</body>
+</html>

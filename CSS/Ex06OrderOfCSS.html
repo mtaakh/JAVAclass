@@ -1,0 +1,65 @@
+<!-- Ex06OrderOfCSS.html -->
+<!doctype html>
+<html lang="ko">
+	<head>
+	<meta charset="UTF-8">
+	<title>CSS의 우선순위</title>
+
+	<style type="text/css">
+	/* 
+	CSS를 적용시키는 방법은 크게 3가지로 나뉘어진다.
+	1. Embedding style : <style> 태그를 사용해 문서에 직접 정의하는 방법
+	2. Inline style : 적용하고자 하는 태그에 직접 정의하는 방법
+	3. External style : 외부 파일로 만들어서 링크시켜서 사용하는 방법
+
+	[선택자 사이의 우선순위]
+	!important > inline style > id > class > tag > *
+	※ 우선순위가 같다면 태그랑 가까운 CSS가 적용된다. 인터프리터 방식이기 때문.
+	*/
+
+	h1{ 
+		color:blue;
+	}
+	h1{ /* 뒤에 선언된 h1이 우선순위가 높으므로 red로 표현됨 */
+		color:red;
+	}
+	#sea{ /* 선언된 위치에 상관없이 우선순위가 가장 높음 */
+		color:white !important;
+	}
+	.mountain{
+		color:brown;
+	}
+	li{
+		color:green;
+	}
+	dd{
+		color:green;
+	}
+	</style>
+	<!-- External style : 외부 파일로 정의한 후 링크시켜서 사용하고 있다. -->
+	<link rel="stylesheet" href="./style/styles.css" />
+	</head>
+	<body>
+
+	<h1>선택자 종류에 따른 CSS 적용순서</h1>
+	<ul>
+		<li class="mountain">관악산</li>
+		<li class="mountain">치악산</li>
+		<li class="mountain" id="sea" style="color:aqua;">경포대</li>
+		<li class="mountain">해운대</li>
+	</ul>
+
+	<h1>CSS적용 스타일에 따른 적용 순서</h1>
+	<dl>
+		<dd>종로구</dd>
+		<dd>강서구</dd>
+		<dd style="color:red;">강동구</dd>
+		<dd>강남구</dd>
+	</dl>
+
+
+
+
+	<div style="padding:100px;"></div>
+	</body>
+</html>

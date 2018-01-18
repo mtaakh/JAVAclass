@@ -1,0 +1,43 @@
+<!-- Ex11Border02.html -->
+<!doctype html>
+<html lang="ko">
+	<head>
+	<meta charset="UTF-8">
+	<title>Border 2</title>
+	<style type="text/css">
+		div div{
+			width:200px;
+			height:200px;
+		}
+		.radius{
+			border:5px red solid;
+			text-align:center;
+			line-height:200px;
+			background-color:blue;
+			border-radius:100px 100px 100px 100px;
+			/*
+			border-radius : 네모난 박스의 모서리에 둥근 효과를 줌
+				속성값 : 좌상단px 우상단px 우하단px 좌하단px 순서대로 지정(사분면 순서대로)
+			*/
+		}
+		.shadow{
+			text-align:center;
+			line-height:200px;
+			background-color:red;
+			box-shadow:10px 20px 40px black;
+			/*
+			box-shadow : 개체 아래쪽에 그림자 효과를 줌
+				속성값 : 우측px 하단px Alpha(흐림정도/투명도)값 color(그림자 색상) 순서대로 지정
+			*/
+		}
+	</style>
+	</head>
+	<body>
+	
+		<h2>둥근 테두리 및 그림자</h2>
+		<div>
+			<div class="radius">Radius - 꼭지점을 둥글게</div>
+			<div class="shadow">Shadow - 그림자효과</div>
+		</div>
+	</body>
+</html>

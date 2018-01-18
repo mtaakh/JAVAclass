@@ -1,0 +1,118 @@
+<!-- Ex01Selector01.html -->
+<!doctype html>
+<html lang="ko">
+	<head>
+	<meta charset="UTF-8">
+	<title>Selector(셀렉터)1</title>
+	<style type="text/css">
+	/* style 태그 내에서는 주석은 블럭단위 주석만 허용됨
+	라인단위 주석 // 는 허락 안됨 */
+
+	/* 전체 선택자 : 글꼴ㄹ이나 여백을 전체적으로 지정할때 사용. 일반적으로 CSS를 선언할때 제일먼저 등장하게 된다*/
+	*{
+	margin:10px; /*문서의 마진을 0픽셀로 설정.(0으로 할 경우 px는 생략가능)*/
+	font-family:Verdana; /*문서에서 사용할 폰트를 설정함.*/
+	}
+
+	/*태그 선택자 : 태그와 동일한 이름을 사용하여 문서 내의 모든 태그를 지정한다.
+	아래는 문서 내에 있는 모든 span태그를 해당 스타일로 지정한다.*/
+	span{
+		color:green;
+		font-size:20px;
+	}
+	/*클래스 선택자 : 클래스명으로 선택가능한 선택자. 하나의 문서 내에 클래스명은 중복이 가능하다.
+	클래스선택자는 .(점)으로 지정함*/
+	.positive{
+		font-weight:bold; /*폰트의 굵기를 설정*/
+		background-color:yellow; /*폰트의 배경색*/
+	}
+	.negative{
+		color:gray; /*주로 텍스트의 컬러를 설정*/
+		font-size:12px; /*폰트의 크기를 설정*/
+	}
+
+	/*
+	하위 선택자 : 스페이스로 구분하며, 항목을 선택함
+	*/
+
+	.myDiv span{
+		color:red;
+		font-size:24px;
+	}
+
+	/*
+	자식선택자 : > (꺽쇄)로 구분해서 항목을 선택함
+	*/
+	.myDiv > span{
+		color:cyan;
+		font-size:20px;
+	}
+
+	/*
+	아이디 선택자 : 아이디명으로 선택 가능한 선택자.
+	#(샵)으로 아이디를 지정한다.
+	아이디는 동일 문서 내에서는 중복 불가능
+	*/
+
+	#bas{
+		color:#664599;
+	}
+
+	/*
+	다중선택자 : ,(콤마)로 구분하여 선택
+	*/
+
+	.multi h2, .multi h3, .multi h4, .multi h5{
+		color:blue;
+	}
+
+	/*li의 하위태그 중에서 myclass라는 클래스명을 가진 태그를 선택
+	현재 li의 하위 태그가 없기 때문에 노란색으로 표현되는 부분이 없음*/
+	li. myclass{
+		color:yellow;
+		}
+
+	/*li태그 중에서 myclass라는 클래스명을 가진 li태그*/
+	li.myclass{
+		color:red;
+		}
+
+	</style>
+	</head>
+	<body>
+
+		<h2>여기는 본문입니다.</h2>
+		Default 내용입니다.
+		.
+		<h2>태그 선택지</h2>
+		<div>
+			저의 <span>장점</span>은 <span class="positive">긍정적인 성격</span>입니다.
+			<br />
+			저의 <span class="negative">단점</span>은 <span class="negative">지저분한 스타일</span>입니다.
+		</div>
+
+		<h2>하위 및 자식선택자</h2>
+		<div class="myDiv">
+			<span>Div 태그 안의 Span 태그</span>
+			<fieldset>
+			<span>Field 안의 Span 태그</span>
+			</fieldset>
+		</div>
+
+		<h2>아이디 선택자</h2>
+		<ul>
+			<li class="myclass">축구<span class="myclass">(난노랑)</span> </li>
+			<li id="bas">농구</li>
+			<li class="myclass">배구</li>
+		</ul>
+
+		<h2>다중 선택자</h2>
+		<div class="multi">
+		<h2>제목2</h2>
+		<h3>제목3</h3>
+		<h4>제목4</h4>
+		<h5>제목5</h5>
+		</div>
+	
+	</body>
+</html>

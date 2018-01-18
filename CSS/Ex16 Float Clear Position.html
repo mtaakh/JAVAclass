@@ -1,0 +1,129 @@
+<!-- Ex16 Float Clear Position.html -->
+<!doctype html>
+<html lang="ko">
+	<head>
+	<meta charset="UTF-8">
+	<title>Float, Clear, Position 속성</title>
+	</head>
+	<body>
+	
+		<h2>Div 배치(레이아웃) 관련 속성</h2>
+
+		<fieldset>
+			<legend>float속성(div의 width미지정)</legend>
+
+			<div style="background-color:red; float:left;">div1</div>
+			<div style="background-color:green; float:right;">div2</div>
+			<div style="background-color:blue;">div3</div>
+		</fieldset>
+		<fieldset>
+			<legend>float속성(div의 width지정)</legend>
+
+			<div style="width:100px; background-color:red; float:left;">div1</div>
+			<div style="width:100px; background-color:green; float:left;">div2</div>
+			<div style="width:100px; background-color:blue; float:right;">div3</div>
+		</fieldset>
+
+		<!-- 
+		clear : 앞서 div에서 설정한 float의 속성값이 남아 뒤에 정의한 div에 영향을 미치는 경우 float의 속성을 제거하는 역할을 한다.
+		-->
+		<fieldset>
+			<legend>float속성제거 > clear</legend>
+
+			<div>
+			<div style="width:100px; height:100px; background-color:red; float:left;">div1</div>
+			<div style="width:100px; height:50px; background-color:green; float:left;">dvi2</div>
+			</div>
+			<div style="clear:both;"></div>
+			<div style="width:250px; height:120px; background-color:blue;">div3</div>
+		</fieldset>
+
+		<!-- 
+		position 속성
+			- static : 기본값으로 위치정보를 임의로 성정해줄 수 없다.
+			- absolute : 절대위치로, 현재문서의 좌측상단을 기준으로 위치정보를 설정하며 스크롤시 이동한다.
+			- relative : 상대위치로, static 위치 사용시 있던 위치 기준으로 위치정보를 설정한다
+			- fixed : 고정된 위치로, 스크롤 움직임과 상관없이 항상 문서 최 좌측상단을 기준으로 좌표가 설정되어 있다.
+		-->
+
+
+		<fieldset style="position:relative;">
+			<legend>position:relative</legend>
+
+			부모 하위의 static 위치를 기준으로 left에서 300만큼, top에서 50만큼 간격이 떨어진다.
+
+			<div style="position:relative; left:300px; top:50px; width:100px; height:100px; background-color:red;">relative</div>
+		</fieldset>
+
+		<fieldset style="position:absolute;">
+			<legend>position:absolute</legend>
+
+			부모의 좌측상단을 기준으로 left에서 300만큼, top에서 50만큼 간격이 떨어진다.
+				<div style="position:absolute; left:300px; top:50px; width:100px; height:100px; background-color:green;">absolute</div>
+		</fieldset>
+
+		<p style="height:200px;"></p>
+
+		<fieldset>
+			<legend>position : static(기본값)</legend>
+			static일때는 위치값을 임의로 조정할 수 없다.
+
+			<div style="position:static; width:300px; height:200px; background-color:yellow;">
+
+				<div style="position:static; left:0px; top:0px; width:50px; height:50px; background-color:red;">div1(0,0)</div>
+				<div style="position:static; left:100px; top:100px; width:50px; height:50px; background-color:green;">div2(100,100)</div>
+				<div style="position:static; left:100px; top:100px; width:50px; height:50px; background-color:blue;">div3(100,100)</div>
+			</div>
+		</fieldset>
+
+		<fieldset>
+			<legend>부모div는 position:속성있음, 자식 div는 absolute</legend>
+
+				부모가 position속성값이 있는 경우 자식이 absolute이면 부모의 시작위치가 기준위치가 된다.
+				left, top의 값을 음수(-)로 주게 되면 기준위치보다 작은 쪽(좌측/상단)으로 이동하게 된다.
+
+			<div style="position:relative; width:300px; height:200px; background-color:yellow;">
+
+				<div style="position:absolute; left:0px; top:0px; width:50px; height:50px; background-color:red;">div1(0.0)</div>
+				<div style="position:absolute; left:50px; top:50px; width:50px; height:50px; background-color:green;">div2(50,50)</div>
+				<div style="position:absolute; left:100px; top:100px; width:50px; height:50px; background-color:blue;">div3(100,100)</div>
+			</div>
+		</fieldset>
+
+		<fieldset>
+			<legend>부모 div는 position:속성있음, 자식 div는 relative</legend>
+			
+			<div style="position:relative; width:300px; height:200px; background-color:yellow;">
+
+				<div style="position:relative; left:0px; top:0px; width:50px; height:50px; background-color:red;">div1(0,0)</div>
+				<div style="position:relative; left:50px; top:0px; width:50px; height:50px; background-color:green;">div2(50,0)</div>
+				<div style="position:relative; left:100px; top:0px; width:50px; height:50px; background-color:blue;">div3(100,0)</div>
+			</div>
+		</fieldset>
+
+		<fieldset>
+			<legend>부모div는 positive:속성없음 or static, 자식 div는 absolute</legend>
+
+			부모가 position의 속성값을 갖지 않으면 자식의 기준 위치는 부모의 위치가 아닌 해당 문서가 된다.
+			즉 아래 노란색 박스가 아니라 문서의 최 좌측상단이 기준점이 된다.
+			아래 검은색 박스는 문서의 상단으로 가면 확인할 수 있다.
+
+			<div style="position:; width:300px; height:200px; background-color:yellow;">
+
+				<div style="position:absolute; left:0px; top:0px; width:200px; height:200px; background-color:black; color:white;">div(0,0)</div>
+			</div>
+		</fieldset>
+
+		<fieldset>
+			<legend>z-index</legend> <!-- 레이어들의 우선순위 -->
+			z-index는 숫자가 클수록 우선순위가 높아짐. 즉 위쪽에 배치되게 된다. 우선순위가 낮으면 아래쪽에 배치된다.
+
+			<div style="position:relative; width:300px; height:300px; background-color:yellow;">
+				<div style="position:absolute; left:10px; top:10px; width:100px; height:100px; background-color:red; z-index:10;">div1</div>
+				<div style="position:absolute; left:40px; top:40px; width:100px; height:100px; background-color:green; z-index:5;">div2</div>
+				<div style="position:absolute; left:70px; top:70px; width:100px; height:100px; background-color:blue; z-index:1;">div3</div>
+			</div>
+		</fieldset>
+
+	</body>
+</html>

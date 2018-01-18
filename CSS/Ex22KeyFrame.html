@@ -1,0 +1,90 @@
+<!-- Ex22KeyFrame.html -->
+<!doctype html>
+<html lang="ko">
+	<head>
+	<meta charset="UTF-8">
+	<title>키프레임을 이용한 애니메이션</title>
+	<style type="text/css">
+	*{
+		margin:0px; padding:0px;
+	}
+	#rect{
+		width:100px; height:100px;
+		background-color:red;
+		/* 애니메이션을 적용하기 위한 속성 */
+		animation-duration:3s;
+		animation-timing-function:ease-in-out;
+		animation-name:myani; /* 키프레임 애니메니션 이름 지정 */
+		
+		/*animation-iteration-count:5; /* 5회 진행*/
+	}
+
+	/* 
+		#rect에 키프레임 규칙 적용 : 이렇게 해야 애니메이션이 일어난다.
+	*/
+	@keyframes myani{
+		from{ /* ~~로부터  */
+			width:100px;
+		}
+		to{ /* ~~까지 */
+			width:400px;
+		}
+	}
+
+	#circ1{
+		width:100px; height:100px;
+		line-height:100px; text-align:center;
+		background-color:green; border-radius:50px;
+		position:absolute; left:0; top:100px;
+		
+		animation-duration:3s;
+		animation-name:myani2;
+	}
+	@keyframes myani2{
+		from{
+			left:0; width:100px; height:100px;
+			line-height:100px; border-radius:50px;
+			transform:rotate(0deg);
+		}
+		to{
+			left:400px; width:200px; height:200px;
+			line-height:200px; border-radius:100px;
+			transform:rotate(180deg);
+		}
+	}
+
+	#circ2{
+		width:50px; height:50px;
+		background-color:blue;
+		position:absolute; left:0; top:220px;
+		
+		animation-duration:3s;
+		animation-name:myani3;
+		/* 애니메이션 무한반복 */
+		animation-iteration-count:infinite; 
+	}
+	@keyframes myani3{
+		from{
+			left:0;
+			top:220px;
+		}
+		to{
+			left:200px;
+			top:420px;
+		}
+	}
+	#circ2:hover{ /* 마우스가 올라가면 애니메이션 일시정지 */
+		animation-play-state:paused;
+	}
+
+	</style>
+	</head>
+	<body>
+	
+		<div id="wrap">
+			<div id="rect">Ractangle</div>
+			<div id="circ1">Circle1</div>
+			<div id="circ2">Circle2</div>
+		</div>
+	</body>
+</html>

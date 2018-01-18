@@ -1,0 +1,71 @@
+<!-- Ex13MarginPadding.html -->
+<!doctype html>
+<html lang="ko">
+	<head>
+	<meta charset="UTF-8">
+	<title>Margin Padding</title>
+	</head>
+	<body>
+	
+		<h2>여백관련속성</h2>
+
+		<h3>Padding 속성</h3>
+
+		<div style="border:1px red solid; padding-top:20px; padding-left:20px; padding-bottom:20px; padding-right:20px;">
+			"상하좌우" 여백 각각 지정(블럭 엘리먼트)
+		</div>
+
+		<div style="border:1px blue solid; padding:20px;">
+			"상하좌우" 여백 동시 지정(블럭 엘리먼트)
+		</div>
+		
+		<div style="border:1px brown solid; padding:20px;">
+			"상하" "좌우" 여백 동시 지정(블럭 엘리먼트)
+		</div>
+		
+		<div style="border:1px green solid; padding:10px 30px 50px;">
+			"상" "좌우" "하" 여백 동시 지정(블럭 엘리먼트)
+		</div>
+		
+		<div style="border:1px black solid; padding:10px 30px 50px 70px;">
+			"상" "우" "하" "좌" 여백 동시 지정(블럭 엘리먼트)
+		</div>
+
+		<!-- 
+			인라인 엘리먼트의 경우 좌측 padding을 줄때는 컨텐츠가 우측으로 밀려나고, 그 이외의 경우(상,하,우)는 컨텐츠는 그대로 있고 영역만 해당 방향으로 늘어난다.
+		-->
+		<span style="border:1px solid green; padding:20px 20px 50px 50px;">인라인 엘리먼트</span>
+
+		<h3>Margin 속성</h3>
+
+		<fieldset>
+			<legend>block과 block</legend>
+			<!-- 
+			block1과 block2는 서로 margin-top 및 margin-bottom이 적용되어 총 70px만큼 떨어져있고, block1과 block2에 margin-left, margin-right는 부모 영역과으 ㅣ여백이다.
+			각각 100px만큼 떨어져 있다. 즉 margin-left와 margin-right 만큼 영역의 가로폭이 줄어들게 된다.
+			-->
+
+			<div style="border:1px solid red; margin-bottom:50px; margin-left:100px; margin-right:100px;">block1</div>
+			<div style="border:1px green solid; margin-top:20px;">block2</div>
+		</fieldset>
+
+		<fieldset>
+			<legend>block과 inline</legend>
+
+			<div style="border:1px solid red; margin-bottom:50px;">block</div>
+			<!-- 인라인도 margin-left 및 margin-right는 부모영역과의 여백이 된다.(top/bottom은 적용안됨) -->
+			<span style="border:1px red solid; margin-left:50px;">line</span>
+		</fieldset>
+
+		<fieldset style="padding-top:50px;">
+			<legend>inline과 inline</legend>
+
+			<!-- 
+				인라인의 경우 margin-top 및 margin-bottom은 부모와의 여백을 의미하지만 적용이 안됨
+				이럴 경우 부모에서 padding을 이용해 여백을 적용해야 한다
+			-->
+			<span style="border:1px solid red; margin-right:50px;">inline1</span>
+			<span style="border:1px blue solid; margin-left:30px;">inline2</span>
+		</fieldset>
+	</body>
+</html>

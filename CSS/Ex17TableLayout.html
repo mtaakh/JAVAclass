@@ -1,0 +1,82 @@
+<!-- Ex17TableLayout.html -->
+<!doctype html>
+<html lang="ko">
+	<head>
+	<meta charset="UTF-8">
+	<title>Table을 이용한 레이아웃 잡기</title>
+	<link rel="stylesheet" href="./style/tableLayout.css" />
+	</head>
+	<body>
+		<table class="allWrap">
+		<colgroup>
+			<col width="25%" />
+			<col width="*" />
+		</colgroup>
+			<tr>
+				<td colspan="2">
+				<!-- GNB -->
+				<table style="width:100%;">
+				<colgroup>
+				<col width="25%;" />
+				<col width="*;" />
+				</colgroup>
+					<tr>
+						<td class="logo"><img src="../HTML5/images/logo.png" alt="I Seoul U" width="150" /></td>
+						<td class="topMenu">
+							<ul>
+								<li>HOME</li>
+								<li>로그인</li>
+								<li>회원가입</li>
+								<li>게시판</li>
+							</ul>
+						</td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+			<tr>
+			<!-- LNB start -->
+				<td class="leftMenu">
+					<ul>
+						<li>LNB메뉴1</li>
+						<li>LNB메뉴2</li>
+						<li>LNB메뉴3</li>
+						<li>LNB메뉴4</li>
+						<li>LNB메뉴5</li>
+					</ul>
+				</td>
+				<!-- LNB End -->
+				<!-- contents start -->
+				<td class="contents">
+					<p>contents</p>
+					<p>contents</p>
+					<p>contents</p>
+					<p>contents</p>
+					<p>contents</p>
+					<p>contents</p>
+					<p>contents</p>
+					<p>contents</p>
+					<p>contents</p>
+					<p>contents</p>
+					<p>contents</p>
+					<p>contents</p>
+					<p>contents</p>
+					<p>contents</p>
+					<p>contents</p>
+					<p>contents</p>
+					<p>contents</p>
+					<p>contents</p>
+					<p>contents</p>
+					<p>contents</p>
+					<p>contents</p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" class="copyright">
+				<!-- Copyright -->
+				<address>(주)한국소프트웨어아이앤씨(153-759) 서울시 금천구 가산동 426-5 월드메르디앙 2차 410호</address>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

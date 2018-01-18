@@ -1,0 +1,40 @@
+<!-- prac15_2.html -->
+<!doctype html>
+<html lang="ko">
+	<head>
+	<meta charset="UTF-8">
+	<title>prac15_2</title>
+	<style type="text/css">
+	#spongebob img{
+		width:150px; height:150px;
+		animation-duration:1s;
+		animation-name:bingbing1;
+		animation-direction:alternate;
+	/*	animation-name:bingbing2;*/
+		/* 애니메이션 무한반복 */
+		animation-iteration-count:infinite; 
+	}
+	@keyframes bingbing1{
+		from{
+			transform:rotate(0deg);
+		}
+		to{
+			transform:rotate(-90deg);
+		}
+	}
+/*	@keyframes bingbing2{
+		from{
+			transform:rotate(0deg);
+		}
+		to{
+			transform:rotate(90deg);
+		}
+	}*/
+	</style>
+	</head>
+	<body>
+		<h3>어지러워요</h3>
+		<hr />
+		<div id="spongebob"><img src="../Images/1.png" align="middle"></div>
+	</body>
+</html>

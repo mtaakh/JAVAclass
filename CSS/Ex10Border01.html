@@ -1,0 +1,66 @@
+<!-- Ex10Border01.html -->
+<!doctype html>
+<html lang="ko">
+	<head>
+	<meta charset="UTF-8">
+	<title>Border</title>
+	<style type="text/css">
+	div div{
+		width:200px;
+		height:200px;
+		line-height:200px;
+	}
+	#border1{
+		border-top-style:dashed;
+		border-bottom-style:dotted;
+		border-left-style:solid;
+		border-right-style:double;
+	}
+	#border2{
+		border-style:solid;
+		border-top-color:green;
+		border-bottom-color:red;
+		border-left-color:aqua;
+		border-right-color:coral;
+	}
+	#border3{
+		border-style:solid;
+		border-top-width:10px;
+		border-bottom-width:20px;
+		border-left-width:5px;
+		border-right-width:15px;
+	}
+	#border4{
+		border:dotted red 5px;
+	}
+	#border5{
+		border:none;
+		border-bottom:2px green solid;
+	}
+	</style>
+	</head>
+	<body>
+	<!-- 
+	페이지에서 하나밖에 없는 요소 - id
+	페이지에서 반복해서 쓸 수 있는 요소 - class
+	-->
+	
+		<h2>테두리 관련 CSS속성</h2>
+		<div>
+			<h3>테두리 스타일</h3>
+			<div id="border1" style="text-align:center;">border-style</div>
+
+			<h3>테두리 색상</h3>
+			<div id="border2" style="text-align:center;">border-color</div>
+			
+			<h3>테두리 두께</h3>
+			<div id="border3" style="text-align:center;">border-width</div>
+
+			<h3>테두리 색상/두께/스타일 동시 지정</h3>
+			<div id="border4">border</div>
+
+			<h3>폼의 하위요소 input type="text"</h3>
+			<input type="text" id="border5" />
+		</div>
+	</body>
+</html>

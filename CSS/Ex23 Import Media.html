@@ -1,0 +1,52 @@
+<!-- Ex23 Import Media.html -->
+<!doctype html>
+<html lang="ko">
+	<head>
+	<meta charset="UTF-8">
+	<title>Import 규칙을 이용한 외부 CSS파일 연결</title>
+	<style type="text/css">
+		/*
+			import 규칙을 이용한 외부 css파일 연결
+			- 반드시 style태그 안에 사용해야 한다
+			- 반드시 style태그 최상단에 위치해야 한다.(그렇지 않으면 적용 안 됨)
+		*/
+		@import url("./style/import.css");
+
+		.content{
+			background-color:black;
+			color:red;
+		}
+/*@media = media 쿼리*/
+		/*
+			해당 웹페이지를 어떤 디바이스에서 접근하느냐에 따라 다른 화면(배경색, 폰트사이즈 등)을 보여줄 수 있다.
+		*/
+		/* 모니터를 통해 볼때는 검정 바탕에 흰 글씨 */
+		@media screen{
+			.content{
+				background-color:black;
+				color:white;
+			}
+		}
+		/* 프린트를 통해 출력할 때는 흰색 바탕에 검정 글씨 */
+		@media print{
+			.content{
+				background-color:white;
+				color:black;
+			}
+		}
+	</style>
+	</head>
+	<body>
+	
+		<div class="content">
+			<p>
+				
+(서울=연합뉴스) 이상헌 기자 = 문재인 대통령이 19일 검찰내 '빅4'로 불리는 서울중앙지검장에 '평검사'인 윤석열 대전고검 검사를 파격 발탁한 배경에는 검찰 조직을 이대로 방치할 수 없다는 판단이 작용한 것으로 볼 수 있다. <br /><br />
+
+그동안 검찰 개혁을 요구하는 국민적 여론이 들끓어온 상황에서 '돈봉투 만찬' 파문이 터져나오자 검찰 개혁에 본격적으로 팔을 걷어붙여야 한다는 뜻을 굳힌 것으로 풀이된다.
+<br /><br />
+일단 문 대통령은 '돈 봉투 만찬' 파문의 당사자인 이영렬 서울중앙지검장과 안태근 법무부 검찰국장은 부산고검과 대구고검 차장검사로 각각 '좌천'시키고 그 자리에 과거 정권의 엘리트 코스에서 배제됐던 '개혁성향'의 인물들을 앉혔다.
+			</p>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,98 @@
+<!-- Ex02Selector02.html -->
+<!doctype html>
+<html lang="ko">
+	<head>
+	<meta charset="UTF-8">
+	<title>Selector(셀렉터) 2</title>
+	<style type="text/css">
+		h1{
+			color:green;
+		}
+
+		input{
+			/* 입력 텍스트 스타일 변경 */
+			color:green;
+			font-size:20px;
+			font-weight:bold;
+		}
+
+		/* 속성 선택자 : 해당 속성(여기선 타이틀)이 정의되어있는 태그를 지정함 */
+		h1[title]{
+			border:1px solid red; /* 외곽선을 1px 빨강 직선으로 표시. 속성값의 순서는 상관없음 */
+		}
+		/*속성값은 "(더블)이나 '(싱글)로 감싸거나 특수문자가 포함되지 않은 경우는 감싸지 않아도 된다 */
+		input[type="text"]{
+			color:red;
+		}
+		input[type="tel"]{
+			border:none; /* 외곽선을 0픽셀로 표시 */
+			border-bottom:1px solid gray;
+		}
+		/* 
+		외곽선중
+		border-top : 상단을 지정
+		border-bottom : 하단을 지정
+		border-left : 좌측을 지정
+		border-right : 우측을 지정
+		*/
+		input[type="password"]{
+			background-color:yellow;
+		}
+
+		/*속성에 정규 표현식 적용*/
+		a[href*='da']{ /*href=에 써있는 문자열 중 da가 포함됐는지를 의미*/
+		color:#ff6699;
+		font-size:20px;
+		font-weight:bold;
+		}
+		a[href$=com]{ /* $ : 끝난다는 의미*/
+			font-size:30px;
+		}
+		a[href^=http]{ /* ^ : 시작됨을 의미 */
+			border:5px green dotted;
+			/* 외곽선을 5픽셀 녹색 점선으로 표현 */
+		}
+		a[href="www.nate.com"]{ /*  = : 같다라는 의미 */
+			background-color:yellow;
+		}
+
+		/* 동위 선택자 */
+		/* h3과 같은 수준의 div태그들(~) */
+		h3~div{
+			color:aqua;
+		}
+		/* h3과 같은 수준의 div태그들 중에서 h3 바로 아래에 있는 div태그 */
+		h3+div{
+			color:red;
+		}
+
+
+	</style>
+	</head>
+	<body>
+
+	<h1>title속성이 없는 h1태그</h1>
+	<h1 title="제목태그입니다.">title 속성이 있는 h1태그</h1>
+
+	<form>
+	이름: <input type="text" /><br />
+	아이디: <input type="text" /><br />
+	비밀번호: <input type="password" /><br />
+	전화번호: <input type="tel" /><br />
+	</form>
+
+	<h2>정규 표현식 사용</h2>
+	<a href="http://www.naver.com">NAVER</a><br />
+	<a href="http://www.daum.net">DAUM</a><br />
+	<a href="www.nate.com">NATE</a>
+
+	<h3 id="title">동위(+,~) 선택자</h3>
+	<div>div1</div>
+	<div>div2</div>
+	<div>div3</div>
+	<div>div4</div>
+	<div>div5</div>
+
+	
+	</body>
+</html>

@@ -1,0 +1,90 @@
+<!-- Ex15 Display Visibility.html -->
+<!doctype html>
+<html lang="ko">
+	<head>
+	<meta charset="UTF-8">
+	<title>Display Visibility 속성</title>
+	<style type="text/css">
+		fieldset div{
+			width:80px; height:80px;
+		}
+		fieldset.inline div{
+			/* 블럭엘리먼트가 가로배치되고 inline 속성으로 변경됨 */
+			display:inline;
+		}
+		fieldset.inline_block div{
+			/* 블럭엘리먼트가 가로배치는 되지만 block속성은 유지됨 */
+			display:inline-block;
+		}
+		fieldset.block span{
+			/* 인라인 엘리먼트를 블럭 엘리먼트로 속성 변경 */
+			display:block;
+		}
+
+	</style>
+	</head>
+	<body>
+	
+		<h2>Display 및 Visibility 속성</h2>
+
+		<h3>Visibility 속성</h3>
+		<fieldset style="width:300px" class="visible">
+			<legend>visibility:hidden일 때 영역은 그대로 존재함</legend>
+			<div style="background-color:red;">
+				left
+			</div>
+			<div style="background-color:blue; visibility:hidden;">
+				center
+			</div>
+			<div style="background-color:green;">
+				right
+			</div>
+		</fieldset>
+
+		<h3>Display 속성</h3>
+		<fieldset style="width:300px;" class="visible">
+			<legend>display:none일 때 영역도 사라짐</legend>
+			<div style="background-color:red;">
+				lelft
+			</div>
+			<div style="background-color:blue; display:none">
+				center
+			</div>
+			<div style="background-color:green;">
+				right
+			</div>
+		</fieldset>
+
+		<h3>HTML5의 hidden 속성</h3>
+		<fieldset style="width:300px;" class="visible">
+			<legend>hidden 속성으로 display:none과 같은 효과</legend>
+			<div style="background-color:red;">
+				lelft
+			</div>
+			<div style="background-color:blue;" hidden>
+				center
+			</div>
+			<div style="background-color:green;">
+				right
+			</div>
+		</fieldset>
+
+		<h3>block ㅡ>inline-block</h3>
+		<fieldset style="width:300px;" class="inline_block">
+			<legend>가로배치로 변경</legend>
+
+			<div style="background-color:red;">left</div>
+			<div style="background-color:blue;">center</div>
+			<div style="background-color:green;">right</div>
+		</fieldset>
+		
+		<h3>inline ㅡ>block</h3>
+		<fieldset style="width:300px;" class="block">
+			<legend>세로배치로 변경</legend>
+
+			<span style="background-color:red;">left</span>
+			<span style="background-color:blue;">center</span>
+			<span style="background-color:green;">right</span>
+		</fieldset>
+	</body>
+</html>

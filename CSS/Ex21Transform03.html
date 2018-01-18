@@ -1,0 +1,31 @@
+<!-- Ex21Transform03.html -->
+<!doctype html>
+<html lang="ko">
+	<head>
+	<meta charset="UTF-8">
+	<title>트랜스폼03</title>
+	<style type="text/css">
+		div{
+			width:100px;
+			height:100px;
+			text-align:center;
+			line-height:100px;
+			transition-duration:1s;
+		}
+		#trans1:hover{
+			background-color:red;
+			opacity:0.5;
+			transform:translateX(400px) rotate(90deg) scaleX(0.5); /* deg : degree() */
+		}
+		#trans2:hover{
+			background-color:green;
+			transform:translate(400px,100px) scale(1.5,1.5) rotate(180deg);
+		}
+	</style>
+	</head>
+	<body>
+	
+		<div id="trans1" style="background-color:cyan;">Trans1</div>
+		<div id="trans2" style="background-color:purple">Trans2</div>
+	</body>
+</html>

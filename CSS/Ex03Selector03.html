@@ -1,0 +1,109 @@
+<!-- Ex03Selector03.html -->
+<!doctype html>
+<html lang="ko">
+	<head>
+	<meta charset="UTF-8">
+	<title>Selector(셀렉터) 3</title>
+	<style type="text/css">
+		#content{
+			width:300px;
+			background-color:yellow;
+		}
+		ul li{
+			list-style:none;
+			border:1px solid green;
+			font-size:24px;
+			font-weight:bold;
+			height:50px;
+		}
+		/* 홀수번째만 선택 : n은 0부터 시작하고 1씩 증가함 */
+		div#content li:nth-child(2n+1){
+			background-color:#820f6b;
+		}
+		/* 짝수번째만 선택 : n은 0부터 시작하고 1씩 증가함 */
+		div#content li:nth-child(2n){
+			background-color:#b56010;
+		}
+		/* 처음 요소와 마지막 요소를 선택 */
+		div#content ul li:first-child, div#content ul li:last-child{
+			background-color:red;
+		}
+		/* 위와 다른 점은 무엇인가? ㅡ ,(콤마)로 연결되어있긴 하지만 콤마의 좌측/우측에 해당하는 li는 별개이다.
+										따라서 공통된 집합의 부속을 묶으려면 집합명을 일일이 묶어줘야 한다.
+		div#content ul li:first-child, ul li:last-child{
+			background-color:red;
+		} */
+
+		/* 처음 요소 */
+		div#content ul li:first-child{
+			/* border-radius의 가장자리 순서 : 
+				top-left, top-right, bottom-ringt, bottom-left
+				지정된 값 만큼 원형으로 표현한다. */
+			border-radius:25px 10px 10px 25px;
+		}
+		/* 마지막 요소 */
+		div#content li:last-child{
+			border-radius:0 0 10px 50px;
+		}
+
+		/* 문자 선택자 */
+		/*
+		first-letter : 요소의 첫번재 글자를 선택함
+		irst-line : 요소의 첫번째 줄을 선택
+
+		::selection : 블럭으로 지정했을 때 반전되는 색상을 지정 */
+		#start:first-letter,#end:first-letter{
+			font-size:32px;
+		}
+		#start:first-line,#end:first-line{
+			color:red;
+			font-weight:bold;
+		}
+		#character p:first-child::selection{
+			color:yellow;
+			background-color:black;
+		}
+		li:nth-child(2){
+			color:yellow;
+		}
+
+	</style>
+	</head>
+	<body>
+	
+		<h1>구조 선택자</h1>
+		<div id="content">
+			<ul>
+				<li>menu1</li>
+				<li>menu2</li>
+				<li>menu3</li>
+				<li>menu4</li>
+				<li>menu5</li>
+				<li>menu6</li>
+			</ul>
+		</div>
+
+		<h1>문자 선택자</h1>
+		<div id="character">
+			<p id="start">
+				2017년 5월 15일<br />
+				CSS 강의 시작
+			</p>
+			<p id="end">
+				2017년 12월 25일<br />
+				즐거운 크리스마스
+			</p>
+		</div>
+		<div>
+			<ul>
+				<li>menu1</li>
+				<li>menu2</li>
+				<li>menu3</li>
+				<li>menu4</li>
+				<li>menu5</li>
+				<li>menu6</li>
+			</ul>
+		</div>
+
+	</body>
+</html>

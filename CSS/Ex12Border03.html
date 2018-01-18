@@ -1,0 +1,45 @@
+<!-- Ex12Border03.html -->
+<!doctype html>
+<html lang="ko">
+	<head>
+	<meta charset="UTF-8">
+	<title>Border 3</title>
+	<style type="text/css">
+	*{
+		margin:0;
+		padding:0;
+	}
+	div{
+		width:200px; height:200px;
+		line-height:200px; text-align:center;
+		border:10px red solid;
+		padding:10px;
+	}
+	/*
+	box-sizeing : 박스를 기본 값으로 세팅한 크기를 유지할지 결정하는 속성값
+		- cintent-box : 기본값(디폴트)
+		- border-box : 가로 세로 모두 패딩값고 보더값을 포함하는 값. 즉 패딩과 보더 상관없이 설정한 크기대로 표현함
+	*/
+	#box1{
+		border:0;
+		padding:0;
+		background-color:orange;
+	}
+	#box2{
+		background-color:purple;
+		box-sizing:border-box;
+	}
+	#box3{
+		background-color:#cecece;
+		box-sizing:content-box; /*얘가 기본값*/
+	}
+	</style>
+	</head>
+	<body>
+	
+		<h2>box-sizing 속성</h2>
+		<div id="box1">box1</div>
+		<div id="box2">box2</div>
+		<div id="box3">box3</div>
+	</body>
+</html>

@@ -1,0 +1,86 @@
+<!-- Ex09Background.html -->
+<!doctype html>
+<html lang="ko">
+	<head>
+	<meta charset="UTF-8">
+	<title>Background</title>
+
+	<style type="text/css">
+	/*
+	background 속성
+
+		# background-repeat
+			repeat : 배경이 반복됨. 디폴트
+			repeat-x : 배경이 x축방향(가로)로 반복됨
+			repeat-y : 배경이 y축방향(세로)로 반복됨
+			no-repeat : 배경이 반복되지 않고 한번만 노출됨
+
+		# background-color : 배경색 지정
+
+		# background-image : 배경이미지 지정
+			url(path) : 배경이미지의 경로를 지정
+
+		# background-position : 배경이미지의 위치 지정
+			가로위치px 세로위치px (위치값은 px, %로 지정)
+	*/
+
+		#div div{
+			width:80%;
+			height:400px;
+			margin:0 auto; /* 블럭엘리먼트를 가운데 정렬할 때 사용함 */
+			background-image:url(../HTML5/images/sumnail.jpg); /* url 주소괄호 안에 '이나 "를 쓰면 안됨 */
+			background-repeat:repeat-y;
+		}
+		#div div:first-child{
+			border:1px solid red;
+			background-size:100%
+		}
+		#div div:last-child{
+			border:1px blue dotted;
+			background-size:30%
+		}
+
+		#love{
+			background-image:url(../HTML5/images/2.jpg);
+			background-repeat:repeat-y;
+			background-position:50% 50%;
+			width:400px; height:250px;
+			background-color:yellow;
+		}
+
+		/* 
+		background 속성을 이용하면 여러개의 속성값을 동시에 사용할 수 있다.
+		속성값의 순서는 상관없이 작성 가능(x좌표-y좌표 쌍으로 이루어진것은 순서 필요)
+		*/
+		#total_bg{
+			width:500px; 
+			height:500px;
+			background:url(../HTML5/images/apple.png) 50px 50px no-repeat #cc66ff;
+		}
+
+	</style>
+	</head>
+	<body>
+	
+		<h2>배경관련 CSS 속성</h2>
+		<div>
+			<h2>배경색 지정</h2>
+			<div style="background-color:#ff0000;">블럭 엘리먼트</div>
+			<span style="background-color:#00ff00;">인라인 엘리먼트<br />인라인 엘리먼트</span>
+		</div>
+
+		<div id="div">
+			<div></div>
+			<div></div>
+		</div>
+
+		<div id="love">
+			div태그는 "Division"의 줄임말 입니다.
+		</div>
+
+		<div id="total_bg">
+			background 속성값을 동시에 사용
+		</div>
+
+	</body>
+</html>

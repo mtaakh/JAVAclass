@@ -1,0 +1,43 @@
+<!-- Ex20Transform02.html -->
+<!doctype html>
+<html lang="ko">
+	<head>
+	<meta charset="UTF-8">
+	<title>트랜스폼02</title>
+	<style type="text/css">
+		.rect1, .rect2{
+			width:100px; height:100px;
+			float:left;
+			/*
+			변형을 통한 애니메이션 구현
+
+			변형을 가할 CSS 속성
+			*/
+			transition-property:background-color, width, height;
+			/* 변형이 일어나는데 걸리는 시간을 다중설정. 각각 배경색ㅡ4초, 가로폭ㅡ3초, 세로폭ㅡ10초가 걸림 */
+			transition-duration:10s, 1s, 4s;
+		}
+		.rect1{background-color:red;}
+		.rect2{background-color:green;}
+		.rect1:hover{
+			background-color:#076738;
+			width:300px;
+			height:200px;
+		}
+		.rect2:hover{
+			background-color:#b40a0a;
+			width:200px;
+			height:300px;
+		}
+	</style>
+	</head>
+	<body>
+	
+		<h1>변형2</h1>
+		<div id="content">
+		<div class="rect1"></div>
+		<div class="rect2"></div>
+		</div>
+		<div style="width:100px; height:100px; backfround-color:#aa0f73;"></div>
+	</body>
+</html>

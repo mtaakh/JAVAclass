@@ -1,0 +1,65 @@
+<!-- Ex08Paragraph.html -->
+<!doctype html>
+<html lang="ko">
+	<head>
+	<meta charset="UTF-8">
+	<title>Paragraph</title>
+	</head>
+	<body>
+	
+		<h2>문단 관련 CSS 속성들</h2>
+
+		<div style="border:1px blue dotted; width:400px;">
+			<h3>컨텐츠 수평방향 정렬</h3>
+
+			<div style="border:1px solid red; text-align:right;">블럭 엘리먼트</div>
+			<!-- 인라인 엘리먼트에서 정렬은 여유공간이 없기 때문에 의미 없음 -->
+			<span style="border:1px solid blue; text-align:right;">인라인 엘리먼트</span>
+		</div>
+
+		<h2>배분정렬</h2>
+		<p style="border:1px green solid; text-align:justify;">
+			지난해 이화여대에 입학한 정씨는 체육특기자 입시 과정과 입학이후 학사관리에서 부당한 특혜를 받았다는 의혹에 휩싸였다. 지난달 시민단체 서민생대책위원회가 최경희 전 이대 총장과 최씨 모녀를 서울중앙지검에 고발하면서 수사 대상에도 올랐다.
+			<br />
+			논란이 확산되자 교육부가 특별감사를 진행한 결과, 이런 의혹들 중 상당수는 사실로 드러나기도 했다.
+			<br />
+			하단 생략....
+		</p>
+
+		<h2>텍스트 꾸미기</h2>
+		<span style="text-decoration:overline;">텍스트 윗줄긋기</span><br />
+		<span style="text-decoration:underline;">텍스트 밑줄긋기</span><br />
+		<span style="text-decoration:line-through;">가운데 선긋기</span><br />
+		<a href="http://nate.com" style="text-decoration:none;">네이트 바로가기</a>
+
+		<h2>들여쓰기</h2>
+		<div style="border:1px red solid; text-indent:1em;">
+			블럭 엘리먼트
+		</div>
+		<span style="border:1px solid blue; text-indent:1em;">
+			인라인 엘리먼트
+		</span>
+
+		<h2>수직방향 정렬</h2>
+		<!-- 
+		vertical-align : 수직방향에서의 정렬
+			top : 상단으로 정렬
+			middle : 중간으로 정렬
+			bottom : 하단으로 정렬
+
+		※행박스 안의 인라인박스나 표에서 칸 안의 수직위치를 지정할때 주로 사용함.
+		  div와 같은 블럭 엘리먼트에서 사용하기 위해서는 display속성을 변경하여 inline속성으로 바꿔줘야 함
+
+		-->
+		<div style="border:1px red solid; height:200px; display:table-cell; vertical-align:middle;">
+			블럭 엘리먼트
+		</div>
+		<!-- 인라인 엘리먼트는 상하 여백이 없으므로 적용 안됨. 컨텐츠의 양에 따라 영역이 결정된다. -->
+		<span style="border:1px blue solid; height:200px; vertical-align:middle;">
+			인라인 엘리먼트
+		</span>
+		<br /><br />
+		<img src="../HTML5/images/sumnail.jpg" alt="등산복" />제품이미지
+
+	</body>
+</html>
