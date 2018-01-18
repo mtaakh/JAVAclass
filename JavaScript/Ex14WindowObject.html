@@ -1,0 +1,59 @@
+<!-- Ex14WindowObject.html -->
+<!doctype html>
+<html lang="ko">
+	<head>
+	<meta charset="UTF-8">
+	<title>Window 객체01</title>
+	<script type="text/javascript">
+		/* alert, confirm, prompt창 등은 'window.'를 생략할 수 있다(window의 객체이기 때문). */
+		var fn = {
+			login: function(){
+
+				var user = document.getElementById("user");
+				if(user.value=="")
+				{
+					alert("아이디를 입력해주세요");
+					user.focus(); // input에 입력이 가능한 상태로 변경
+				}
+			},
+			drop: function()
+			{
+				/*
+				confirm : 일종의 대화상자로, 사용자에게 어떤 액션을 취할 지 여부를 물어볼 때 사용한다. '예'를 누를 경우 true가 반환 / '아니오'를 누르면 false값 반환
+				*/
+				var answer = window.confirm("정말로 삭제하시겠습니까?");
+				if(answer==true)
+				{
+					window.alert("삭제되었습니다. 복구할 수 없습니다.");
+				}
+				if(answer==false)
+				{
+					window.alert("아니오를 선택하셨습니다. 데이터가 유지됩니다.");
+				}
+			},
+			insertName: function(){
+
+				var name = window.prompt("당신의 이름은 무엇인가요?", "");
+				alert("당신의 이름이 "+name+" 이군요");
+			},
+			insertAge: function(){
+
+				var age = window.prompt("당신의 나이는?", "1");
+				alert("당신의 10년 후 나이는 "+(window.parseInt(age)+10)+"살입니다.");
+			}
+		};
+	</script>
+	</head>
+	<body>
+	
+		<fieldset>
+			<legend>대화 상자들</legend>
+			아이디 : <input type="text" id="user" />
+			<input type="button" value="로그인" onclick="fn.login();" />
+			<input type="button" value="삭제" onclick="fn.drop();" />
+			<input type="button" value="입력" onclick="fn.insertName();" />
+			<input type="button" value="나이입력" onclick="fn.insertAge(10);" />
+
+		</fieldset>
+	</body>
+</html>

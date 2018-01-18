@@ -1,0 +1,25 @@
+<!-- openChild2nd.html -->
+<!doctype html>
+<html lang="ko">
+	<head>
+	<meta charset="UTF-8">
+	<title>openChild 2nd</title>
+	<script type="text/javascript">
+		function openerCtrl()
+		{
+			//팝업창 하나를 거쳐서 부모창으로 가야 하리 때문에 opener를 겹쳐 사용한다. 창이 많아진다면 몇개를 겹쳐 쓰는것도 가능함
+			//- 중간에 있는 팝업창이 닫히게 되면 부모쪽으로 데이터를 보낼 수 없게 된다(스크립트 오류 발생)
+			opener.opener.document.getElementById("zipcode").value = "99999";
+			opener.opener.document.getElementById("addr1").value = "여기는 한국소프트웨어인재개발원";
+		}
+
+	</script>
+	</head>
+	<body>
+	
+		<h2>openChild 2nd 창</h2>
+		<p style="text-align:center;">
+			<button onclick="openerCtrl();">opener > opener로 데이터 보내기</button>
+		</p>
+	</body>
+</html>

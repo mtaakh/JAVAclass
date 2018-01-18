@@ -1,0 +1,79 @@
+<!-- Ex08Function01.html -->
+<!doctype html>
+<html lang="ko">
+	<head>
+	<meta charset="UTF-8">
+	<title>function() - 01</title>
+	<script type="text/javascript">
+	/*
+		[함수정의]
+		매개변수를 정의할 때 var는 쓸 수 없다. 변수명만 써야한다.
+
+		방법1] 우명함수(이름이 있는 함수)
+			function 함수명(매개변수1, 매개변수2,....)
+			{
+				함수의 몸체 정의
+				return 변수 혹은 값;
+			}
+		
+		방법2]무명함수(이름 없는 함수)
+			var 함수명으로 사용할 변수 = function(매개변수1, 매개변수2..){
+				함수의 몸체 정의
+				return 변수 혹은 값;
+			}
+		
+		[함수호출]
+		함수를 정의한 원형 그대로 호출함
+
+		※함수 안에서 선언된 변수는 함수의 실행이 끝나면 메모리에서 소멸한다. 즉 지역변수임(Local Variable)
+		그리고 script 태그 안에서 선언된 변수는 해당 페이지 전역에서 아용할 수 있는 변수이다. 즉 전역변수임(Global Variable)
+	*/
+
+	//함수형식1 : 유명함수
+	function noParamNoreturn()
+	{
+		document.write("========메 뉴=======<br/>");
+		document.write("1. 계속 2. 나가기<br/>");
+		document.write("====================<br/>");
+	}
+	noParamNoreturn(); // 함수호출
+
+	/*
+	함수형식2 : 무명함수
+		함수의 시작 주소를 왼쪽의 변수명에 저장한 후 변수명을 마치 함수명처럼 사용하는 형태
+	*/
+	var yesParamNoReturn = function(start, end){
+		var sum = 0;
+		for(var i=start; i<=end; i++){
+			sum += i;
+		}
+		document.write(start + "부터"+ end + "의 누적합 : " +sum+"<br/>");
+	}
+	yesParamNoReturn(1,10); // 함수호출
+	yesParamNoReturn(10, 1000); // 함수호출
+
+	/* 함수형식 3 */
+	var noParamYesReturn = function() {
+		var name = prompt("이름을 입력하세요", "");
+		var age = prompt("나이를 입력하세요", "");
+		return name + "은 " + age + "살입니다<br/>";
+		/*
+		Java : unreachable code 에러가 발생
+		JS : 아래 부분이 실행 안됨(에러는 발생x)
+		*/
+		document.write("return문 이후 출력문");
+	}
+	document.write(noParamYesReturn()); // 함수호출
+
+	/* 함수형식4 */
+	var yesParaYesReturn = function(num1, num2){
+		return num1>=num2 ? num1 : num2;
+	}
+	document.write("최대값"+yesParaYesReturn(1, 10)); //함수호출
+
+	</script>
+	</head>
+	<body>
+	
+	</body>
+</html>

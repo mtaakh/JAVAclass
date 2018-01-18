@@ -1,0 +1,83 @@
+<!-- Ex04If.html -->
+<!doctype html>
+<html lang="ko">
+	<head>
+	<meta charset="UTF-8">
+	<title>IF</title>
+	<script type="text/javascript">
+	/*
+		자바스크립트에서는 if(비교식, 논리식 뿐만 아니라 산술식 등 모든 값이 올 수 있다)
+		Java에서는 true, false를 판단할 수 있는 비교식이나 논리식이 와야 한다(산술식 X)
+		JS에서 모든 식이 가능한 이유는 0, null, false 외의 모든 값을 true로 판단하기 때문
+	*/
+	var nullvar = null, num1 = num2 = 10;
+	if(num1 - num2){
+		document.write("num1-num2는 참이다<br/>");
+	}
+	else{
+		document.write("num1-num2는 거짓이다<br/>");
+	}
+
+	/* 삼항연산자 */
+	/*
+	Java와는 다르게 판단식이 참이거나 거짓일때 결과값을 변수에 대입하지 않아도 됨
+	*/
+
+	/*
+	방법1. Java X
+		판단식 ? 참일때 : 거짓일때;
+	방법2. Java O
+		var 변수 = 판단식 ? 참일때 : 거짓일때;
+	*/
+
+	//방법1
+	num1 > num2 ? document.write(num1 + "이 "+ num2 + "보다 크다<br/>"):
+	document.write(num1 + "이 "+ num2 + "보다 크지 않다<br/>");
+
+	//방법2
+	var result = num1 > num2 ? 
+		num1 +"이 " + num2 + "보다 크다<br/>" 
+		:
+		num1 +"이 " + num2 + "보다 크지 않다<br/>";
+	document.write(result);
+
+	function getGrade()
+	{
+		//사용자가 입력한 값을 얻어오기 : DOM 객체를 가져오는 경우 무조건 string 타입으로 인식하므로
+		//연산을 할 때는 parseInt를 통해 number타입으로 변환해줘야 한다.
+		var kor = parseInt(document.getElementById("kor").value);
+		var eng = parseInt(document.getElementById("eng").value);
+		var math = parseInt(document.getElementById("math").value);
+alert(kor + eng + math);
+
+		var avg = (kor + eng + math) / 3;
+		var stringGrade;
+		if(avg>=90) stringGrade = "<span style='color:blue; font-size:3em;'>A학점";
+		else if(avg>=80) stringGrade = "B학점";
+		else if(avg>=70) stringGrade = "C학점";
+		else if(avg>=60) stringGrade = "D학점";
+		else stringGrade = "F학점";
+
+		/*
+		innerHTML : text 혹은 html태그가 삽입 가능함
+
+		innerText : text만 삽입 가능함. html 태그는 해석하지 않고 text로만 출력함
+		*/
+		document.getElementById("span").innerHTML = stringGrade;
+		//document.getElementById("span").innerText = stringGrade;
+	}
+
+	</script>
+	</head>
+	<body>
+	
+		<fieldset>
+			<legend>성적 출력</legend>
+			국어 : <input type="text" id="kor" /><br />
+			영어 : <input type="text" id="eng" /><br />
+			수학 : <input type="text" id="math" /><br />
+			= <span style="color:red; font-weight:bold;" id="span">여기에 학점이 출력됨</span>
+			<button onclick="getGrade();">확인</button>
+		</fieldset>
+	</body>
+</html>

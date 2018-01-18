@@ -1,0 +1,84 @@
+<!-- Ex15EventBasic.html -->
+<!doctype html>
+<html lang="ko">
+	<head>
+	<meta charset="UTF-8">
+	<title>Event</title>
+	<script type="text/javascript">
+	/*
+		모든 엘리먼트(태그, 요소)에는 사용자가 발생시킨 이벤트가 있다.
+
+		이벤트리스너 : 이벤트의 발생 여부를 캐치하는 객체. 주로 on계열의 리스너가 있다.
+		리스너는 주로 태그 안의 속성으로 작성하게 된다.
+
+		[이벤트 처리방법]
+			방법1 : 해당 태그에 직접 on계열의 리스너를 부착
+				예) <a gref="#" onclick="함수() or 실행코드">링크</a>
+			방법2 : 해당 태그를 얻어와서 익명함수로 처리
+				예) 얻어온 객체.addEventListener("on을 뺀 이벤트명", function(){})
+			
+		주요이벤트
+
+		load : 페이지가 웹브라우저에 처음 로딩될때 발생하는 이벤트
+		- 리스너 : onload
+		- body 태그 안에서 기술가능
+
+		unload : 페이지가 닫히거나 다른 페이지로 이동할때 발생하는 이벤트(Firefox는 적용안됨)
+		- 리스너 : onunload
+		- body태그 안에서 기술가능
+
+		submit : type="submit" or type="image"인 경우 클릭했을때 발생하는 이벤트. 즉 폼값을 지정된 action쪽으로 전송할때 발생하는 이벤트.
+		- 리스너 : onsubmit
+		- form태그 안에서 사용가능
+
+		reset : type="reset" 버튼 클릭시 발생하는 이벤트.
+		- 리스너 : onreset
+		- form 태그 안에서 사용가능
+
+		click = 가장 많이 사용하는 이벤트. 모든 태그에서 사용가능. 사용자가 해당 엘리먼트를 클릭할때 발생하는 이벤트.
+		- 리스너 : onclick
+
+		change : <select>에서 <option>을 바꿀 때마다 발생하는 이벤트.
+		- 리스너 : onchange
+		- select태그에서 사용가능
+
+		키보드 이벤트 : 텍스트상자(<input type="text">)에 적용되는 이벤트
+
+		keydown : 모든 키를 누를때 발생하는 이벤트
+		keyup : 키보드를 눌렀다가 뗄 때 발생하는 이벤트
+		keypress : 문자키를 누를때 발생하는 이벤트(방향키나 Delete키는 발생x)
+
+		마우스 이벤트 : 
+		mousedown : 해당 영역 내에서 마우스를 눌렀을때 발생하는 이벤트
+		mouseup : 마우스를 눌렀다가 뗐을때 발생하는 이벤트
+		mouseover : 영역에 마우스가 들어왔을때의 이벤트
+		mouseout : 영역에서 마우스가 나갔을 때의 이벤트
+
+		포커스 이벤트 : 
+		focus : 포커스(입력커서)를 얻었을때 발생하는 이벤트
+		blur : 포커스를 잃었을때 발생하는 이벤트(포커스가 다른 엘리먼트로 이동할때)
+
+	*/
+	
+
+
+	</script>
+	</head>
+
+	<!-- 방법1] 태그에 속성으로 on계열 리스너 부착 -->
+	<body onload="alert('방법1: 웹브라우저의 모든 내용이 로드됨');" onunload="alert('페이지를 벗어남'):">
+
+	<script type="text/javascript">
+	/* 방법2] load 이벤트를 부착할 DOM 객체 얻기. 여기서는 window 객체를 사용 */
+/*	window.onload = function() {
+		alert("방법2: 웹브라우저의 모든 내용이 로드됨");
+	} */
+
+	/* 방법3] 얻어온 객체.addEventListener("on을 뺀 이벤트", function(){ 함수내용 }) */
+/*	window.addEventListener("load", function(){
+		alert("방법3: 웹브라우저의 모든 내용이 로드됨");
+		});*/
+	</script>
+	
+	</body>
+</html>

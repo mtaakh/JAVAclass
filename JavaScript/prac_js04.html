@@ -1,0 +1,35 @@
+<!-- prac_js04.html -->
+<!doctype html>
+<html lang="ko">
+	<head>
+	<meta charset="UTF-8">
+	<title>prac04</title>
+	<script type="text/javascript">
+	
+		document.write("<h2>document.write()로 표만들기</h2>");
+		document.write("<hr />");
+
+		document.write("<table border='1'>");
+		document.write("<tr>");
+			document.write("<th>n</th>");
+			for(j=2; j<10; j++)
+			{
+				document.write("<td>"+j+"</td>");
+			}
+		document.write("</tr>");
+		document.write("<tr>");
+			document.write("<th>n&sup2;</th>");
+			for(k=2; k<10; k++)
+			{
+				document.write("<td>" + k*k + "</td>");
+			}
+		document.write("</tr>");
+
+		document.write("</table>");
+
+	</script>
+	</head>
+	<body>
+	
+	</body>
+</html>

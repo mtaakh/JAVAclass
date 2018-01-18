@@ -1,0 +1,104 @@
+<!-- Ex14WindowObject03.html -->
+<!doctype html>
+<html lang="ko">
+	<head>
+	<meta charset="UTF-8">
+	<title>Window 객체03</title>
+	<script type="text/javascript">
+	/*
+		setTimeout : 매개변수에 주어진 시간이 되면 해당 함수를 딱 한번만 호출할때 ㅏㅅ용함
+		- 사용법
+			var 타이머변수 = setTimeout("함수명()", 1/1000초);
+		- 해제시
+			clearTimeout(타이머변수);
+
+		setInterval : 매개변수에 주어진 시간 간격마다 해당 함수가 계속 호출됨
+		- 사용법
+			var 타이머변수 = setInterval("함수명()", 1/1000초)
+		- 해제시
+			clearInterval(타이머변수);
+	*/
+
+	function fnOnce() {
+		alert("5초 후 딱 한번만 실행됨");
+	}
+	function fnContinue() {
+		alert("3초마다 매번 실행됨");
+	}
+
+	var timerOnce, timerMode;
+
+	function fnCallAfter(flag)
+	{
+		if(flag=="T") {
+			timerOnce = window.setTimeout("fnOnce()", 5000);
+		}
+		else{
+			timerMode = setInterval("fnContinue()", 3000);
+		}
+	}
+
+	function fnCallBreak(flag)
+	{
+		if(flag==1) {
+			clearTimeout(timerOnce);
+		}
+		else{
+			clearInterval(timerMode);
+		}
+	}
+
+	function displayTime()
+	{
+		var date = new Date();
+		spanTag.innerHTML = date.getHours() + "시" +
+							date.getMinutes() + "분" +
+							date.getSeconds() + "초";
+	}
+
+	var spanTag;
+	window.onload = function() {
+		spanTag = document.getElementById("clock");
+		setInterval("displayTime()", 1000);
+	}
+
+	/*
+	창 크기를 조절
+
+		resizeTo(가로폭, 세로폭) : 절대크기로 창 크기를 변경
+		resizeBy(가로간격, 세로간격) : 상대크기로 창 크기를 지정
+	*/
+		function fnResize(flag)
+		{
+			if(flag=='A'){
+				resizeTo(300, 300);
+			}
+			else{
+				resizeBy(10, 10);
+			}
+		}
+
+
+
+	</script>
+	</head>
+	<body>
+		<fieldset>
+			<legend>타이머 및 창크기 조절</legend>
+			<h3>일정 시간 후 함수 실행</h3>
+			<input type="button" value="5초 후 함수 실행" onclick="fnCallAfter('T');" />
+			<input type="button" value="함수 호출 중지" onclick="fnCallBreak(1);" />
+
+			<h3>일정 시간마다 함수 실행</h3>
+			<input type="button" value="3초마다 함수 실행" onclick="fnCallAfter('I');" />
+			<input type="button" value="함수 호출 중지" onclick="fnCallBreak(2);" />
+
+			<h3>간단한 시계 구현</h3>
+			<span id="clock" style="color:green; font-size:1.8em; font-weight:bold;"></span>
+
+			<h3>브라우저 창 크기 조절</h3>
+			<input type="button" value="절대크기" onclick="fnResize('A');" />
+			<input type="button" value="상대크기" onclick="fnResize('B');" />
+		</fieldset>
+	</body>
+</html>

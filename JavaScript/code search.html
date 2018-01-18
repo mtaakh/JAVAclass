@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ko">
+	<head>
+	<meta charset="UTF-8">
+	<title>code search</title>
+	<script type="text/javascript">
+	
+		
+		var str1 = "abcdefgABCDEFG";
+		var str2 = '가나다라마';
+		var str3 = "12345 6789 10";
+		var str4 = new String("~!!~! ");
+		
+		document.write("<h2>문자열의 길이 : lengrh 속성</h2>");
+		document.write("str1의 길이 : "+str1.length+"<br/>");
+		document.write("str2의 길이 : "+str2.length+"<br/>");
+		document.write("str4의 길이 : "+str4.length+"<br/>");
+		
+		//5-2. 문자열에서 특정 문자열 얻어오기2
+		/* substr(시작위치, 시작위치에서 가져올 문자 갯수) */
+		document.write("<h2>substr(시작인덱스[3], 문자열갯수(4개))</h2>");
+		document.write('ACADEMY'.substr(3,4));
+
+		//6. 특정위치의 아스키 코드값 가져오기
+		/* JAVA에서는 codePointAt(int index) */
+		document.write("<h2>charCodeAt(인덱스[1])</h2>");
+		document.write(str1.charAt(7)+"의 아스키코드 값 : "+str1.charCodeAt(7));
+	</script>
+	</head>
+	<body>
+	
+	</body>
+</html>

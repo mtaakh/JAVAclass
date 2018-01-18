@@ -1,0 +1,167 @@
+<!-- Ex15EventBasic02.html -->
+<!doctype html>
+<html lang="ko">
+	<head>
+	<meta charset="UTF-8">
+	<title>Event02</title>
+	<script type="text/javascript">
+		
+	/* 방법2] load 이벤트를 부착할 DOM 객체 얻기. 여기서는 window 객체를 사용 */
+/*	window.onload = function() {
+		alert("방법2: 웹브라우저의 모든 내용이 로드됨");
+	} */
+
+	/* 방법3] 얻어온 객체.addEventListener("on을 뺀 이벤트", function(){ 함수내용 }) */
+/*	window.addEventListener("load", function(){
+		alert("방법3: 웹브라우저의 모든 내용이 로드됨");
+		});*/
+
+		function fnClick(obj)
+		{
+			alert("obj.innerHTML="+obj.innerHTML);
+		}
+	</script>
+	</head>
+	<body>
+		<fieldset>
+			<legend>click 이벤트</legend>
+
+			<div style="border:1px solid red;" onclick="alert('Div에 클릭이벤트 발생');">
+			Div 클릭 이벤트
+			</div>
+			<h3 style="border:1px solid green;" onclick="alert('H3에 클릭이벤트 발생');">
+			H3 클릭이벤트
+			</h3>
+			<!-- 
+			on이벤트명 -> 자바스크립트 코드 안에서 this
+			이때 this는 자기자신의 태그를 가리킨다.
+			this는 이벤트리스너에서 전달되어야 하고, href 속성에서 전달될 경우 undefined가 된다.
+			-->
+			<a href="javascript:alert('A에 클릭이벤트 발생(javascript)'); fnClick(this);">
+			A클릭 이벤트(javascript:;)
+			</a><br />
+			<a href="#" onclick="alert('A에 클릭이벤트 발생(#)'); fnClick(this);">
+			A클릭 이벤트(#)
+			</a>
+		</fieldset>
+
+		<script type="text/javascript">
+			/*
+			select태그에서 사용하는 change 이벤트
+
+			선택된 인덱스 얻기
+			- select객체.selectedIndex
+			-인덱스는 0부터 시작
+
+			select하위태그인 option(목록)의 개수 얻기
+			- select객체.options 배열로 얻는다
+			- select객체.options.length
+
+			선택한값 얻기
+			방법1)select객체.value : 단일선택
+			방법2)for문 루프를 돌면서 selected 속성 이용(다중선택)
+
+			option 태그 사이의 텍스트 얻기
+			방법1) options[인덱스].text로 얻기
+			방법2) select객체[select객체.selectedIndex].text로 얻기
+			*/
+			function fnSelect(obj)
+			{
+				//선택된 인덱스 얻기
+				alert("선택한 인덱스 : "+ obj.selectedIndex);
+
+				//총 아이템
+				var items = obj.options.length;
+				alert("총 아이템: "+items);
+
+				//선택한값 얻기
+				//방법1
+				alert("value값: "+ obj.value);
+
+				//방법2
+				alert("value값: "+ obj.options[obj.selectedIndex].value);
+
+				for(var i=0; i<items; i++)
+				{
+					if(obj.options[i].selected==true)
+					{
+						alert("선택한 value값: "+ obj.options[i].value);
+					}
+					else{
+						//선택한 항목 이외의 항목의 텍스틀르 '---'로 바꿈
+						//obj.options[i].text = "---";
+					}
+				}
+
+				//텍스트 얻기
+				alert("텍스트 얻기"+obj[obj.selectedIndex].text);
+				alert("텍스트 얻기"+obj.options[obj.selectedIndex].text);
+			}
+		</script>
+		<fieldset>
+			<legend>change 이벤트</legend>
+			<select onchange="fnSelect(this)"><!-- alert('change 이벤트 발생'); -->
+				<option value="초딩">초등학교</option>
+				<option value="중딩">중학교</option>
+				<option value="고딩">고등학교</option>
+				<option value="대딩">대학교</option>
+			</select>
+		</fieldset>
+
+		<script type="text/javascript">
+			function fnChoice(obj)
+			{
+				if(obj.type=="checkbox")
+				{
+					if(obj.checked==true)
+					{
+						alert("선택: "+ obj.value);
+					}
+				}
+				else if(obj.type=="radio")
+				{
+					alert("선택: "+ obj.value);
+				}
+			}
+		</script>
+		<fieldset>
+			<legend>radio/checkbox는 click이벤트로 체크</legend>
+
+			<input type="radio" name="gender" value="남자" onclick="fnChoice(this);" />남자
+			<input type="radio" name="gender" value="여자" onclick="fnChoice(this);" />여자
+
+			<br />
+
+			<input type="checkbox" name="inter" value="정치" onclick="fnChoice(this);" />정치
+			<input type="checkbox" name="inter" value="경제" onclick="fnChoice(this);" />경제
+			<input type="checkbox" name="inter" value="스포츠" onclick="fnChoice(this);" />스포츠
+		</fieldset>
+
+		<script type="text/javascript">
+			window.onload = function() {
+				document.forms[0].onreset = function(){
+					alert("reset이벤트 발생");
+				}
+			}
+			function fnSubmit()
+			{
+				var inputObj = document.forms[0].txt;
+				if(inputObj.value=="")
+				{
+					alert("텍스트를 입력해주세요");
+					inputObj.focus();
+					return false;
+				}
+			}
+
+		</script>
+		<fieldset>
+			<legend>submit / reset 이벤트</legend>
+			<form action="http://naver.com" onsubmit="return fnSubmit();">
+				<input type="text" name="txt" />
+				<input type="submit" value="SUBMIT" />
+				<input type="reset" value="RESET" />
+			</form>
+		</fieldset>
+	</body>
+</html>

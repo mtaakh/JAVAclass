@@ -1,0 +1,52 @@
+<!-- Ex14WindowObject04.html -->
+<!doctype html>
+<html lang="ko">
+	<head>
+	<meta charset="UTF-8">
+	<title>Window 객체04</title>
+	<script type="text/javascript">
+	/*
+	escape() : 한글이나 일본어, 중국어 등 2바이트로 표현하는 언어들을 UTF=8 형식으로 인코딩할 때 사용
+	숫자나 영문자는 아스키코드(ANSI)로 표현하기 때문에 인코딩이 안됨(인코딩하지 않아도 문제없음)
+
+	빈 공백은 %20으로 인코딩 처리
+
+	Ajax나 jQuery Ajax에서 한글 처리시 주로 사용함
+	*/
+	var escapeString = window.escape("안녕 Hello 1234567");
+	document.write("인코딩 : "+escapeString+"<br/>");
+
+	document.write("디코딩 : "+unescape("%uC548%uB155%20Hello%201234567") +"<br/>");
+
+	/*
+	eval() : 매개변수에 있는 값을 자바스크립트로 해석
+			 문자열로 전달되는 매개변수 양쪽의 "(더블)을 이발하듯 잘라내서 안에 있는 코드를 실행한다.
+
+	inNaN() : Is Not A Number
+		숫자인지 아닌지 판단하는 함수
+		숫자면 false, 숫자가 아니면 true 반환
+	parseInt() : 숫자 부분만 반환해주는 함수. 단, 숫자가 아닌 문자로 시작하면 NaN 반환
+	*/
+
+	document.write("<h3>eval() 함수</h3>");
+	document.write("alert('나는 alert 함수다');");
+	eval("alert('나는 alert 함수다. eval() 안에 있다.');");
+
+	document.write("<br/>1+2+3<br/>");
+	document.write(eval("1+2+3"));
+
+	document.write("<h3>isNaN() 함수</h3>");
+	isNaN("12A") ? document.write("<br/>숫자형식이 아니다") : document.write("<br/>숫자형식이다");
+	isNaN("12") ? document.write("<br/>숫자형식이 아니다") : document.write("<br/>숫자형식이다");
+
+	document.write("<h3>parseInt() 함수</h3>");
+	document.write("<br/>12A를 숫자로 변환하면"+parseInt("12A"));
+	document.write("<br/>A12를 숫자로 변환하면"+parseInt("A12"));
+	document.write("<br/>12A34를 숫자로 변환하면"+parseInt("12A34"));
+
+	</script>
+	</head>
+	<body>
+	
+	</body>
+</html>

@@ -1,0 +1,99 @@
+<!-- Ex01Variable.html -->
+<!doctype html>
+<html lang="ko">
+	<head>
+	<meta charset="UTF-8">
+	<title>Variable</title>
+	<script type="text/javascript">
+		/*
+		- 자바스크립트에서는 대소문자를 구분한다ㅏ.
+		-하나의 명령행이 끝나면 ;으로 명령의 끝을 알린다.
+
+		-자바스크립트에서는 변수에 대입한 값에 따라 자료형이 결정된다.
+		-변수선언은 var 라는 키워드를 통해 이뤄진다.
+		*/
+
+		//1. 변수선언
+		var num;
+		document.write("<h2>초기화전</h2>");
+		document.write("num의 자료형"+typeof(num) + ", num에 저장된 데이타: "+num);
+		//2. 변수 초기화
+		num=100;
+		document.write("<h2>초기화후</h2>");
+		document.write("num의 자료형"+typeof(num) + ", num에 저장된 데이타: "+num);
+
+		//string 타입
+		num='문자열입니다.'; // 문자열을 나타낼 때 '(싱글), "(더블) 둘 다 사용가능
+		document.write("<br/>num의 자료형"+typeof(num) + ", num에 저장된 데이타: "+num);
+
+		//number 타입
+		num=3.14;
+		document.write("<br/>num의 자료형"+typeof(num) + ", num에 저장된 데이타: "+num);
+
+		//boolean 타입
+		num=true;
+		document.write("<br/>num의 자료형"+typeof(num) + ", num에 저장된 데이타: "+num);
+
+		//3. 변수선언과 동시에 초기화
+		var strvar = "자바스크립트";
+		document.write("<br/>strvar의 자료형"+typeof(strvar) + ", num에 저장된 데이타: "+strvar);
+
+		//4. 여러개의 변수를 콤마(,)로 구분해서  동시선언 및 초기화
+		var num1=10, num2, str1="자바스크립트", str2;
+		document.write("<br/>num1+num2="+(num1+num2));
+		/*
+			NaN(Not a Number) : 숫자가 아님을 나타내는 말
+			isNaN() : 변수가 Number 타입이 아닌지 확인하는 함수
+		*/
+		if(isNaN(num1+num2)){
+			alert("NaN이다");
+		}
+		else{
+			alert("NaN이 아니다");
+		}
+		document.write("<br/>str1+str2="+(str1+str2));
+
+		//number타입 + string타입 = string타입으로 출력됨
+		document.write("<br/>num1+str1=" + (num1+str1));
+
+		//5. 자바스크립트의 기타 자료형
+		document.write("<h2>기타자료형</h2>");
+		var date = new Date();
+		document.write("date의 자료형"+typeof(date) + ", date에 저장된 데이타: "+date);
+		/*
+			날짜시간함수
+			getYear() : 1900년도를 기준으로 하여 년도를 반환
+				현재 년도 - 1900 = 결과치 반환
+			getMonth() : 월을 0~11 형태로 반환함. +1을 해야 정상적인 '월'이 출력됨
+			getDate() : 날짜에 해당하는 숫자를 출력한다.
+		*/
+		document.write("<br/>"+(date.getYear()+1900)+"년 "+(date.getMonth()+1)+"월 "+date.getDate()+"일");
+
+		/*
+			null의 의미 : 값이 없다는 의미.
+			0이나 ' ', " " 은 null이 아니다. 0 혹은 빈문자열이다.
+		*/
+		var nullvar = null;
+		document.write("<br/>nullvar의 자료형:"+typeof(nullvar) + ", nullvar에 저장된 데이타: "+nullvar);
+		document.write("<br/>document의 자료형:"+typeof(document) + ", document에 저장된 데이타: "+document);
+
+		//6. var 키워드로 변수를 정의하지 않은 경우 > 에러
+		//document.write("novar="+ novar); // novar는 정의하지 않은 상태이므로 에러임
+		var novar = 100;
+		document.write("<br/>novar의 자료형:"+typeof(novar) + ", novar에 저장된 데이타: "+novar);
+		/*
+		자료형에 대한 정리 : 
+			실수나 정수 : number 타입
+			문자열('', "") : string 타입
+			true, false : booldean 타입
+			document, window, null, Date, Math 등 : Object 타입
+			변수 정의 후 값으 ㄹ설정하지 않은 경우 : undefined 타입
+			변수를 정의하지 않고 출력할 경우 : Error
+		*/
+
+	</script>
+	</head>
+	<body>
+	
+	</body>
+</html>

@@ -1,0 +1,47 @@
+<!-- ./pages/zipcode.html -->
+<!doctype html>
+<html lang="ko">
+	<head>
+	<meta charset="UTF-8">
+	<title>우편번호 찾기</title>
+	<script type="text/javascript">
+		function setZipcode(zip, addr)
+		{
+			//alert("우편번호입력");
+			opener.document.getElementById("zipcode").value = zip;
+			opener.document.getElementById("addr1").value = addr;
+			opener.document.getElementById("addr2").focus();
+			self.close();
+		}
+	</script>
+	</head>
+	<body>
+		<h2>우편번호 검색</h2>
+		<table border="1">
+			<tr>
+				<td>우편번호</td>
+				<td>주소</td>
+			</tr>
+			<tr>
+				<td>11111</td>
+				<td><a href="javascript:setZipcode('11111', '서울시 종로구')">서울시 종로구</a></td>
+			</tr>
+			<tr>
+				<td>22222</td>
+				<td><a href="javascript:setZipcode('22222', '서울시 강남구')">서울시 강남구</a></td>
+			</tr>
+			<tr>
+				<td>33333</td>
+				<td><a href="javascript:setZipcode('33333', '서울시 관악구')">서울시 관악구</a></td>
+			</tr>
+			<tr>
+				<td>44444</td>
+				<td><a href="javascript:setZipcode('44444', '서울시 금천구')">서울시 금천구</a></td>
+			</tr>
+			<tr>
+				<td>55555</td>
+				<td><a href="javascript:setZipcode('55555', '서울시 강동구')">서울시 강동구</a></td>
+			</tr>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,26 @@
+<!--prac_js07.html-->
+<!doctype html>
+<html lang="ko">
+	<head>
+	<meta charset="UTF-8">
+	<title>prac07</title>
+	</head>
+	<body>
+	<script type="text/javascript">
+		function big(par1, par2) {
+			var p1 = parseInt(par1);
+			var p2 = parseInt(par2);
+			if(p1>p2){
+				return par1;
+			}
+			else{
+				return par2;
+			}
+		}
+	</script>
+	<script type="text/javascript">
+		var b = big("625", "555");
+		document.write("큰수="+b);
+	</script>
+	</body>
+</html>

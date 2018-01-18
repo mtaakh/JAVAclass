@@ -1,0 +1,56 @@
+<!-- Ex13LocationHistory.html -->
+<!doctype html>
+<html lang="ko">
+	<head>
+	<meta charset="UTF-8">
+	<title>location과 history</title>
+	<script type="text/javascript">
+		/*
+		location : 페이지 이동할대 사용. target을 걸어야 할 경우 target.location 형식으로 사용함
+
+		history : 페이지 이동은 동일하나 이전에 이동했던 내역이 있는 경우에만 사용가능. IE or 크롬의 '뒤로'버튼과 동일한 기능
+		*/
+		function fnLogin()
+		{
+			var id = document.getElementById("user_id").value;
+			var pw = document.getElementById("user_pw").value;
+
+			if(id=="Kim" && pw=="1234"){
+				location.href="./pages/history01.html"; //마이페이지로 가정한다
+			}
+			else{
+				//alert("등록되지 않은 아이디/비밀번호");
+				location.href="./pages/history02.html"; // 회원가입 페이지로 가정한다
+			}
+		}
+
+	</script>
+	</head>
+	<body>
+	
+	<fieldset>
+		<legend>로그인 화면</legend>
+		아이디 : <input type="text" id="user_id" /><br />
+		패스워드 : <input type="password" id="user_pw" /><br />
+		<input type="button" value="로그인" onclick="fnLogin();" />
+<!-- 
+		javascript 링크 거는 방법 : 
+			href 속성에 걸때 : javascript 를 반드시 같이 써줘야 한다. 생략할 경우 엉뚱한 곳으로 페이지 이동이 발생.
+			onclick과 같은 이벤트리스너에 걸때 : javascript를 생략하는 것이 가능하고 함수호출 문장만 써도 된다.
+
+		<a href="#" onclick="javascript:fnLogin();">로그인1(가능)</a>
+		<a href="#" onclick="fnLogin();">로그인2(가능)</a>
+		<a href="javascript:fnLogin();">로그인3(가능)</a>
+		<a href="fnLogin();">로그인3(불가능)</a>
+-->
+
+		<input type="button" value="history테스트" onclick="location.href='Ex04If.html';" />
+
+		<input type="button" value="다음페이지" onclick="history.go(1);" />
+
+		<input type="button" value="이전페이지1" onclick="history.go(-1);" />
+		
+		<input type="button" value="이전페이지2" onclick="history.back();" />
+	</fieldset>
+	</body>
+</html>

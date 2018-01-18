@@ -1,0 +1,116 @@
+<!-- Ex08Function02.html -->
+<!doctype html>
+<html lang="ko">
+	<head>
+	<meta charset="UTF-8">
+	<title>function() - 02</title>
+	<script type="text/javascript">
+		//전역변수 선언
+		var param=100, args=1;
+
+		/*
+		Call By Value : 값에 의한 호출. 값을 매개변수로 전달함.
+			callByValue() 함수로 전달된 param, args는 전달이 됨과 동시에 지역변수가 됨. 그리고 함수의 실행이 종료되면 소멸함
+		*/
+		document.write("<h2>CallByValue</h2>");
+		function callByValue(param, args)
+		{
+			var temp=param;
+			param=args;
+			args=temp;
+			document.write("함수 안 param="+ param + ", args=" + args +"<br/>");
+		}
+		callByValue(param, args);
+		document.write("함수 밖 param="+ param + ", args=" + args +"<br/>");
+
+		/*
+		Call By Reference : 참조에 의한 호출. 값이 아닌 객체의 참조값(주소)를 전달함. 지역에 상관없이 참조 가능
+		*/
+		document.write("<h2>CallByReference</h2>");
+		var array = [100, 1];
+		function callByRef(array)
+		{
+			var temp = array[0];
+			array[0] = array[1];
+			array[1] = temp;
+			document.write("함수 안 array[0]="+array[0]+", array[1]="+array[1]+"<br/>")
+		}
+		callByRef(array);
+		document.write("함수 밖 array[0]="+array[0]+", array[1]="+array[1]+"<br/>")
+
+		/*
+		※지역변수와 전역변수가 충돌할 경우 지역변수가 우선된다.
+		- this 키워드는 윈도우 객체를 가리키는 것으로 해당 페이지 안의 script 태그 안에 선언된 모든 멤버에 접근 가능
+		*/
+		document.write("<h2>지역변수와 전역변수</h2>");
+		var mVar = 100;
+		function conflict(mVar)
+		{
+			/*
+			mVar : 지역변수
+			this.mVar : 전역변수
+			*/
+			this.mVar = mVar * 2;
+			document.write("함수 안 mVar="+ mVar +"<br/>");
+		}
+		conflict(mVar);
+		document.write("함수 밖 mVar="+ mVar +"<br/>");
+
+
+		document.write("<h2>참조에 의한 호출 예제</h2>");
+		var member = new Array(3);
+
+		function setMember(array)
+		{
+			array[0] = prompt("이름을 입력하세요.","");
+			array[1] = prompt("나이를 입력하세요.","1");
+			array[2] = prompt("연락처를 입력하세요.","010-");
+		}
+		setMember(member);
+		var titles = ["이름", "나이", "연락처"];
+		for(var i=0; i<member.length; i++)
+		{
+			document.write(titles[i]+":"+member[i]+"<br/>");
+		}
+
+		document.write("<h2>배열을 크기순으로 정렬하기</h2>");
+		/*
+		문제] 다음 배열을 크기순(큰값)으로 재정렬하는 함수를 정의하시오. 단. 정렬전과 정렬후의 결과를 출력해야 함
+		*/
+		var arr = [10, 45, 99, 1, 34, 78, 100, 22, 2, 55];
+		function setOrdering(arr)
+		{
+			//배열의 전체요소를 정렬하기 위해 중첩된 반복문 필요
+			for(var i=0; i<arr.length; i++)
+			{
+				for(var j=0; j<arr.length; j++)
+				{
+					//큰값이 감지되면 swap
+					if(arr[i] > arr[j])
+					{
+						var temp = arr[j];
+						arr[j] = arr[i];
+						arr[i] = temp;
+					}
+				}
+			}
+		}
+		for(var n=0; n<arr.length; n++) {
+		document.write(arr[n]+"&nbsp;");
+		}
+		document.write("<br/>");
+		
+		setOrdering(arr);
+
+		for(var n=0; n<arr.length; n++) {
+		document.write(arr[n]+"&nbsp;");}
+
+
+	</script>
+	</head>
+	<body>
+	<script type="text/javascript">
+		
+	</script>
+	</body>
+</html>

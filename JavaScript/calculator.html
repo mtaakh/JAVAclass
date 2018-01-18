@@ -1,0 +1,74 @@
+<!-- calculator.html -->
+<!doctype html>
+<html lang="ko">
+	<head>
+	<meta charset="UTF-8">
+	<title>계산기</title>
+	<style type="text/css">
+		body{
+			text-align:center;
+			font-weight:bold;
+			margin:0 auto;
+		}
+		table{
+			border:0;
+			width:500px;
+			background-color:lightgrey;
+			border-radius:10px 10px 10px 10px;
+		}
+		td{
+			background-color:#2a2a2a;
+			color:white;
+			border-radius:10px 10px 10px 10px;
+		}
+		input{
+			border:0;
+			background-color:#00cc33;
+			color:black;
+			font-size:2em;
+			text-align:right;
+		}
+	</style>
+	</head>
+	<body>
+		<h2>계산기</h2>
+
+		<table border="1" cellspacing="5"><!--  style="border:1px solid gray;" -->
+			<tr style="">
+				<td colspan="4" rowspan="2" style="background-color:#00cc33;">
+				<input type="text" placeholder="answer" readonly />
+				</td>
+			</tr>
+			<tr>
+			</tr>
+			<tr>
+				<td colspan="2" style="background-color:grey;" onclick="history.go(-1);">BackSpace</td>
+				<td colspan="2" style="background-color:grey;" onclick="clear();">C</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>/</td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td>5</td>
+				<td>6</td>
+				<td>x</td>
+			</tr>
+			<tr>
+				<td>7</td>
+				<td>8</td>
+				<td>9</td>
+				<td>+</td>
+			</tr>
+			<tr>
+				<td>=</td>
+				<td>0</td>
+				<td>.</td>
+				<td>-</td>
+			</tr>
+		</table>
+	</body>
+</html>

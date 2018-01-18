@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="ko">
+	<head>
+	<meta charset="UTF-8">
+	<title>D-day cumulate</title>
+	<script type="text/javascript">
+	
+
+		//두 날짜 사이의 차이 구하기
+		/*
+		getTime() : 1970년 1월 1일 0시0분0초부터 특정일가지 흘러온 시간을 1/1000초 단위로 반환함
+		*/
+		var startDate = new Date(2017, 4, 24); // 오늘날짜 : 5/24 세팅
+		var endDate = new Date(2017, 11, 25); // 크리스마스
+		var diff = endDate.getTime() - startDate.getTime();
+		document.write("크리스마스까지 남은 날짜 : "+ diff / (1000*60*60*24) + "일");
+
+	</script>
+	</head>
+	<body>
+	
+	</body>
+</html>

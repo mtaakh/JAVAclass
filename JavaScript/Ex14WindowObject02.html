@@ -1,0 +1,127 @@
+<!-- Ex15WindowObject02.html -->
+<!doctype html>
+<html lang="ko">
+	<head>
+	<meta charset="UTF-8">
+	<title>Window 객체02</title>
+	<script type="text/javascript">
+		/*
+		팝업창 : 광고나 공지사항을 게시할때 주로 사용
+
+		window.open("경로", "창의이름", "창의속성(모양, 위치 등)")
+		-open() 메소드는 윈도우 객체를 반환함
+		- 팝업창을 여러개 띄울때 창의 이름이 같으면 하나의 창에 계속 뿌려짐
+
+		#팝업창의 모양을 설정하기 위한 속성
+		width : 팝업창의 가로폭
+		height : 팝업창의 세로폭
+		top : 팝업창을 띄울때 Y좌표(모니터기준)
+		left : 팝업창을 띄울때 X좌표(모니터기준)
+		location : 주소표시줄
+		toolbar : 도구모음창 on/off
+		menubar : 메뉴바 on/off
+		scrollbars : 스크롤바 on/off
+		resizable : 팝업창의 크기조절 가능여부 on/off
+
+		창의 제어
+		- 부모창에서 팝업창을 제어할때 : 팝업창의 참조변수를 이용하여 제어한다.
+			예)
+				부모창에서 팝업을 열음 - var winObj = window.open("", "", "");
+				부모창에서 팝업창을 닫음 - winObj.close();
+
+		- 팝업창에서 부모창을 제어할때 : opener 속성을 이용해서 제어한다
+			예)
+				//팝업창에서 부모창으로 데이터 보내기 - opener.document.getXXXX("식별자").value = 값;
+		- 창을 닫을때 : close() 메소드를 이용한다
+			예) 자신을 닫을때 : self.close();
+		*/
+
+/*
+		//1. 기본팝업창
+		var winObj = window.open("http://daum.net", "popup1", "width=400, height=400, left=100, top=100");
+
+		window.open("Ex03Array.html", "popup2", "width=400, heigth=400, left=150, top=150");
+		
+		window.open("Ex04If.html", "popup3", "width=400, heigth=400, left=300, top=300");
+		
+
+		//2. 기본팝업창 - 이름이 같을때
+		var winObj = window.open("http://daum.net", "popup", "width=400, height=400, left=100, top=100");
+
+		window.open("Ex03Array.html", "popup", "width=400, heigth=400, left=150, top=150");
+		
+		window.open("Ex04If.html", "popup3", "width=400, heigth=400, left=300, top=300");
+		*/
+
+		//3. 속성을 사용하여 팝업창 띄우기
+		/*
+			속성을 활성화할때 : 정수 1 / 'yes'
+			속성을 비활성화 할때 : 정수 0 / 'no'
+		*/
+/*		var winObj = window.open("Ex03Array.html", "popup", "width=400, height=400, left=100, top=100, toolbar=1, menubar=0, location=0, scrollbars=0, resizable=0");*/
+
+		//4. 모니터 화면의 해상도를 얻어와서 스크린 중간에 팝업창으로 띄우기
+/*		var width = window.screen.width;
+		var height = window.screen.height;
+		//alert("모니터 해상도 > 가로폭"+ width +"세로폭"+ height);
+
+		var leftVar = width/2 - 400/2;
+		var topVar = height/2 - 400/2;
+		window.open("Ex03Array.html", "popup", "width=400, height=400, left="+ leftVar +", top=" + topVar);*/
+
+		//5. 팝업창 닫기
+/*			var winObj = window.open("./pages/popup.html", "popup", "width=400, height=400, left=100, top=100");
+		
+			function popClose()
+			{
+				alert("부모창에서 팝업을 닫아요~~!!");
+				winObj.close();
+			}*/
+
+			function findZipcode()
+			{
+				window.open("./pages/zipcode.html", "zip", "width=400, height=400, left=100, top=100");
+			}
+
+			function popFirst()
+			{
+				window.open("./pages/openChild1st.html", "child1", "width=300, height=300, left=100, top=100");
+			}
+
+	</script>
+	</head>
+	<body>
+		<h2>여긴 부모창</h2>
+		<p style="text-alignLcenter;">
+			<button onclick="popClose();">팝업창닫기</button>
+		</p>
+
+		<fieldset>
+			<legend>우편번호</legend>
+			<table>
+				<tr>
+					<td>우편번호</td>
+					<td>
+					<input type="text" id="zipcode" maxlength="5" size="5" />
+					<button onclick="findZipcode();">우편번호찾기</button>
+					</td>
+				</tr>
+				<tr>
+					<td>기본주소</td>
+					<td>
+					<input type="text" id="addr1" size="30" />
+					</td>
+				</tr>
+				<tr>
+					<td>상세주소</td>
+					<td>
+					<input type="text" id="addr2" size="40" />
+					</td>
+				</tr>
+			</table>
+		</fieldset>
+
+		<h2>팝업의 팝업에서 부모창 제어하기</h2>
+		<button onclick="popFirst();">첫번째 팝업창 열기</button>
+	</body>
+</html>

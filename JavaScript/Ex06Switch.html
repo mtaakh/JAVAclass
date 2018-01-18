@@ -1,0 +1,46 @@
+<!-- Ex06Switch.html -->
+<!doctype html>
+<html lang="ko">
+	<head>
+	<meta charset="UTF-8">
+	<title>Switch</title>
+	<script type="text/javascript">
+	/*
+	switxh(식)
+		JAVA : 식이 정수값(byte/short/int/char)이 나올 수 있는 정수식(산술식)이거나 문자열(String)이어야 한다. long타입은 올 수 없음
+		JS : 모든 값이 나올 수 있는 식이 가능함. 즉 정수뿐만 아니라 실수, 논리값(true/false), 문자열도 가능
+	*/
+
+	var PI = 3.14;
+	switch(PI){ // JAVA X
+
+		case 3.0000014 : 
+		case 3.000014 :
+		case 3.00014 : 
+		case 3.0014 : 
+		case 3.014 : 
+		case 3.14 : 
+			document.write("PI는 3.14<br/>");
+			break;
+		default:
+			document.write("PI는 3.14가 아니다<br/>");
+	}
+	switch(10%2==0){ // JAVA X
+		case true : 
+			document.write("짝수다<br/>");
+		default : 
+			document.write("홀수다<br/>");
+	}
+	switch("자스"){ // JAVA O(JDK 7.0 이후부터 가능)
+			case "자바" : document.write("자바다<br/>"); break;
+			case "자스" : document.write("자스다<br/>"); break;
+			case "자수" : document.write("자수다<br/>"); break;
+
+	}
+
+	</script>
+	</head>
+	<body>
+	
+	</body>
+</html>

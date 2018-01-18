@@ -1,0 +1,34 @@
+<!-- prac_js05.html -->
+<!doctype html>
+<html lang="ko">
+	<head>
+	<meta charset="UTF-8">
+	<title>prac05</title>
+	<script type="text/javascript">
+		var askDay = function()
+		{
+			var day = prompt("월화수목금토일 중에서 입력하세요", "");
+
+			switch(day){
+					case "월" : return day+"는 출근"; break;
+					case "화" : return day+"는 출근"; break;
+					case "수" : return day+"는 출근"; break; break;
+					case "목" : return day+"는 출근"; break; break;
+
+					case "금" : return day+"는 휴일"; break;
+					case "토" : return day+"는 휴일"; break;
+					case "일" : return day+"는 휴일"; break;
+			}
+		}
+
+		document.write("<h2>월화수목금토일</h2>");
+		document.write("<hr />");
+
+		document.write(askDay());
+
+	</script>
+	</head>
+	<body>
+	
+	</body>
+</html>

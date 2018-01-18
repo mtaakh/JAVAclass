@@ -1,0 +1,111 @@
+<!-- Ex05ForWhile.html -->
+<!doctype html>
+<html lang="ko">
+	<head>
+	<meta charset="UTF-8">
+	<title>For, While</title>
+	<script type="text/javascript">
+	/*
+		Java : for문 안에서 선언된 변수는 for문을 벗어나면 소멸됨
+		Js : script태그 안에서 선언된 변수는 해당 페이지의 모든 영역에서 사용 가능
+
+		for(var 변수=초기값 ; 반복조건; 증감식){
+			반복조건이 참일때 실행할 문장
+		}
+	*/
+	for(var i=0; i<5; i++){
+		var varInFor = 100;
+		document.write("i="+i+"<br/>");
+		}
+		document.write("for문이 끝난 후의 i의 값: "+ i +"<br/>");
+
+		document.write("<h2>for문으로 출력</h2>");
+		/*
+		10000
+		01000
+		00100
+		00010
+		00001
+		위 모양을 for문으로 출력하시오
+
+		for(var i=0; i<5; i++)
+		{
+			for(var k=0; k<5; k++)
+			{
+				if(i==k) document.write("1&nbsp;");
+				else document.write("0&nbsp;");
+			}
+			document.write("<br/>");
+		}
+		*/
+		var numAr = new Array(0, 0, 0, 0, 0);
+		for(var i=0; i<5; i++){
+				numAr[i] = 1;
+			for(var j=0; j<numAr.length; j++) {
+				document.write(numAr[j]);
+				}
+			document.write("<br/>");
+			//numAr = [0, 0, 0, 0, 0];
+		}
+			document.write("<br/>");
+
+
+		document.write("<h2>while문으로 출력</h2>");
+		i=0;
+		while(i<5)
+		{
+			k=0;
+			while(k<5)
+			{
+				if(i==k)
+					document.write("0&nbsp;");
+				else
+				document.write("1&nbsp;");
+				
+				k++;
+			}
+			document.write("<br/>");
+			
+			i++;
+		}
+
+		document.write("<h2>구구단 출력하기</h2>");
+
+		var guguStr = ""; // 해당 변수는 string타입으로 결정
+
+		document.write("<table border='1'>");
+		guguStr = "<table border='1'>";
+		for(i=1; i<10; i++) // 곱해지는 수
+		{
+		document.write("<tr>");
+		guguStr = guguStr + "<tr>";
+			for(k=2; k<10; k++)
+			{
+				document.write("<td>"+k + "*" + i + "=" + i*k + "</td>");
+				guguStr += "<td>"+k + "*" + i + "=" + i*k + "</td>";
+			}
+		document.write("</tr>");
+		guguStr += "</tr>";
+		}
+
+		document.write("</table>");
+		guguStr += "</table>";
+
+
+	</script>
+	</head>
+	<body>
+	
+		<script type="text/javascript">
+			document.write("i의 값: "+ i + ", varInFor의 값: " + varInFor);
+		</script>
+
+		<div>
+		<span id="here_gugu">여기에도 구구단을 출력해봅시다</span>
+		</div>
+		<script type="text/javascript">
+		
+		document.getElementById("here_gugu").innerHTML = guguStr;
+		</script>
+	</body>
+</html>

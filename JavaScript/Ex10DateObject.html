@@ -1,0 +1,97 @@
+<!-- Ex10DateObject.html -->
+<!doctype html>
+<html lang="ko">
+	<head>
+	<meta charset="UTF-8">
+	<title>Core객체 > Date</title>
+	<script type="text/javascript">
+	/*
+	Date객체
+		var 변수명 = new Date();
+
+		날짜 정보를 가져올때는 getXXXX() 계열 함수 사용
+		날짜를 설정할때는 setXXXX() 계열 함수 사용
+	*/
+
+		//1. Date객체 얻기 방법1
+		var date = new Date();
+		document.write("자료형"+typeof(date) + "<br/>");
+		document.write("저장된값: "+ date +"<br/>");
+		document.write("date에 저장된 연도: "+ (date.getYear() + 1900) + "<br/>");
+
+		/*
+		년도 구하는 함수 구현하기
+		브라우저 IE9.0 이상 및 기타 브라우저 : getYear() + 1900
+		IE 8.0 이하 : getYear() (1900 안더해도 됨)
+		*/
+
+/* 브라우저 종류 알아내기
+document.write("브라우저 종류 : "+navigator.userAgent);
+*/
+		var getYearByBrowser = function(date){
+
+			var browser = navigator.userAgent.toUpperCase();
+			if(browser.indexOf("MSIE")==-1){
+				return date.getYear() + 1900;
+			}
+			else if(browser.indexOf("MSIE 6.0")!=-1 || 
+					browser.indexOf("MSIE 7.0")!=-1 || 
+					browser.indexOf("MSIE 8.0")!=-1) 
+					{
+						return getYear();
+					}
+			else {
+				return date.getYear() + 1900;
+			}
+		}
+		document.write("연도 구하는 함수 호출: "+ getYearByBrowser(date) + "년<br/>");
+
+		//getMonth()는 0~11까지 반환하므로 +1을 해줘야 한다.
+		document.write((date.getMonth()+1) + "월 " + date.getDate() + "일 " + date.getHours() + "시 " + date.getMinutes() + "분" + date.getSeconds() + "초<br/>");
+
+		//1-2. Date객체 얻는 방법2 : 월은 0~11 사이의 값을 입력.
+		var another = new Date(2002, 5, 22, 14, 30, 50);
+		document.write("<h2>2002, 5, 22, 14, 30, 50 설정 후</h2>");
+		document.write(getYearByBrowser(another) + "년 " + (another.getMonth()+1) + "월 " + another.getDate() + "일 " + 
+						another.getHours() + "시 " + another.getMinutes() + "분 " + another.getSeconds() + "초<br/>");
+
+		//2. setXXXX() 함수로 날짜 변경
+		another.setMonth(9); // 월 설정
+		another.setDate(10); // 일 설정
+		another.setHours(13); // 시간 설정
+		document.write("<h2>월/일/시간만 변경 후</h2>");
+		
+		document.write(getYearByBrowser(another) + "년 " + (another.getMonth()+1) + "월 " + another.getDate() + "일 " + 
+						another.getHours() + "시 " + another.getMinutes() + "분 " + another.getSeconds() + "초<br/>");
+
+		//3. 요일 얻기 : 일(0), 월(1), .... 토(5)
+		document.write("<h2>요일 얻기</h2>");
+		switch(date.getDay())
+		{
+			case 0: document.write("일요일<br/>"); break;
+			case 1: document.write("월요일<br/>"); break;
+			case 2: document.write("화요일<br/>"); break;
+			case 3: document.write("수요일<br/>"); break;
+			case 4: document.write("목요일<br/>"); break;
+			case 5: document.write("금요일<br/>"); break;
+			case 6: document.write("토요일<br/>"); break;
+		}
+
+		//4. 두 날짜 사이의 차이 구하기
+		/*
+		getTime() : 1970년 1월 1일 0시0분0초부터 특정일가지 흘러온 시간을 1/1000초 단위로 반환함
+		*/
+		document.write("<h2>크리스마스까지 남은 날짜 얻기</h2>");
+
+		var startDate = new Date(2017, 4, 24); // 오늘날짜 : 5/24 세팅
+		var endDate = new Date(2017, 11, 25); // 크리스마스
+		var diff = endDate.getTime() - startDate.getTime();
+		document.write("크리스마스까지 남은 날짜 : "+ diff / (1000*60*60*24) + "일");
+
+
+	</script>
+	</head>
+	<body>
+	
+	</body>
+</html>
