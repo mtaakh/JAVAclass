@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<!-- 
+	부트스트랩(BootStrap)
+	: 부트스트랩은 웹에서 반응형웹 페이지를 개발하기 위해 가장 널리 사용되는 HTML,CSS,JS프레임워크 이다.
+	
+	배포사이트 : http://getbootstrap.com/
+	한글사이트 : http://bootstrapk.com/
+	2017-07-17 현재 currently v3.3.7
+	
+	
+뷰포트 : 
+	width=device-width : 장치의 화면폭에 따라 페이지의 폭을 설정함(기기에 따라 다름)
+	device-width는 100% 스케일에서 CSS 픽셀들로 계산된 화면의 폭을 의미함
+	
+	initial-scale=1 :  페이지가 처음 브라우저에 의해 로드된 초기 줌 레벨을 설정함(초기확대값)
+ -->
+<meta name="viewport" content="with=device-width, initial-scale=1" />
+<title>Bs01BasicBootstrap.html</title>
+<!-- CDN(Content Delivery Network)방식으로 부트스트랩 사용 -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- External 방식으로 부트스트랩 사용 -->
+<!-- 
+<link rel="stylesheet" href="./bootstrap3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="./bootstrap3.3.7/css/bootstrap-theme.min.css">
+<script src="./bootstrap3.3.7/js/bootstrap.min.js"></script> -->
+</head>
+<body>
+<!-- 
+	부트스트랩에는 사이트 컨텐츠를 감싸기 위해 container 요소가 필요하다.
+	다음의 두가지 컨테이너 클래스가 있음
+	
+	.container : 고정폭 컨테이너
+	.container-fluid : 뷰포트의 전체폭에 펼쳐진 전체 폭 컨테이너
+ -->
+<div class="container">
+	<h1>My First Bootstrap page</h1>
+	<p>.container 클래스는 반응형 고정 폭 컨테이너를 제공합니다.</p>
+</div>
+
+<div class="container-fluid">
+	<h2></h2>
+	<p>.container-fluid 클래스는 뷰포트의 전체폭에 펼쳐진 전체 폭 컨테이너를 제공합니다.</p>
+</div>
+</body>
+</html>

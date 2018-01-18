@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="with=device-width, initial-scale=1" />
+<link rel="stylesheet" href="./bootstrap3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="./bootstrap3.3.7/js/bootstrap.min.js"></script>
+
+<title>Bs04Image.html</title>
+</head>
+<body>
+<div class="container-fluid">
+	<h2>이미지</h2>
+	
+	<div class="row">
+		<!-- 가장자리 부분을 둥글게 처리 -->
+		<h2>.img-rounded 클래스</h2>
+		<img src="./images/cinqueterre.jpg" class="img-rounded" width="304" height="236" />
+	</div>
+	<div class="row">
+		<!-- 이미지를 원형으로 처리 -->
+		<h2>.img-circle 클래스</h2>
+		<img src="./images/fjords.jpg" class="img-circle" width="304" height="236" />
+	</div>
+	<div class="row">
+		<!-- 이미지 가장자리에 얇은 보더로 감싸기 -->
+		<h2>.img-thumbnail 클래스</h2>
+		<img src="./images/nature.jpg" class="img-thumbnail" width="304" height="236" />
+	</div>
+	<div class="row">
+		<!-- 화면 사이즈에 맞게 이미지 크기 변화 -->
+		<h2>.img-responsive 클래스</h2>
+		<img src="./images/img_chania.jpg" class="img-responsive" />
+	</div>
+	
+	<h2>갤러리 만들기</h2>
+	<div class="row">
+		<div class="col-sm-4">
+			<div class="thumbnail">
+			<a href="./images/lights.jpg" target="_blank">
+				<img src="./images/lights.jpg" style="width:100%;" />
+				<div class="caption">
+					<p>이미지 설명이 들어갑니다.</p>
+				</div>
+			</a>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="thumbnail">
+			<a href="./images/lights.jpg" target="_blank">
+				<img src="./images/nature.jpg" style="width:100%;" />
+				<div class="caption">
+					<p>이미지 설명이 들어갑니다.</p>
+				</div>
+			</a>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="thumbnail">
+			<a href="./images/lights.jpg" target="_blank">
+				<img src="./images/fjords.jpg" style="width:100%;" />
+				<div class="caption">
+					<p>이미지 설명이 들어갑니다.</p>
+				</div>
+			</a>
+			</div>
+		</div>
+	</div>
+	
+	
+</div>
+</body>
+</html>

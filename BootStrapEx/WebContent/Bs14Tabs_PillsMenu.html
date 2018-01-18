@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="with=device-width, initial-scale=1" />
+<link rel="stylesheet" href="./bootstrap3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="./bootstrap3.3.7/js/bootstrap.min.js"></script>
+<title>Bs14Tabs_PillsMenu.html</title>
+</head>
+<body>
+<div class="container-fluid">
+
+	<h2>탭 형태의 드롭다운 메뉴(탭메뉴)</h2>
+	<!-- active : 메뉴가 선택되어진 상태로 표현함. <li class="">에 입력 
+	jsp 코드로 만드는법:
+	<%
+	menu=1;
+	if(menu==1) at1 = "active";
+	if(menu==2) at2 = "active";
+	%>
+	-->
+	<ul class="nav nav-tabs">
+		<li class="active"><a href="#">홈으로</a></li>
+		<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown">대메뉴1 <span class="caret"></span></a>
+			<ul class="dropdown-menu">
+				<li><a href="#">하위메뉴1</a></li>
+				<li><a href="#">하위메뉴2</a></li>
+				<li><a href="#">하위메뉴3</a></li>
+			</ul>
+		</li>
+		<li><a href="#">대메뉴2</a></li>
+		<li><a href="#">대메뉴3</a></li>
+	</ul>
+
+<hr />
+
+	<h2>동적 탭메뉴</h2>
+	<ul class="nav nav-tabs">
+		<li class="active"><a href="#home" data-toggle="tab">HOME</a></li>
+		<li><a href="#menu1" data-toggle="tab">메뉴1</a></li>
+		<li><a href="#menu2" data-toggle="tab">메뉴2</a></li>
+		<li><a href="#menu3" data-toggle="tab">메뉴3</a></li>
+	</ul>
+	<div class="tab-content">
+		<div id="home" class="tab-panel fade in active">
+			<h3>HOME</h3>
+			<p>HOME 영역입니다.</p>
+		</div>
+		<div id="menu1" class="tab-panel fade">
+			<h3>메뉴1</h3>
+			<p>메뉴1 영역입니다.</p>
+		</div>
+		<div id="menu2" class="tab-panel fade">
+			<h3>메뉴</h3>
+			<p>메뉴2 영역입니다.</p>
+		</div>
+		<div id="menu3" class="tab-panel fade">
+			<h3>메뉴3</h3>
+			<p>메뉴3 영역입니다.</p>
+		</div>
+	</div>
+
+<hr />
+
+	<h2>동적 Pills메뉴</h2>
+	<ul class="nav nav-pills">
+		<li class="active"><a href="#p_home" data-toggle="pill">HOME</a></li>
+		<li><a href="#p_menu1" data-toggle="pill">메뉴1</a></li>
+		<li><a href="#p_menu2" data-toggle="pill">메뉴2</a></li>
+		<li><a href="#p_menu3" data-toggle="pill">메뉴3</a></li>
+	</ul>
+	<div class="tab-content">
+		<div id="p_home" class="tab-panel fade in active">
+			<h3>HOME</h3>
+			<p>HOME 영역입니다.</p>
+		</div>
+		<div id="p_menu1" class="tab-panel fade">
+			<h3>메뉴1</h3>
+			<p>메뉴1 영역입니다.</p>
+		</div>
+		<div id="p_menu2" class="tab-panel fade">
+			<h3>메뉴</h3>
+			<p>메뉴2 영역입니다.</p>
+		</div>
+		<div id="p_menu3" class="tab-panel fade">
+			<h3>메뉴3</h3>
+			<p>메뉴3 영역입니다.</p>
+		</div>
+	</div>
+
+<hr />
+	
+	<h2>수직형 Pills 메뉴</h2>
+	<ul class="nav nav-pills nav-stacked">
+		<li class="active"><a href="#">HOME</a></li>
+		<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown">메뉴1 <span class="caret"></span></a>
+			<ul class="dropdown-menu">
+				<li><a href="#">서브메뉴1</a></li>
+				<li><a href="#">서브메뉴2</a></li>
+				<li><a href="#">서브메뉴3</a></li>
+			</ul>
+		</li>
+		<li><a href="#">메뉴2</a></li>
+		<li><a href="#">메뉴3</a></li>
+	</ul>
+	
+	<p style="margin:100px;">&nbsp;</p>
+
+
+</div>
+</body>
+</html>

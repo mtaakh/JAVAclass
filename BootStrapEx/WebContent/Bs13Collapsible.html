@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="with=device-width, initial-scale=1" />
+<link rel="stylesheet" href="./bootstrap3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="./bootstrap3.3.7/js/bootstrap.min.js"></script>
+<title>Bs13Collapsible.html</title>
+</head>
+<body>
+	<div class="container-fluid">
+		<h2>Simple Collapsible(접을 수 있는 레이어)</h2>
+		
+		<p>버튼을 클릭하면 내용을 보임/숨김 처리할 수 있다.</p>
+		<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">내용 보임/숨김 토글</button>
+		<div id="demo" class="collapse">
+			[헤럴드경제=유재훈 기자] ‘대기업 저격수’로 불리며 시장의 관심을 한몸에 받아온 김상조 공정거래위원장이 취임한 지 한 달을 넘기면서 개혁을 위한 ‘완급조절’에 들어갔다. <br />
+		지난 20년간 시민사회단체에 몸담으며 대기업의 지배구조 개선과 불법 경영승계를 강하게 지적하고, 이에 날선 비판을 쏟아 온 김 위원장의 행보에 재계와 시장은 여전히 촉각을 곤두세우고 있다. <br />
+		</div>
+		
+		<h2>Collapsible Panel(접을 수 있는 패널)</h2>
+		<p>버튼을 클릭하면 패널을 보임/숨김 처리할 수 있다</p>
+		<div class="panel-group">
+			<div class="panel panel-default">
+				<h4 class="panel-title">
+					<a href="#collapse1" data-toggle="collapse" style="padding:10px;">접을 수 있는 패널</a>
+				</h4>
+			</div>
+			<div id="collapse1" class="panel-collapse collapse">
+				<div class="panel-body">패널 body</div>
+				<div class="panel-footer">패널 footer</div>
+			</div>
+		</div>
+		
+		<h2>아코디언(Accordion) 예제</h2>
+		<div class="panel-group" id="accordion">
+			
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a href="#collapseAcc1" data-toggle="collapse" data-parent="#accordion">아코디언메뉴1</a>
+					</h4>
+				</div>
+				<div id="collapseAcc1" class="pannel-collapse collapse in">
+					<div class="panel-body">
+						아코디언메뉴1의 내용<br />
+						href="#collapseAcc1" 과 id="collapseAcc1" 을 매칭시킴
+					</div>
+				</div>
+			</div>
+		
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a href="#collapseAcc2" data-toggle="collapse" data-parent="#accordion">아코디언메뉴2</a>
+					</h4>
+				</div>
+				<div id="collapseAcc2" class="pannel-collapse collapse">
+					<div class="panel-body">
+						아코디언메뉴2의 내용<br />
+						href="#collapseAcc2" 과 id="collapseAcc2" 을 매칭시킴
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a href="#collapseAcc3" data-toggle="collapse" data-parent="#accordion">아코디언메뉴3</a>
+					</h4>
+				</div>
+				<div id="collapseAcc3" class="pannel-collapse collapse">
+					<div class="panel-body">
+						아코디언메뉴3의 내용<br />
+						href="#collapseAcc3" 과 id="collapseAcc3" 을 매칭시킴<br />
+						<code>pannel-collapse collapse in</code> : 아코디언이 열린 상태<br />
+						<code>pannel-collapse collapse</code> : 아코디언이 닫힌 상태<br />
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	
+	</div>
+</body>
+</html>

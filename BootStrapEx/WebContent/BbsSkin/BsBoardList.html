@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="with=device-width, initial-scale=1" />
+<link rel="stylesheet" href="../bootstrap3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="../bootstrap3.3.7/js/bootstrap.min.js"></script>
+<title>BsBoardList.html</title>
+<style>
+	div{border:0px solid #000000;}
+</style>
+<script>
+	function searchFrmChk()
+	{
+		alert("검색");
+	}
+</script>
+</head>
+<body>
+<div class="container-fluid">
+	<!-- 상단 s -->
+	<div class="row">
+				
+		<nav class="navbar navbar-inverse"><!-- navbar-fixed-top -->
+			<div class="container-fluid">
+			
+				<!-- 좌상단 로고 영역 -->
+				<div class="navbar-header">
+					<a href="#" class="navbar-brand">JAVA26기</a>
+				</div>
+				<!-- 메뉴 부분 -->
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#">홈으로</a></li>
+					<li><a href="#"></a>JAVA</li>
+					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
+						웹표준 <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="#">HTML</a></li>
+							<li><a href="#">CSS</a></li>
+							<li><a href="#">JavaScript</a></li>
+						</ul>
+					</li>
+					<li><a href="#">Oracle</a></li>
+					<li><a href="#">JSP</a></li>
+				</ul>
+				
+				<!-- 검색폼 -->
+				<form action="" class="navbar-form navbar-left">
+					<div class="input-group">
+					<input type="text" class="form-control" placeholder="검색" />
+					<div class="input-group-btn">
+						<button class="btn btn-default">
+							<i class="glyphicon glyphicon-search"></i>
+						</button>
+					</div>
+					</div>
+				</form>
+				
+				<!-- 우측메뉴 -->
+				<ul class="nav navbar-nav navbar-right">
+				<!-- 비회원상태 -->
+				<!-- 	<li><a href="#"><span class="glyphicon glyphicon-user"></span>회원가입</a></li>
+					<li><a href="#"><span class="glyphicon glyphicon-log-in"></span>로그인</a></li> -->
+				<!-- 회원상태 -->
+					<li><a href="#"><span class="glyphicon glyphicon-cog"></span> 회원정보수정</a></li>
+					<li><a href="#"><span class="glyphicon glyphicon-log-out"></span> 로그아웃</a></li>
+				</ul>
+				
+			</div>	
+		</nav>
+		
+	</div>
+	<!-- 상단 e -->
+	
+	<div class="row">
+	<!-- 좌측메뉴 s -->
+	<div class="col-sm-3">
+		<ul class="nav nav-pills nav-stacked">
+		<li style="height:100px; padding-top:20px; text-align:center; background-color:#000066; color:#FFFFFF;">
+			<h3>Project-B</h3>
+		</li>
+		  <li class="active"><a href="#">Home</a></li>
+		  <li><a href="#">회원제 게시판</a></li>
+		  <li><a href="#">비회원 게시판</a></li>
+		  <li><a href="#">답변형 게시판</a></li>
+		  <li><a href="#">첨부형 게시판</a></li>
+		</ul>
+	</div>
+  	<!-- 좌측메뉴 e -->
+  	
+  	<!-- 본문 s -->
+	<div class="col-sm-9">
+		<h3>회원제 게시판 - <small>회원만 작성할 수 있는 게시판입니다.</small></h3>
+		<div class="row" style="text-align:right; padding-right:15px;">
+		<!-- 게시판 검색 폼 -->
+		<form action="" class="form-inline" name="searchFrm" method="get" onsubmit="return searchFrmChk();">
+			<div class="form-group">
+				<select name="" class="form-control">
+					<option value="">제목</option>
+					<option value="">작성자</option>
+					<option value="">내용</option>
+				</select>
+			</div>
+			<div class="input-group">
+				<input type="text" name="" class="form-control" placeholder="검색어입력" />
+				<div class="input-group-btn">
+					<button class="btn btn-default" type="submit">
+						<i class="glyphicon glyphicon-search"></i>
+					</button>
+				</div>
+			</div>
+		</form>
+		
+		<!-- 게시판리스트 -->
+		<table class="table table-bordered table-hover">
+			<colgroup>
+				<col width="80px" />
+				<col width="*" />
+				<col width="120px" />
+				<col width="100px" />
+				<col width="80px" />
+			</colgroup>
+			<thead>
+			<tr class="success">
+				<th class="text-center">번호</th>
+				<th class="text-center">제목</th>
+				<th class="text-center">작성자</th>
+				<th class="text-center">작성일</th>
+				<th class="text-center">조회수</th>
+			</tr>
+			</thead>
+			
+			<tbody>
+			<tr>
+				<td class="text-center">10</td>
+				<td class="text-left">게시판 제목은 제목일뿐,, <span class="badge">10</span></td>
+				<td class="text-center">홍길동</td>
+				<td class="text-center">17-10-24</td>
+				<td class="text-center">99</td>
+			</tr>
+			<tr>
+				<td class="text-center">10</td>
+				<td class="text-left">게시판 제목은 제목일뿐,,</td>
+				<td class="text-center">홍길동</td>
+				<td class="text-center">17-10-24</td>
+				<td class="text-center">99</td>
+			</tr>
+			<tr>
+				<td class="text-center">10</td>
+				<td class="text-left">게시판 제목은 제목일뿐,,</td>
+				<td class="text-center">홍길동</td>
+				<td class="text-center">17-10-24</td>
+				<td class="text-center">99</td>
+			</tr>
+			<tr>
+				<td class="text-center">10</td>
+				<td class="text-left">게시판 제목은 제목일뿐,,</td>
+				<td class="text-center">홍길동</td>
+				<td class="text-center">17-10-24</td>
+				<td class="text-center">99</td>
+			</tr>
+			<tr>
+				<td class="text-center">10</td>
+				<td class="text-left">게시판 제목은 제목일뿐,,</td>
+				<td class="text-center">홍길동</td>
+				<td class="text-center">17-10-24</td>
+				<td class="text-center">99</td>
+			</tr>
+			<tr>
+				<td class="text-center">10</td>
+				<td class="text-left">게시판 제목은 제목일뿐,,</td>
+				<td class="text-center">홍길동</td>
+				<td class="text-center">17-10-24</td>
+				<td class="text-center">99</td>
+			</tr>
+			<tr>
+				<td class="text-center">10</td>
+				<td class="text-left">게시판 제목은 제목일뿐,,</td>
+				<td class="text-center">홍길동</td>
+				<td class="text-center">17-10-24</td>
+				<td class="text-center">99</td>
+			</tr>
+			<tr>
+				<td class="text-center">10</td>
+				<td class="text-left">게시판 제목은 제목일뿐,,</td>
+				<td class="text-center">홍길동</td>
+				<td class="text-center">17-10-24</td>
+				<td class="text-center">99</td>
+			</tr>
+			<tr>
+				<td class="text-center">10</td>
+				<td class="text-left">게시판 제목은 제목일뿐,,</td>
+				<td class="text-center">홍길동</td>
+				<td class="text-center">17-10-24</td>
+				<td class="text-center">99</td>
+			</tr>
+			</tbody>
+		</table>
+		
+		<!-- 버튼 -->
+		<div class="row" style="padding-right:15px;">
+			<button type="button" class="btn btn-default" onclick="">리셋하기</button>
+			<button type="button" class="btn btn-danger" onclick="">답글달기</button>
+			<button type="button" class="btn btn-primary" onclick="">수정하기</button>
+			<button type="button" class="btn btn-success" onclick="">삭제하기</button>
+			<button type="button" class="btn btn-info" onclick="">리스트보기</button>
+			<button type="button" class="btn btn-warning" onclick="">글쓰기</button>
+		</div>
+		
+		<!-- 페이지번호 -->
+		<div class="row text-center">
+		<ul class="pagination pagination">
+			<li><a href="#"><span class="glyphicon glyphicon-chevron-left"></span></a></li>
+			<li><a href="#">1</a></li>
+			<li><a href="#">2</a></li>
+			<li><a href="#">3</a></li>
+			<li><a href="#">4</a></li>
+			<li><a href="#">5</a></li>
+			<li><a href="#"><span class="glyphicon glyphicon-chevron-right"></span></a></li>
+		</ul>
+		</div>
+		</div>
+	</div>
+	<!-- 본문 e -->
+	</div>
+	<div class="row" style="height:70px; background-color:#dbdbdb; padding:10px 0;">
+		<div class="col-sm-4">
+			<h3>LMY&trade;</h3>
+		</div>
+		<div class="col-sm-8 text-center">
+			Email : leemy1224@naver.com&nbsp;&nbsp;
+			Address : 서울시 금천구 가산동 &nbsp;&nbsp;
+			Mobile : 010-9998-0466&nbsp;&nbsp;
+			<br />
+			Copyright 2017 (주)한국소프트웨어아이엔씨. All right reserved.
+		</div>
+	</div>
+	
+</div>
+</body>
+</html>

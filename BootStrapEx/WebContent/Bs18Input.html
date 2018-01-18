@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="with=device-width, initial-scale=1" />
+<link rel="stylesheet" href="./bootstrap3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="./bootstrap3.3.7/js/bootstrap.min.js"></script>
+<title>Bs18Input.html</title>
+</head>
+<body>
+<div class="container-fluid">
+	<h2>다양한 Input 사용하기</h2>
+	<form>
+		<!-- input -->
+	<div class="form-group">
+		<label for="usr">이름:</label>
+		<input type="text" class="form-control" id="usr" />
+	</div>
+	<div class="form-group">
+		<label for="pwd">비밀번호:</label>
+		<input type="password" class="form-control" id="pwd" />
+	</div>
+	
+	<!-- textarea -->
+	<div class="form-group">
+		<label for="comment">내용:</label>
+		<textarea name="" id="comment" cols="30" rows="5" class="form-control"></textarea>
+	</div>
+	
+	<!-- checkbox : 인라인 형태로 표시할땐 checkbox-inline 클래스 -->
+	<div class="checkbox">
+		<label><input type="checkbox" name="inter" />스포츠</label>
+	</div>
+	<div class="checkbox">
+		<label><input type="checkbox" name="inter" />영화</label>
+	</div>
+	<div class="checkbox">
+		<label><input type="checkbox" name="inter" disabled />수상레저</label>
+	</div>
+	
+	<!-- radio -->
+	<label class="radio-inline">
+		<input type="radio" name="opt" />강아지
+	</label>
+	<label class="radio-inline">
+		<input type="radio" name="opt" />고양이
+	</label>
+	<label class="radio-inline">
+		<input type="radio" name="opt" />햄스터
+	</label>
+	
+	<!-- select -->
+	<div class="form-group">
+		<label for="sel1">학력:</label>
+		<select name="" id="sel1" class="form-control">
+			<option value="초딩">초딩</option>
+			<option value="중딩">중딩</option>
+			<option value="고딩">고딩</option>
+			<option value="대딩">대딩</option>
+		</select>
+	</div>
+	
+	</form>
+	
+
+</div>
+</body>
+</html>

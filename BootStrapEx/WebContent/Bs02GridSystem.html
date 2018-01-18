@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="with=device-width, initial-scale=1" />
+<!-- CDN(Content Delivery Network)방식으로 부트스트랩 사용 -->
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+
+<!-- External 방식으로 부트스트랩 사용 -->
+<link rel="stylesheet" href="./bootstrap3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="./bootstrap3.3.7/js/bootstrap.min.js"></script>
+
+<title>Bs02GridSystem.html</title>
+
+<style>
+	div{height:50px; margin:0 0 20px 0;}
+</style>
+</head>
+<body>
+<div class="container-fluid">
+	<h1>부트스트랩 그리드 시스템</h1>
+	<p><pre>
+		부트스트랩의 그리드 시스템은 페이지 전체에 12개의 컬럼을 지원한다.
+		12개의 열을 개별적으로 사용하지 않으려면 열을 그룹화하여 더 넓은 열을 만들 수 있다.
+		그리드 시스템에는 다음 4가지 클래스가 있다.
+			xs(for phones)
+			sm(for tablets)
+			md(for desktops)
+			lg(for larger desktops)
+	</pre></p>
+	
+	<div class="row">
+	<!-- 하나의 레이어를 작성할땐 rpw 클래스를 이용한ㄷ가
+	12개의 그리드를ㄹ 내가 원하는 형태로 나눠서 사용할때는 col-xx -컬럼크기 형태로 사련하념 된다.
+		*xx : 디바이스에 따라 가지로 분류함
+		컬럼크기 : 1~ㅂ2개ㅡ이 숫자를 이용함  -->
+		<div class="col-sm-4 .col-md-4" style="background-color:red;">.col-sm-4</div>
+		<div class="col-sm-4 .col-md-4" style="background-color:blue;">.col-sm-4</div>
+		<div class="col-sm-4 .col-md-4" style="background-color:green;">.col-sm-4</div>
+	</div>
+	
+	<div class="row">
+		<div class="col-md-4" style="background-color:blue;">나는 컬럼 4개짜리</div>
+		<div class="col-lg-8" style="background-color:red;">나는 컬럼 8개짜리</div>
+	</div>
+</div>
+</body>
+</html>

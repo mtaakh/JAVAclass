@@ -1,0 +1,218 @@
+<!DOCTYPE html> 	
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="with=device-width, initial-scale=1" />
+<link rel="stylesheet" href="./bootstrap3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="./bootstrap3.3.7/js/bootstrap.min.js"></script>
+
+<title>Bs03Table.html</title>
+</head>
+<body>
+<div class="container-fluid">
+	<h2>기본테이블</h2>
+		<table class="table">
+		<thead>
+			<tr>
+				<td>No</td>
+				<td>제목</td>
+				<td>날짜</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>1</td>
+				<td>제목은 제목일뿐</td>
+				<td>17/01/01</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>오늘은 엄청 더운 날씨네요</td>
+				<td>17/07/17</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>35층 초고층 주상복합 랜드마크</td>
+				<td>17/10/24</td>
+			</tr>
+		</tbody>
+		</table>
+	<h2>줄무늬가 있는 테이블</h2>
+		<table class="table table-striped">
+		<thead>
+			<tr>
+				<td>No</td>
+				<td>제목</td>
+				<td>날짜</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>1</td>
+				<td>제목은 제목일뿐</td>
+				<td>17/01/01</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>오늘은 엄청 더운 날씨네요</td>
+				<td>17/07/17</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>35층 초고층 주상복합 랜드마크</td>
+				<td>17/10/24</td>
+			</tr>
+		</tbody>
+		</table>
+	<h2>보더(border)가 있는 테이블</h2>
+		<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>No</th>
+				<th>제목</th>
+				<th>날짜</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>1</td>
+				<td>제목은 제목일뿐</td>
+				<td>17/01/01</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>오늘은 엄청 더운 날씨네요</td>
+				<td>17/07/17</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>35층 초고층 주상복합 랜드마크</td>
+				<td>17/10/24</td>
+			</tr>
+		</tbody>
+		</table>
+	<h2>마우스오버(hover)가 있는 테이블</h2>
+		<table class="table table-hover">
+		<thead>
+			<tr>
+				<th>No</th>
+				<th>제목</th>
+				<th>날짜</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>1</td>
+				<td>제목은 제목일뿐</td>
+				<td>17/01/01</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>오늘은 엄청 더운 날씨네요</td>
+				<td>17/07/17</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>35층 초고층 주상복합 랜드마크</td>
+				<td>17/10/24</td>
+			</tr>
+		</tbody>
+		</table>
+		
+	<h2>보더,마우스오버,줄무늬가 있는 테이블</h2>
+		<table class="table table-bordered table-hover table-striped">
+		<thead>
+			<tr>
+				<th>No</th>
+				<th>제목</th>
+				<th>날짜</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>1</td>
+				<td>제목은 제목일뿐</td>
+				<td>17/01/01</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>오늘은 엄청 더운 날씨네요</td>
+				<td>17/07/17</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>35층 초고층 주상복합 랜드마크</td>
+				<td>17/10/24</td>
+			</tr>
+		</tbody>
+		</table>
+	<h2>테이블에 사용할 수 있는 클래스 종류</h2>
+		<table class="table">
+		<tbody>
+			<tr>
+				<td>1</td>
+				<td>.default</td>
+				<td>17/01/01</td>
+			</tr>
+			<tr class="success">
+				<td>2</td>
+				<td>.success</td>
+				<td>17/07/17</td>
+			</tr>
+			<tr class="danger">
+				<td>3</td>
+				<td>.danger</td>
+				<td>17/10/24</td>
+			</tr>
+			<tr class="info">
+				<td>4</td>
+				<td>.info</td>
+				<td>17/10/24</td>
+			</tr>
+			<tr class="warning">
+				<td>5</td>
+				<td>.warning</td>
+				<td>17/10/24</td>
+			</tr>
+			<tr class="active">
+				<td>6</td>
+				<td>.active</td>
+				<td>17/10/24</td>
+			</tr>
+		</tbody>
+		</table>
+	<h2>반응형 테이블</h2>
+	<h4>반응형 테이블은 768px미만의 장치에서는 가로스클로이 생긴다.
+	768px보다 큰 디바이스에서는 차이점이 없다.</h4>
+		<div class="table-resopnsive">
+		<table class="table">
+		<thead>
+			<tr>
+				<th>No</th>
+				<th>제목</th>
+				<th>날짜</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>1</td>
+				<td>제목은 제목일뿐</td>
+				<td>17/01/01</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>오늘은 엄청 더운 날씨네요</td>
+				<td>17/07/17</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>35층 초고층 주상복합 랜드마크</td>
+				<td>17/10/24</td>
+			</tr>
+		</tbody>
+		</table>
+	</div>
+</div>
+</body>
+</html>
