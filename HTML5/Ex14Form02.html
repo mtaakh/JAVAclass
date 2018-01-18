@@ -1,0 +1,227 @@
+<!-- Ex14Form02.html -->
+<!doctype html>
+<html lang="ko">
+	<head>
+	<meta charset="UTF-8">
+	<title>Form 하위요소 사용하기</title>
+	</head>
+	<body>
+	<!-- 
+	input 태그 : form 태그의 하위요소로 type 속성에 다양한 값을 지정함으로서 여러 가지 형태의 모양을 만들어 사용자로부터 입력이나 선택을 받을 수 있는 태그
+
+	주요속성 : 
+		- type : 모양을 나타내는 값 지정(text, password, checkbox, radio 등)
+			*text : 한줄 입력상자
+			*password : 패스워드 입력시 입력값이 노출되지 않게(****나 ....형태로 보임) 입력받음
+			*checkbox : 여러개 선택가능한 체크박스 표시
+				이미 체크된 상태를 미리 보여줄때는 checked="checked" 속성 추가
+			*radio : 하나만 선택 가능한 라디오박스 표시
+				이미 선택된 박스를 보여줄때는 checked="checked" 속성 추가
+			*hidden : 값을 웹브라우저에 표시하지 않고 숨긴 상태로 전송하고자 할 때 사용
+				ㅡ입력창 자체가 브라우저에 보이지 않음(웹사이트 제작시 굉장히 많이 사용)
+
+		- 아래는 버튼 모양
+			*submit : 값을 전송(submit)할때 사용
+			*reset : 값을 초기화할때 사용
+			*image : 버튼을 이미지를 이용해 만들때 사용. 기능은 submit과 동일
+			*button : 버튼모양을 표시할때 사용. 클릭했을대 아무런 액션도 일어나지 않음. 액션은 주로 javascript를 정의해서 사용함
+			*file : 파일 찾아보기 버튼과 한줄입력 상자가 표시됨. 주로 첨부파일이 있을때 사용함
+
+	select 태그 : 여러개의 목록 중 하나를 선택하게 할 때 사용하는 태그. 하위 태그로 option을 가짐
+				  미리 선택된 목록을 표시하기 위해서는 selected="selected" 속성 추가
+
+	textarea 태그 : 여러줄 입력상자. 시작태그와 종료태그 사이에 입력값을 넣어주면 입력상자에 표시됨.	주로 게시판에서 내용을 입력할 때 사용함
+					단, 사용자가 입력한 값을 가져올 때는 value 속성을 이용.		cols, rows 속성으로 크기를 지정함
+
+
+	공통속성 : 
+		- name : 값을 전송할때 입력값을 구분하기 위한 이름을 지정
+		 -value : 사용자가 입력한 값이 저장되는 속성 혹은 값을 미리 지정할때 사용. 주로 정보수정할때 사용함
+
+		Inline Element
+
+		#참고1 : 값을 전송하려면 반드시 name 속성을 지정해야 함
+		chechbox나 radio 계열을 제외하고는 name속성을 다르게 지정해야 한다
+
+		#참고2 : radio 및 checkbox는 반드시 value 속성에 값을 지정해야 선택된 값이 전송된다.
+				그리고 name 속성은 같은 그룹으로 묶기 위해서 name은 동일하게 지정해야 함
+
+		#참고3 : 모든 태그는 id 속성을 가질 수 있다. 단, 한페이지 내에서 id값은 중복될 수 없다
+	-->
+
+	<h2>form의 하위(자식) 태그들</h2>
+	<h3>input 계열의 type="text"</h3>
+
+	<!-- 
+	한줄입력상자
+	주요속성 : 
+		size : 한줄입력 상자의 크기 지정(영문/숫자 기준)
+		maxlength : 최대 입력할 수 있는 글자수 지정
+		value : 사용자가 입력한 값이 저장되는 속성
+		disable : 비활성화(입력,수정 아무것도 할 수 없음), 폼값도 전송되지 않음
+		enable : 활성화(기본값)
+		readonly : 읽기전용으로 설정. 폼값이 전송될때 같이 전송됨. 회원가입시 아이디처럼 변경할 수 없으나 폼값의 전송은 필요한 항목에 사용한다
+	-->
+	<form action="">
+	기본 텍스트 상자 : <input type="text" name="name1" />
+	<br />
+	속성 추가 : <input type="text" name="name2" size="50" maxlength="10" value="기본텍스트" disabled="disabled" />
+	<br />
+	주민번호 : <input type="text" name="name3" size="6" maxlength="6" /> - <input type="password" size="7" maxlength="7" />
+	<br />
+	홈페이지 : <input type="text" name="name4" value="http://" />
+	<br />
+	<input type="submit" value="서브밋">
+	</form>
+
+	<h3>type="password"</h3>
+	<!-- 
+		type이 text일때와 속성이 완전히 동일함
+		단, 입력한 값이 *로 표시된다. 입력값을 화면상에서 숨겨야 하 ㄹ때 주로 사용됨
+	-->
+	기본 패스워드 : <input type="password" /><br />
+	비번 미리설정 : <input type="password" value="1234" />
+
+	<h3>type="checkbox"</h3>
+	<!-- 
+		체크박스는 기존의 항목 중 여러가지를 선택해야 할 때 사용함
+		name을 동일하게 지정하여 그룹화 시켜줌
+		value 속성에 값을 미리 지정해야 한다.
+		label 태그와 같이 사용하게 되면 텍스트를 클릭해도 항목이 체크(선택)됨
+			(*input태그의 id와 label 태그의 for가 매칭되어야 함)
+		선택된 값만 서버로 전송된다
+	-->
+	<fieldset>
+		<legend>당신의 관심사항은</legend>
+			<form action="">
+			 <input type="checkbox" name="inter" value="pol" id="pol" /> <label for="pol">정치</label>
+			 <br />
+			 <input type="checkbox" name="inter" value="eco" id="eco" checked="checked" />경제
+
+			 <input type="checkbox" name="inter" value="ent" id="ent" /> <label for="ent">연예</label>
+
+			 <input type="checkbox" name="inter" value="spo" id="spo" />스포츠
+			 <input type="submit" value="확인" />
+			</form>
+	</fieldset>
+
+	<h3>type="radio"</h3>
+	<!-- 
+	라디오박스는 여러개 중 하나만 선택해야 할 대 사용
+	나머지 속성은 checkbox와 동일함
+	name 속성을 다르게 주면 여러개 선택 가능(체크박스와 동일한 기능으로 사용가능)
+	-->
+	<fieldset>
+		<legend>당신의 성별은?</legend>
+		<form action="">
+			<input type="radio" name="gender" value="man" />남자
+			<input type="radio" name="gender" value="waman" checked="checked" />여자
+			<input type="radio" name="gender" value="trans" />트랜드젠더
+
+			<br />
+			<input type="submit" value="전송하기" />
+		</form>
+	</fieldset>
+
+	<h3>select 태그</h3>
+	<!-- 
+	라디오박스와 동일하게 항목 중 하나만 선택해야 할 때 사용
+	주로 생년월일과 같이 항목이 아주 많은 경우 사용하게 된다
+
+	속성
+		- size : 보여줄 목록의 갯수를 지정(디폴트 1)
+		- multiple : 다중선택 가능
+		-
+			*단일선택이 디폴트
+			*종료태그 있음
+			*하위태그로 option 태그를 가짐
+			*option 태그의 value속성에 값을 지정함으로서 목록을 표시함
+			*selected 속성은 option 태그의 속성임
+	-->
+	<fieldset>
+		<legend>당신의 학력은?</legend>
+		<form action="">
+			<select name="grade">
+				<option value="ele">초등학교</option>
+				<option value="mid">중학교</option>
+				<option value="hig" selected="selected">고등학교</option>
+				<option value="uni1">대학교</option>
+				<option value="uni2">대학원</option>
+			</select>
+			&nbsp;&nbsp;
+			
+			<select name="sports" size="5" multiple>
+				<option value="s1">야구</option>
+				<option value="s2">배구</option>
+				<option value="s3">축구</option>
+				<option value="s4">농구</option>
+				<option value="s5">테니스</option>
+			</select>
+			<input type="image" src="./images/button.jpg" />
+		</form>
+	</fieldset>
+
+	<h3>type="file"</h3>
+	<!-- 
+	input type="text"와 속성이 동일함
+	단, value 속성에 값을 지정하더라도 텍스트상에 보이지 않음
+	선택한 파일만 value 속성에 저장됨
+	즉 ㅡ 파일의 경우는 수정시 value에 값을 불러오는 것이 아니라 이미지를 별도로 보여주거나 파일명을 별도로 보여주는 형태로 처리해야 함
+	-->
+	기본 : <input type="file" /><br />
+	속성추가 : <input type="file" size="30" value="기본텍스트" />
+
+	<h3>textarea 태그</h3>
+	<!-- 
+	내용을 표시할때는 value 속성 대신에 태그 사이에 내용을 삽입하면 됨
+	row와 cols는 크기를 결정할때 사용하나 실무에서는 주로 CSS를 사용하여 사이즈를 결정함
+	-->
+	기본 : 	<textarea>내용은 여기에</textarea><br/>
+	속성추가 : <textarea name="contents" cols="30" rows="10" value="기본텍스트" /></textarea>
+
+	<!-- 실제로 요새는 col나 row를 사용하지 않는다 -->
+
+
+
+
+	<h3>type="hidden"</h3>
+	<!-- 
+	웹프로그램에서 자주 사용하는 폼의 하위태그
+	웹브라우저에 아무 모양도 보이지 않음
+	값을 숨겨서 전송할때 사용
+	주로 키값(아이디, 상품코드 등)을 전송할때 많이 사용
+	-->
+	<form action="">
+		<input type="hidden" name="num" value="120" />
+		<button type="submit" />전송하기</button>
+	</form>
+
+	<h3>다양한 버튼들</h3>
+	<fieldset>
+		<legend>각종버튼</legend>
+
+		<form action="">
+			아이디 : <input type="text" name="id" value="난아이디" />
+			성별 : 
+			<input type="radio" name="gender" value="man" />남자
+			<input type="radio" name="gender" value="woman" checked="checked" />여자
+			<br />
+			<!-- 		클릭시 무조건 action에 지정한 페이지(URL)로 폼값을 전송		-->
+			<input type="submit" value="submit버튼" />
+			<!-- 입력폼에 입력한 값을 초기화시킴(처음상태로 되돌려줌) -->
+			<input type="reset" value="reset버튼" />
+			<!-- 일반버튼으로 javascript나 jQuery를 연결하기 전엔 아무 동작도 하지 않음 -->
+			<input type="button" value="일반버튼" />
+			<!-- 브라우저 종류에 따라 submit 기능이 있거나 없는 경우도 있음 -->
+			<button>버튼태그</button>
+			<!-- submit과 같은 전송기능. 단 ㅡ 이미지를 이용해서 버튼을 표현하려 할때 사용 -->
+			<input type="image" src="./images/sumnail.jpg" style="width:100px; height:50px;" />
+		</form>
+	</fieldset>
+
+
+
+
+
+	</body>
+</html>

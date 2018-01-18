@@ -1,0 +1,66 @@
+<!-- Ex15Form03.html -->
+<!doctype html>
+<html lang="ko">
+	<head>
+	<meta charset="UTF-8">
+	<title>input 태그의 다양한 속성</title>
+	</head>
+	<body>
+		<h2>input 태그의 다양한 활용</h2>
+
+		<form name="frm" method="get">
+		<table cellspacing=-"0" cellpadding="10" border="1" width="800">
+		<colgroup>
+		<col style="width:50%;" />
+		<col style="width:50%;" />
+		</colgroup>
+			<tr>
+				<td>readonly 속성 : 읽기 전용필드 만들기</td>
+				<td>
+				<input type="text" name="id" style="width:100%;" value="읽기전용입니다." readonly />
+				</td>
+			</tr>
+			<tr>
+				<td>placeholder 속성 : 텍스트박스의 힌트 표시하기</td>
+				<td>
+				<input type="text" style="width=100%;" placeholder="힌트를 표시합니다" />
+				</td>
+			</tr>
+			<tr>
+				<td>autofocus 속성 : 입력 커서 표시하기</td>
+				<td>
+				<input type="text" style="width=100%;" autofocus />
+				</td>
+			</tr>
+			<tr>
+				<td>required 속성 : 필수입력사항 표시</td>
+				<td>
+				<input type="text" style="width:100%;" required />
+				</td>
+			</tr>
+			<tr>
+				<td>type="number" 속성 - 숫자를 스핀박스를 이용하여 입력함</td>
+				<td>
+				<input type="number" style="width:200px" />
+				</td>
+			</tr>
+			<tr>
+				<td>type="range" 속성 : 숫자를 슬라이드 막대를 이용해 입력</td>
+				<td>
+				<input type="range" style="width:200px;" value="2" min="1" max="3" />
+				</td>
+			</tr>
+			<tr>
+				<td>min, max, step 속성</td>
+				<td>
+				<input type="number" style="width:200px;" min="10" max="100" step="10" />
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" style="text-align:center;"> <button type="submit">전송하기</button></td>
+			</tr>
+		</table>
+		
+		</form>
+	</body>
+</html>

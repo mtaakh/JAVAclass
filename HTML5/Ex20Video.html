@@ -1,0 +1,73 @@
+<!-- Ex20Video.html -->
+<!doctype html>
+<html lang="ko">
+	<head>
+	<meta charset="UTF-8">
+	<title>video</title>
+	</head>
+	<body>
+	<!-- 
+		<video src="./media/video.mp4" autoplay controls width="200" height="150">
+			video 태그를 지원하지 않는 경우 <a href="./media/video.mp4">여기</a>를 클릭하세요
+		</video> -->
+<!-- 
+		<h2>source 하위태그 사용</h2>
+		<video autoplay controls width="200" height="150">
+		<source src="./media/video.3gp" type="video/3gpp" />
+		<source src="./media/video.mp4" type="video/mp4" />
+		video를 지원하지 않는 경우 <a href="./media/video.mp4">여기</a>를 클릭하세요
+		</video>
+ -->
+
+	<script type="text/javascript">
+
+		var video;
+		window.onload = function()
+		{
+			var currentSpan = document.getElementById("currenttime");
+			var totalSpan = document.getElementById("totaltime");
+			//비디오 객체 가져오기
+			video = document.getElementById("video");
+			//비디오에 리스너 붙임. timeupdate 이벤트 발생시 개최
+			video.addEventListener("timeupdate", function(){
+				//현재 재생시간
+				currentSpan.innerHTML = video.currenttime;
+				//ㅊ오 재생시간
+				totalSpan.innerHTML = video.duration;
+				});
+		}
+
+		
+			function play()
+			{
+				video.hidden="";
+				video.play();
+			}
+			function stop()
+			{
+				video.pause();
+			}
+			function start()
+			{
+				//비디오를 처음부터 다시 재생할때
+				video.currentTime = 0;
+				video.play();
+			}
+		
+	</script>
+	<h2>JavaScript를 이용한 커스텀 비디오 만들기</h2>
+	<div>
+		<video id="video" width="300" height="200" src="./media/video.mp4">
+			비디오 태그를 지원하지 않는 브라우저입니다,,,
+		</video>
+	</div>
+	<div>
+		<input type="button" value="PLAY" onclick="play();" />
+		<input type="button" value="STOP" onclick="stop();" />
+		<input type="button" value="START" onclick="start();" />
+		<span id="currenttime"></span>
+		/
+		<span id="totaltime"></span>
+	</div>
+	</body>
+</html>

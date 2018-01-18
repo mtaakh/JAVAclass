@@ -1,0 +1,64 @@
+<!-- Ex13Form01.html -->
+<!doctype html>
+<html lang="ko">
+	<head>
+	<meta charset="UTF-8">
+	<title>Form 사용하기</title>
+	</head>
+	<body>
+	<!-- 
+	form태그 : 사용자가 입력한 값을 서버로 전송할때 사용하는 태그
+
+	주요속성 : 
+		-name :  폼의 이름
+		- action : 사용자가 입력한 값을 전송할 페이지경로 지정(action을 생략할 경우 디폴트는 자신의 페이지)
+		- method : get / post(method 생략시 디폴트는 get) 데이터 전송방식을 의미함
+
+				-------------------------------------------------------------------------
+				데이터 전송방식		get						post
+				-------------------------------------------------------------------------
+				URL노출				노출됨					노출되지않음
+				-------------------------------------------------------------------------
+				전송방식			HTTP헤더에 포함돼 전송	HTTP바디에 포함돼 전송
+				-------------------------------------------------------------------------
+				데이터량			최대 4kb				무한대
+				-------------------------------------------------------------------------
+		#get 방식에서 URL을 통해 데이터를 전송시 form태그 하위 요소의 name속성에 지정한 이름을 통해서 전송됨
+		즉 이름=값의 형태로 전송.	여러개가 전송될 때는 이름1=값1&이름2=값2 형태(쿼리스트링)로 전송됨
+
+		-target : 이 속성은 a 태그의 target과 같은 기능
+	-->
+
+	<h2>form 태그로 데이터 전송</h2>
+	<h3>GET방식</h3>
+
+	<form name="form1" method="get" action="./request/form_get_method.html">
+	<table>
+		<tr>
+			<td>아이디: <input type="text" name="userid" /></td>
+			<td rowspan="2"><input type="submit" value="전 송" /></td>
+		</tr>
+		<tr>
+			<td>패스워드 : <input type="password" name="userpwd" /></td>
+		</tr>
+	</table>
+	</form>
+
+	<h3>POST방식</h3>
+	<form name="form2" method="post" action="./request/form_post_method.html">
+	<table>
+		<tr>
+			<td>아이디 : <input type="text" name="userid" /></td>
+			<td rowspan="2"><input type="submit" value="전송" /></td>
+		</tr>
+		<tr>
+			<td>패스워드 : <input type="password" name="userpwd" /></td>
+		</tr>
+	</table>
+	</form>
+
+	<h3>a태그로 페이지 이동 및 값전송</h3>
+	<a href="./request/form_get_method.html?userid=kim&userpwd=1234">클릭</a>
+
+	</body>
+</html>

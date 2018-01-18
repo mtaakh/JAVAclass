@@ -1,0 +1,88 @@
+<!-- Ex19Audio.html -->
+<!doctype html>
+<html lang="ko">
+	<head>
+	<meta charset="UTF-8">
+	<title>Audio</title>
+	</head>
+	<body>
+	<!-- 
+		audio 태그 : mp3와 같은 음원파일을 웹페이지에서 재생할 수 있도록 해주는 태그
+		속성
+			autoplay : 웹페이지가 로딩될때 곧바로 음원 재생
+			controls : 컨트롤바를 화면상에 보여줌(브라우저에 따라 모양이 다름)
+	-->
+
+		<h2>기본 AUDIO(src속성 사용)</h2>
+		<!-- <audio src="./media/audio.mp3" autoplay>
+		audio 태그를 지원하지 않습니다.<br />
+		여기를 <a href="./media/audio.mp3">클릭</a>하세요
+		</audio>
+
+		<audio src="./media/audio.mp3" autoplay controls>
+		audio 태그를 지원하지 않습니다.<br />
+		여기를 <a href="./media/audio.mp3">클릭</a>하세요
+		</audio> -->
+
+		<!-- 웹 브라우저마다 지원하는 타입이 다르므로 해당 브라운저에서 지원되는 음원파일이 자동으로 재생됨  -->
+<!-- 
+		<h2>audio의 하위 태그 - source 태그를 이용한 플레이</h2>
+		
+		<audio autoplay controls>
+			<source src="./media/audio.ogg" type="audio/ogg" />
+			<source src="./media/audio.mp3" type="audio/mp3" />
+		</audio>
+ -->
+
+		<script type="text/javascript">
+
+			//Audio 객체 생성
+			var audio = new Audio("./media/audio.mp3");
+
+			//문서의 로드가 완료되면 즉시 실행되는 함수
+			window.onload = function() {
+				//문서가 로드되면 아라ㅐ DOM객체를 가져온다.
+				var currentSpan = document.getElementById("currnettime");
+				var totalSpan = document.getElementById("totaltime");
+				var porgress = document.getElementById("progress");
+
+				/*
+				addEventListener("캐치할 이벤트명", 이벤트 발생시 실행하게 될 함수(){@@@});
+				*/
+				audio.addEventListener("timeupdate", function(){
+				//오디오의 총 재생시간을 얻어와서 설정
+				totalSpan.innerHTML = audio.duration;
+				//오디오의 현재 재생시간을 얻어와서 텍스트로 설정
+				currentSpan.innerHTML = audio.currentTime;
+
+				//timeupdate 이벤트에 따른 진행정도를 표시
+				//최대값 설정
+				progress.amx = audio.duration;
+				//진행정도를 표시
+				progress.value = audio.currentTime;
+				});
+			}
+
+			function play()
+			{
+				audio.play();
+			}
+			function stop()
+			{
+				audio.pause();
+			}
+		</script>
+		<h2>JavcaScript를 이용한 커스텀 오디오 만들기</h2>
+		<div>
+			<progress value="0" id="progress"></progress>
+		</div>
+		<div>
+			<input type="button" value="PLAY" onclick="play();" />
+			<input type="button" value="STOP" onclick="stop();" />
+			<span id="currnettime"></span>
+			/
+			<span id="totaltime"></span>
+		</div>
+
+	</body>
+</html>

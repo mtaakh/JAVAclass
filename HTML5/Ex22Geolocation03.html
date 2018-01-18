@@ -1,0 +1,71 @@
+<!-- Ex22Geolocation03.html -->
+<!doctype html>
+<html lang="ko">
+	<head>
+	<meta charset="UTF-8">
+	<title>GeoLocation 예제03</title>
+	<script>
+        var geocoder;
+        var map;
+ 
+         //현재위치의 위도/경도 얻기]
+        window.onload = function () {
+            if (navigator.geolocation) {
+                geocoder = new google.maps.Geocoder();
+                navigator.geolocation.getCurrentPosition(showPosition);
+            }
+        }
+        var showPosition = function (position) {
+            var latitude = position.coords.latitude;
+            var longitude = position.coords.longitude;
+ 
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: { lat: latitude, lng: longitude },
+                scrollwheel: false, //스크롤 확대/축소 허용여부
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                zoom: 20 //로딩시 맵의 줌 스케일
+            });
+ 
+            var marker = new google.maps.Marker({
+                position: { lat: latitude, lng: longitude },               
+                //map: map,
+                title: '나의 현재 위치!'
+            });
+            marker.setMap(map);
+           
+            
+        }
+ 
+        function codeAddress() {
+            var address = document.getElementById("address").value;
+            geocoder.geocode({ 'address': address }, function (results, status) {
+                if (status == google.maps.GeocoderStatus.OK) {
+                    map.setCenter(results[0].geometry.location);
+                    var marker = new google.maps.Marker({
+                        map: map,
+                        position: results[0].geometry.location
+                    });
+                } else {
+                    alert("Geocode was not successful for the following reason: " + status);
+                }
+            });
+        }
+    </script>
+ 
+
+	</head>
+	<body>
+		<fieldset>
+			<legend>현재 위치를 지도에서 표시하기</legend>
+				<div id="map" style="width:500px; height:500px;"></div>
+				<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCcDVETzAMs4y-t48BZGASt6i754KoSKbU" async defer></script>
+		</fieldset>
+		<fieldset>
+			<legend>주소로 위치 찾기</legend>
+			<div>
+				<input type="text" id="address" />
+				<input type="button" value="주소명" onclick="codeAddress();" />
+			</div>
+		</fieldset>
+	</body>
+</html>

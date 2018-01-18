@@ -1,0 +1,64 @@
+<!-- Ex22Geolocation02.html -->
+<!doctype html>
+<html lang="ko">
+	<head>
+	<meta charset="UTF-8">
+	<title>GeoLocation 예제02</title>
+	<script type="text/javascript">
+	/*
+	반복위치서비스 : 이동중에 위치가 변경될대마다 계속 위치를 갱신한다.
+	*/
+	var span;
+	var watchID;
+	window.onload = function(){
+		span = document.getElementById("result");
+	}
+
+	var start = function(){
+		//브라우저에서 웹 지오로케이션 지원여부 판단
+		if(navigator.geolocation)
+		{
+			var options = { enableHighAccuracy:true, timeout:1000, maximumAge:3000};
+
+			watchID = navigator.geolocation.watchPosition(showPosition, showError, options);
+		}
+		else{
+			span.innerHTML = "지오로케이션을 지원하지 않는 웹브라우저입니다.";
+		}
+	}
+
+	var showPosition = function(position){
+		//위경도 가져오기
+		var latitude = position.coords.latitude;
+		var longitude = position.coords.longitude;
+		span.innerHTML = "위도" + latitude + ", 경도: " + longitude;
+	}
+
+	var showError = function(error){
+		switch(error.code){
+
+			case error.UNKNOWN_ERROR:
+				span.innerHTML = "알 수 없는 오류 발생"; break;
+			case error.PERMISSION_ERROR:
+				span.innerHTML = "권한이 없습니다."; break;
+			case error.POSITION_UNAVAIABLE:
+				span.innerHTML = "위치 확인 불가"; break;
+			case error.TIMEOUT:
+				span.innerHTML = "시간초과"; break;
+		}
+	}
+
+	var stop = function(){
+		navigator.geolocation.clearWatch(watchID);
+	}
+	</script>
+	</head>
+	<body>
+		<fieldset>
+			<legend>GeoLocation - 현재위치 갱신하기</legend>
+			<input type="button" onclick="start();" value="위치 추적 시작" />
+			<input type="button" onclick="stop();" value="위치 추적 정지" />
+			<span id="result" style="color:red; font-size:1.5em; font-weight:bold;"></span>
+		</fieldset>
+	</body>
+</html>

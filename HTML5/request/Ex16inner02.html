@@ -1,0 +1,28 @@
+<!-- Ex16inner02.html -->
+<!doctype html>
+<html lang="ko">
+	<head>
+	<meta charset="UTF-8">
+	<title>inner02 페이지</title>
+	</head>
+	<body>
+		<h2>inner02</h2>
+
+		<!-- 
+		target(타겟) : 링크를 걸 때 어떤 창에서 페이지 이동을 시킬 지 결정하기 위한 요소
+
+			- _self : 기본값. 써주지 않아도 됨
+			- _parent : 여러 단계의 depth(깊이)가 있을 경우 한 단계 위의 창을 가리킴
+			- _top : depth(깊이)에 상관없이 최상위 창을 가리킴
+			- 창의 이름지정 : 원하는 창을 지정할 수 있음
+
+			참고 : javascript를 사용하면 parent.parent.* 등과 같이 중첩해서 사용할 수 있다
+
+		-->
+
+		<a href="../Ex12Table.html" target="_self">Ex12Table.html > _self</a> <br/>
+		<a href="../Ex12Table.html" target="_parent">Ex12Table.html > _parent</a> <br/>
+		<a href="../Ex12Table.html" target="_top">Ex12Table.html > _top</a> <br/>
+		<a href="../Ex12Table.html" target="topWin">Ex12Table.html > topWin</a> <br/>
+	</body>
+</html>

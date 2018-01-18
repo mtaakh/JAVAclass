@@ -1,0 +1,42 @@
+<!-- Ex10Img.html -->
+<!doctype html>
+<html lang="ko">
+	<head>
+	<meta charset="UTF-8">
+	<title>Img 태그</title>
+	</head>
+	<body>
+	<!-- 
+	img 태그 : 웹브라우저에 이미지를 표시할때 사용하는 태그
+	속성:
+		src : 해당 이미지의 경로(절대/상대경로)
+		alt : 대체텍스트(이미지가 표시 안될때 텍스트로 표시함)
+		width : 이미지의 가로폭 지정
+		height : 이미지의 세로폭 지정
+
+		usemap : 이미지를 map으로 사용할때 값 지정, 값 지정시 #를 붙인다.
+
+	- Inline Element
+	- 종료태그가 없음
+	- width, height를 지정하지 않을 경우 이미지의 원본 크기대로 표시함
+		a태그를 이용하여 이미지에 링크를 걸 때는 반드시 border를 0으로 지정해야 이미지의 테두리가 생기지 않음(IE의 경우 자동으로 생김)
+
+	-->
+
+	<h2>img 태그</h2>
+
+	<h3>이미지 원본 크기대로 표시</h3>
+	<img src="./images/4.jpg" alt="숲" />
+
+	<h3>이미지 크기 조정</h3>
+	<img src="./images/4.jpg" width="200" height="200" alt="국가" />
+	<img src="./images/korea.jpg" style="width=100px; height=400px;" alt="국가" />
+
+	<h3>이미지에 링크 걸기(크롬/IE 동시확인)</h3>
+	<a href="http://naver.com" terget="_blank"><img src="./images/button.jpg" alt="" /></a>
+	<br />
+	<a href="http://daum.com" terget="_blank"><img src="./images/2.jpg" alt="" border="0" /></a>
+	<br />
+	
+	</body>
+</html>

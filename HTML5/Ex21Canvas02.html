@@ -1,0 +1,53 @@
+<!-- Ex21Canvas02.html -->
+<!doctype html>
+<html lang="ko">
+	<head>
+	<meta charset="UTF-8">
+	<title>Canvas 예제02</title>
+	<script type="text/javascript">
+		window.onload = function() {
+
+			var canvas = document.getElementById("canvas");
+			var ctx = canvas.getContext("2d");
+
+			ctx.font = "돋움체";
+			ctx.fillStyle = "rgba(255, 0, 0, 1)";
+
+			//기준선
+			ctx.strokeStyle = "red";
+			ctx.moveTo(100, 20);
+			ctx.lineTo(100, 180);
+			ctx.stroke();
+
+			//그림자 표시를 위한 설정
+			ctx.shadowColor = "rgba(0, 255, 0, 0.5)";
+			ctx.shadowOffsetX = 3; // 그림자의 x축 좌표
+			ctx.shadowOffsetY = 8; // 그림자의 y축 좌표
+			ctx.shadowBlur = 4; // 그림자의 흐림(블러) 정도
+
+
+			ctx.textAlign = "start"; // 텍스트의 시작부분이 기준점에 위치
+			ctx.fillText("HTML5_START", 100, 50);
+
+			ctx.textAlign = "end"; // 텍스트의 끝부분이 기준점에 위치
+			ctx.fillText("HTML5_END", 100, 80);
+			
+			ctx.textAlign = "center"; // 텍스트의 가운데가 기준점에 위치
+			ctx.fillText("HTML5_CENTER", 100, 120);
+			
+			ctx.textAlign = "right"; // (end와 동일)
+			ctx.fillText("HTML5_RIGHT", 100, 180);
+
+			ctx.textAlign = "left"; // 텍스트의 가장 오른쪽이 기준점에 위치(start와 동일)
+			ctx.fillText("HTML5_LEFT", 100, 150);
+
+		}
+	</script>
+	</head>
+	<body>
+		<h2>Canvas 태그</h2>
+		<canvas id="canvas" width="200" height="200" style="border:1px solid red;">
+			<p>canvas를 지원하지 않는 브라우저입니다.</p>
+		</canvas>
+	</body>
+</html>

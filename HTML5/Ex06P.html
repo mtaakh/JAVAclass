@@ -1,0 +1,67 @@
+<!-- Ex06P.html -->
+<!doctype html>
+<html lang="ko">
+	<head>
+	<meta charset="UTF-8">
+	<title>p태그</title>
+	</head>
+	<body>
+	<!-- 
+		P태그 : 
+		- Prgraph 의 이니셜로 문단을 나눌 때 사용하는 태그
+		- Block Element
+		- P태그 안에는 다른 블록 엘리먼트를 넣지 않아야 함
+
+		#Block Element : 세로배치되는 태그들(예: hn계열 태그, p태그, div태그 등)
+		#inline Element : 가로배치되는 태그들(예: a태그, span태그, ing태그 등)
+	-->
+	<h2>p태그</h2>
+	<h3>자기소개서</h3>
+	<p>
+		저는 유복한 가정에서 태어났습니다.<br/>
+		자상하신 부모님의 사랑을 받으며 자라왔습니다.
+	</p>
+
+	<!-- 텍스트 정렬: 우측 -->
+	<p style="text-align: right;">
+		입사동기는 열심히 하여 사장이 되고 싶습니다.<br/>
+		열심히 하겠습니다.
+	</p>
+
+	<!-- 가로폭: 400픽셀, 외곽선 1픽 빨간 직선 -->
+	<div style="width:400px; border:1px solid red;">
+		<p style="text-align:center;">텍스트 가운데 정렬</p>
+	</div>
+
+	<hr/>
+
+	<!-- 
+		Blockquote 태그
+		- 인용문을 넣을때 주로 사용함
+	-->
+	<h2>blockquote 태그</h2>
+
+	<!-- font-size : 텍스트 폰트(글자)의 크기를 설정한다 -->
+	<p style="text-align:left; font-size:18px;">
+		어린왕자
+	</p>
+	<blockquote style="border:1px blue solid; font-size:14px;">
+		만약 네가 나를 길들인다면<br/>
+		내 생활은 아마 환하게 밝아질거야<br/>
+		네 발자국 소리는 마치 음악처럼 여겨져서<br/>
+		그걸 들으면 난 땅 밑의 굴 속에서 뛰쳐나오게 될 거야.<br/>
+		<mark>나를 길들여 줘.</mark>
+	</blockquote>
+
+	<hr/>
+
+	<!--
+		mark 태그 : 형광펜 효과를 낸다	
+	-->
+	<h2>mark 태그</h2>
+	<p>
+		오호~!! <mark>형광펜</mark> 데스까??
+	</p>
+
+	</body>
+</html>

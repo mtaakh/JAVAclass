@@ -1,0 +1,79 @@
+<!-- Ex21Canvas01.html -->
+<!doctype html>
+<html lang="ko">
+	<head>
+	<meta charset="UTF-8">
+	<title>캔버스 예제01</title>
+	<script type="text/javascript">
+		/*
+		canvas 태그 : 브라우저 상에 그래프나 차트같은 그림을 그릴 때 사용함
+
+		캔버스텍스트(context) : 캔버스 객체에서 그림을 그리는 도구(rendering tool)
+			- 컨텍스트는 cnavas객체의 getContext로 알아낸다.
+			- 2차원 그래픽을 수행하려면 "2d"를 호출한다.
+			- 3차원 그래픽을 수행하려면 "webgl"을 호출한다.
+
+		컨텍스트 객체의 속성(프로퍼티)
+			strokeStyle : 선의 색
+			fillStyle : 채우기 색
+			lineWidth : 도형의 선두께(픽셀단위)
+			font : 텍스트 폰트 설정
+			textAlign : 텍스트의 정렬방식
+
+			컨텍스트 객체의 메소드(함수)
+			beginPath() : 이전경로를 지우고 새로 시작
+			closePath() : 경로의 끝점과 시작점을 연결하는 선을 추가 후 경로 닫음
+			moveTo() : 경로에 새 점을 만듬
+			lineTo() : 경로의 끝점과 연결하는 선을 추가
+			rect() : 경로에 사각형 추가
+			arc() : 경로에 원호 추가
+
+			fill() : 경로에 만들어진 도형을 외곽선없이 색으로만 채움
+			stroke() : 경로에 만들어진 도형의 외곽선만 칠함
+			clearRect() : 캔버스에서 사각형 영역을 지움
+			fillRect() : 사각형 영역을 외곽선없이 안쪽 영역을 칠함
+			strokeRect() : 사각형을 추가하지 않고 캔버스에 바로 그림
+			strokdText() : 텍스트를 캔버스에 바로 그림
+			drawImage() : 이미지를 캔버스에 바로 그림
+		*/
+
+		window.onload = function(){
+			
+			var canvas = document.getElementById("canvas");
+			var ctx = canvas.getContext("2d");
+
+			ctx.beginPath();
+			ctx.moveTo(0,0);
+			ctx.lineTo(50,50);
+			ctx.stroke();
+
+			ctx.beginPath();
+			ctx.lineCap = "round"; // 라인의 끄트머리(모서리)를 둥글게 처리. 디폴트는 직각(사각형)
+			ctx.lineWidth = 10;
+			ctx.moveTo(50,50);
+			ctx.lineTo(100,50);
+			ctx.stroke();
+			ctx.closePath();
+
+			ctx.beginPath();
+			ctx.lineWidth = 10;
+			ctx.moveTo(100,50);
+			ctx.lineTo(100,100);
+			ctx.stroke();
+			ctx.closePath();
+
+			//rgba : red green blue alpha
+			//alpa는 투명도를 표현함(0 ~ 1, 0은 완전투명 - 1은 완전불투명)
+			ctx.fillStyle = "rgba(255, 0, 0, 0.5)";
+			//fillRect(좌상단x좌표, 좌상단y좌표, 가로폭, 세로폭)
+			ctx.fillRect(100, 100, 150, 50);
+
+		}
+	</script>
+	</head>
+	<body>
+		<h2>canvas 태그</h2>
+		<canvas id="canvas" style="border:1px solid blue;" width="200" height="200"></canvas>
+			<p>canvas가 지원되지 않는 브라우저입니다.</p>
+	</body>
+</html>

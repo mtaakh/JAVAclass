@@ -1,0 +1,84 @@
+<!-- Ex18Span.html -->
+<!doctype html>
+<html lang="ko">
+	<head>
+	<meta charset="UTF-8">
+	<title>span 태그</title>
+	<!-- 자바스크립트를 사용하기 위한 선언부 -->
+	<script type="text/javascript">
+	/*
+	자바스크립트 ㅐ에서 사용할 수 있는 주석의 형태는 
+	Java와 동일하게 행단위와 라인단위 주석을 사용할 수 있음
+
+	함수의 선언 형태는 크게 2가지로 나뉨
+	1. 일반함수의 형태
+	2. 무기명함수(이름이 지정되지 않은 함수)의 형태
+	*/
+		function textToggle()
+		{
+			var text = document.getElementById("text").innerHTML;
+
+			if(text=="JSP")
+			{
+				document.getElementById("text").innerHTML = "<b>제이에스피</b>";
+			}
+			else
+			{
+				document.getElementById("text").innerHTML = "JSP";
+			}
+		}
+
+		var setImage = function() {
+			var img = document.getElementById("image").innerHTML;
+
+			if(image == "이미지")
+			{
+				document.getElementById("image").innerHTML = "<ing src='./images/3.jpg'>";
+			}
+			else
+			{
+				document.getElementById("image").innerHTML = "이미지";
+			}
+		}
+		
+
+	</script>
+	<!-- CSS를 사용하기 위한 선언부 -->
+	<style type="text/css">
+		#monday{
+			font-size:0.4em;
+			color:gray;
+			}
+			.html5{
+				font-size:2em; /* 16px=1em 기준, 비율로 사이즈를 결정함 Ex)2em = 16px*2 = 32px */
+				color:green;
+				font-weight:bold; /*글자를 볼드체로 표현할때 사용*/
+				}
+		
+	</style>
+	</head>
+	<body>
+	<!-- 
+		span태그 : HTML태그와 달리 Mark Up(마크업) 기능이 없다.
+		그러므로 주로 자바스크립트와 CSS에서 활용하기 위한 태그임.
+	-->
+
+		<h2>span 태그 활용하기</h2>
+
+		<h3>자바스크립트에서 활용</h3>
+		<fieldset>
+			<legend>여러가지 버튼들</legend>
+			<input type="button" value="텍스트교체" onclick="textToggle();" />
+			<input type="button" value="이미지교체" onclick="setImage();" />
+		</fieldset>
+
+		오늘의 첫 수업은 <span id="text">JSP</span>입니다. <br />
+		여기에 <span id="image">이미지</span>를 표시합니다. <br />
+
+		<h3>CSS에서 활용</h3>
+
+		오늘은 <span id="monday">월요일</span>이고요 <br />
+		HTML5 <span class="html5">강의시간</span> 입니다.
+
+	</body>
+</html>

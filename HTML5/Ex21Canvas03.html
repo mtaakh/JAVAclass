@@ -1,0 +1,80 @@
+<!-- Ex21Canvas03.html -->
+<!doctype html>
+<html lang="ko">
+	<head>
+	<meta charset="UTF-8">
+	<title>Canvas 예제3</title>
+	<script type="text/javascript">
+		window.onload = function() {
+			var canvas = document.getElementById("canvas1");
+			var c = canvas.getContext("2d");
+
+			c.beginPath();
+			c.strokeStyle = "#FF0000";
+			c.moveTo(60, 313);
+			c.lineTo(120, 166);
+			c.lineTo(180, 76);
+			c.lineTo(240, 250);
+			c.lineTo(300, 70);
+			c.lineTo(360, 200);
+			c.lineTo(420, 120);
+			c.lineTo(480, 70);
+			c.stroke();
+			c.closePath();
+			
+			var canvas2 = document.getElementById("canvas2");
+			var cx = canvas2.getContext("2d");
+
+			//삼각형 그리기
+			cx.beginPath();
+			cx.strokeStyle = "FF0000";
+			cx.moveTo(120, 20);
+			cx.lineTo(20, 50);
+			cx.lineTo(150, 120);
+			cx.lineTo(120, 20);
+			cx.strokeStyle = "magenta";
+			cx.stroke();
+
+			//원호 그리기
+			/*
+			arc(x, y, 반지름, 시작각도, 끝각도, 원호 그릴 방향(false:시계방향 기준));
+			우측점(3시) : 0도(2*Math.PI)
+			하단점(6시) : 90도(0.5*Math.PI)
+			좌측점(9시) : 180도(1*Math.PI)
+			상단점(12시) : 270도(1.5*Math.PI)
+			*/
+			cx.beginPath();
+			cx.strokeStyle = "blue";
+			//우측점에서 상단점까지 시계방향으로 원호 그리기
+			cx.arc(300, 70, 30, 0, 1.5*Math.PI, false);
+			cx.stroke();
+
+			cx.beginPath();
+			cx.strokeStyle = "green";
+			//하단점에서 좌측점까지 반시계방향으로 원호 그리기
+			cx.arc(300, 70, 50, Math.PI/2, Math.PI, true);
+			cx.stroke();
+
+			//사각형 그리기
+			cx.beginPath();
+			for(var i=0; i<5; i++)
+			{
+				cx.rect(100+(i*30), 150+(i*10), 150, 50);
+			}
+			cx.strokeStyle = "orange";
+			cx.stroke();
+		}
+
+	</script>
+	</head>
+	<body>
+		<h2>Canvas 태그</h2>
+		<canvas id="canvas1" style="border:1px solid red;" width="550" height="450">
+			<p>canvas가 지원되지 않는 브라우저입니다.</p>
+		</canvas>
+		
+		<canvas id="canvas2" style="border:1px solid blue;" width="550" height="450">
+			<p>canvas가 지원되지 않는 브라우저입니다.</p>
+		</canvas>
+	</body>
+</html>

@@ -1,0 +1,54 @@
+<!-- Ex03Hr.html -->
+<!doctype html>
+<html lang="ko">
+	<head>
+	<meta charset="UTF-8">
+	<title>hr태그</title>
+	</head>
+	<body>
+		<!--
+			hr태그 : 괘선을 나타내는 태그
+			속성: 
+			color ㅡ 괘선의 색상 지정(style로 적용해야함)
+			size ㅡ 괘선의 두께 지정(숫자만 가능)
+			width ㅡ 괘선의 가로폭 지정(숫자 or %로 지정가능)
+			align ㅡ left(좌측정렬), right(우측정렬), center(가운데정렬:기본값)
+
+			상기 속성으로 지정시 웹표준에 어긋나므로 CSS로 지정해야함
+			-종료태그가 없음
+			-block element(세로형 배치)
+		-->
+	
+	<h2>hr태그 연습</h2>
+	<div style="border:1px solid red; width:600px;">
+		<h3>hr 기본</h3>
+		<hr/>
+	
+		<h3>색상지정</h3>
+		<!-- <hr color="red">
+		해당 표현은 웹표준에 어긋나므로 속성이 제거됨 -->
+		
+		<hr style="background-color:red; height:20px;"/>
+		
+		<h3>두께 지정</h3>
+		<!-- <hr size="30">
+		해당 표현은 웹표준에 어긋나므로 속성이 제거됨 -->
+
+		<hr style="height:30px; background-color:yellow;"/>
+		
+		<h3>가로폭 지정</h3>
+		<!-- <hr width="50">
+		해당 표현은 웹표준에 어긋나므로 속성이 제거됨 -->
+		
+		<hr style="width:200px; height: 10px;"/>
+		<hr style="width:90%;"/>
+		
+		<h3>괘선 정렬(디폴트:가운데정렬)</h3>
+
+		<!-- <hr width="100" align="left" 웹표준 어긋남>-->
+		<hr style="width:100px; margin-left:0px;"/> <!-- margin-좌우 : 좌우에 공간을 얼마나 남기냐 표현 -->
+
+		<!-- <hr width="100" align="right" 웹표준 어긋남>-->
+		<hr style="width:100px; margin-right:0px;"/>
+	</body>
+</html>

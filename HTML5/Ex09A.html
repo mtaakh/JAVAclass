@@ -1,0 +1,68 @@
+<!-- Ex09A.html -->
+<!doctype html>
+<html lang="ko">
+	<head>
+	<meta charset="UTF-8">
+	<title></title>
+	</head>
+	<body>
+	<!-- 
+	 a태그 : 하이퍼링크(Hyper Link) 기능을 제공하는 태그
+	 속성:
+		href : 이동할 때 페이지의 파일명 혹은 URL(웹주소)
+		target : 이동할 페이지를 보여줄 대상을 지정함
+			_self(기본값) : 자기자신의 브라우저에서 이동함
+			_top : 프레임이 여러 단계로 있을 경우 최상위 페이지에서 열림
+			_parent : 프레임이 있을 경우 한단계 위 페이지에서 열림
+			_blank : 새창(혹은 새탭)으로 페이지가 열림
+		Inline Element
+
+		#중요
+		a태그를 이용해서 이동페이지로 특정 값(파라메타)을 전달할 수 있다.
+		쿼리스트링을 이용해 값을 전달함
+
+		#쿼리스트링이란?
+		페이지 혹은 URL 다음에 물음표(?)로 연결한 문자열을 뜻함
+		예) http://naver.com?param1=100&param2=KOSMO&param3=HTML학습
+
+		#링크를 거는 방법
+
+		절대주소 : 현재 페이지의 위치가 바귀더라도 주소가 변치 않음
+			주로 http:// 를 통해 링크를 걸거나
+			/(홈디렉토리로 root를 의미함)로 시작하는 형태로 링크를 건다
+
+		상대주소 : 현재 페이지의 위치에 따라 주소가 상대적으로 변함
+			. : 현재 디렉토리를 의미함
+			.. : 한단계 상위 디렉토리를 의미함
+			../../ : 2단계 상위 디렉토리를 의미함
+	 -->
+
+	 <h2>a태그</h2>
+
+	 <h3>_self 현재창에 이동할 내용을 표시함 : 디폴트</h3>
+	<a href="Ex06P.html">terget속성 미지정(상대경로)</a>
+	<br />
+
+	<a href="http://daum.net" terget="_self">terget속성 지정(절대경로)</a>
+	<br />
+
+	<h3>_blank : 현재창이 아닌 새로운 창으로 링크를 걸때 사용</h3>
+	<a href="Ex07DlDdDt.html" terget="_blank">_blank 지정(상대경로)</a>
+	<br />
+	<a href="http://naver.com" terget="_blank">_blank 지정(절대경로)</a>
+	<br />
+	<a href="http://corners.auction.co.kr/corner/categorybest.aspx?catetab=3&selecteditemno=A916963116" terget="_blank">옥션상품1</a>
+	<br />
+	<a href="http://corners.auction.co.kr/corner/categorybest.aspx?catetab=7&selecteditemno=B417045406" terget="_blank">옥션상품2</a>
+	<br />
+
+	<h3>a태그를 이용해 현재 페이지 내 특정위치로 이동하기</h3>
+	<a href="#bottom">여기를 클릭하세요</a>
+	<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+	<a name="bottom">여기가 bottom입니다.</a>
+	<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />웅<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />우웅<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />앵<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />웅<br /><br /><br /><br /><br /><br /><br /><br /><br />초<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />키<br /><br /><br /><br /><br /><br /><br /><br />포<br /><br /><br /><br /><br /><br /><br /><br /><br />키<br /><br /><br /><br /><br />.<br />
+	<a href="#">Top으로</a>
+
+
+	</body>
+</html>
